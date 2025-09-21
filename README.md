@@ -28,13 +28,13 @@ The project demonstrates a modern, responsive website with dynamic pages and mul
 ## Folder Structure
 
 app/ # Main application pages <br />
-news/ # News listing & dynamic news pages \n
-[id]/ # Dynamic news detail pages
-schools/ # Faculties listing & dynamic pages
-components/ # Header, Footer, PageWrapper
-context/ # Language context (EN/GE switching)
-i18n/ # Language JSON files
-globals.css # Global styles (Tailwind + custom)
+news/ # News listing & dynamic news pages <br />
+[id]/ # Dynamic news detail pages <br />
+schools/ # Faculties listing & dynamic pages <br />
+components/ # Header, Footer, PageWrapper <br />
+context/ # Language context (EN/GE switching) <br />
+i18n/ # Language JSON files <br />
+globals.css # Global styles (Tailwind + custom) <br />
 
 ---
 
