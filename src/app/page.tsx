@@ -1,7 +1,7 @@
 "use client";
 import { useLanguage } from "./context/LanguageContext";
-import en from "../i18n/en.json";
-import ge from "../i18n/ge.json";
+import en from "../../i18n/en.json";
+import ge from "../../i18n/ge.json";
 import { motion } from "framer-motion";
 
 export default function HomePage() {
