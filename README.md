@@ -26,3 +26,31 @@ The project demonstrates a modern, responsive website with dynamic pages and mul
 ---
 
 ## Folder Structure
+
+app/ # Main application pages
+news/ # News listing & dynamic news pages
+[id]/ # Dynamic news detail pages
+schools/ # Faculties listing & dynamic pages
+components/ # Header, Footer, PageWrapper
+context/ # Language context (EN/GE switching)
+i18n/ # Language JSON files
+globals.css # Global styles (Tailwind + custom)
+
+---
+
+## **Getting Started**
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/<your-username>/nextjs-university-demo.git
+cd nextjs-university-demo
+
+
+npm install
+
+npm run dev -- --turbo
+
+```
+
+Open http://localhost:3000 in your browser to see the website.
