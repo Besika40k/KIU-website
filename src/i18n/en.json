@@ -1,0 +1,13 @@
+{
+  "home": {
+    "title": "Welcome to Kutaisi International University",
+    "news": "News",
+    "schools": "Schools"
+  },
+  "news": {
+    "latest": "Latest News"
+  },
+  "schools": {
+    "title": "Our Faculties"
+  }
+}
