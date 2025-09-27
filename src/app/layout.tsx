@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="max-w-screen-md mx-auto p-4">
+      <body className=/*max-w-screen-md*/ "mx-auto p-4">
         <LanguageProvider>
           <Header />
           <PageWrapper>{children}</PageWrapper>

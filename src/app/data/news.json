@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "KIU Master's Students Visit Shanghai's Global Technology Center",
+    "category": "TECHNOLOGY",
+    "date": "2025-07-24",
+    "image": "/NewsImages/shanghai.jpg",
+    "content": "Kutaisi International University Master's students are currently on a study visit to Shanghai's Global Center, engaging in cutting-edge technological processes and international collaboration."
+  },
+  {
+    "id": 2,
+    "title": "KIU's FIM Students Attend Sustainable AI Course",
+    "category": "TECHNOLOGY",
+    "date": "2025-07-17",
+    "image": "/NewsImages/toshanghai.jpg",
+    "content": "Students Lana Tchanturidze, Erekle Beridze, Lizi Areshidze will attend a sustainable AI course at the Global Technology School."
+  },
+  {
+    "id": 3,
+    "title": "KIU Hosts International Summer School on AI",
+    "category": "RESEARCH",
+    "date": "2025-07-09",
+    "image": "/NewsImages/intaischool.jpg",
+    "content": "A five-day program on Symbolic and Statistical Methods for Reasoning and Processing Formal Expressions attracts global participants."
+  },
+  {
+    "id": 4,
+    "title": "KIU Hosts Prospective Students Campus Tour",
+    "category": "CAMPUS",
+    "date": "2025-06-30",
+    "image": "/NewsImages/campustour.jpg",
+    "content": "KIU welcomed applicants and prospective students for a comprehensive campus tour showcasing facilities and programs."
+  },
+  {
+    "id": 5,
+    "title": "KIU and Chiatura Center Expand Partnership",
+    "category": "PARTNERSHIP",
+    "date": "2025-06-24",
+    "image": "/NewsImages/chiaturapartnership.jpg",
+    "content": "KIU hosted students from the Chiatura Multifunctional Center who completed a joint mathematics curriculum program."
+  },
+  {
+    "id": 6,
+    "title": "Communications Ombudsman Public Lecture",
+    "category": "LECTURE",
+    "date": "2025-06-19",
+    "image": "/NewsImages/ombudsmanlecture.jpg",
+    "content": "A public lecture titled \"Know Your Rights in the Field of Communications\" was held at Kutaisi International University."
+  },
+  {
+    "id": 7,
+    "title": "Communications Ombudsman Public Lecture",
+    "category": "LECTURE",
+    "date": "2025-06-19",
+    "image": "/NewsImages/ombudsmanlecture.jpg",
+    "content": "A public lecture titled \"Know Your Rights in the Field of Communications\" was held at Kutaisi International University."
+  }
+]
