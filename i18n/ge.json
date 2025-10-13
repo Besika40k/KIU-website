@@ -20,5 +20,16 @@
     "news": "სიახლეები",
     "campus": "კამპუსი",
     "vacancies": "ვაკანსიები"
+  },
+  "footer": {
+    "usefulLinks": "სასარგებლო ლინკები",
+    "contactUs": "დაგვიკავშირდით",
+    "legalAddress": "იურიდიული მისამართი:",
+    "address": "ახალგაზრდობის გამზირი, ლეინი 5/7, ქუთაისი, 4600 საქართველო",
+    "internationalEnquiries": "საერთაშორისო სტუდენტებისა და ვიზიტორების შეკითხვებისთვის:",
+    "email": "international@kiu.edu.ge",
+    "phone": "(+995) 577 477197",
+    "infoEmail": "info@kiu.edu.ge",
+    "copyright": "2025 kiu.edu.ge © ყველა უფლება დაცულია"
   }
 }

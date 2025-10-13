@@ -20,5 +20,16 @@
     "news": "News",
     "campus": "Campus",
     "vacancies": "Vacancies"
+  },
+  "footer": {
+    "usefulLinks": "Useful Links",
+    "contactUs": "Contact Us",
+    "legalAddress": "Legal address:",
+    "address": "Akhalgazrdoba Ave. Lane 5/7, Kutaisi, 4600 Georgia",
+    "internationalEnquiries": "For international student and visitor enquiries:",
+    "email": "international@kiu.edu.ge",
+    "phone": "(+995) 577 477197",
+    "infoEmail": "info@kiu.edu.ge",
+    "copyright": "2025 kiu.edu.ge © All rights reserved"
   }
 }
