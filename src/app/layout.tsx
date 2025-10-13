@@ -16,10 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className=/*max-w-screen-md*/ "mx-auto p-4">
+      <body className=/*max-w-screen-md*/ "mx-auto">
         <LanguageProvider>
           <Header />
-          <PageWrapper>{children}</PageWrapper>
+          <div className="p-4">
+            <PageWrapper>{children}</PageWrapper>
+          </div>
           <Footer />
         </LanguageProvider>
       </body>
