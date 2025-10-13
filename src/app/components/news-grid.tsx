@@ -13,6 +13,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "../../components/ui/pagination";
+import Link from "next/link";
 
 interface NewsItem {
   id: number;
@@ -112,9 +113,12 @@ export function NewsGrid({ news, itemsPerPage = 6 }: NewsGridProps) {
               <p className="text-sm text-muted-foreground mb-4 text-pretty">
                 {item.content}
               </p>
-              <Button variant="link" className="p-0 h-auto text-primary">
+              <Link
+                href={`/news/${item.id}`}
+                className="p-0 h-auto text-primary underline text-sm"
+              >
                 Read more →
-              </Button>
+              </Link>
             </CardContent>
           </Card>
         ))}
