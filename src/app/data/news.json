@@ -5,7 +5,16 @@
     "category": "TECHNOLOGY",
     "date": "2025-07-24",
     "image": "/NewsImages/shanghai.jpg",
-    "content": "Kutaisi International University Master's students are currently on a study visit to Shanghai's Global Center, engaging in cutting-edge technological processes and international collaboration."
+    "content": "Kutaisi International University Master's students are currently on a study visit to Shanghai's Global Center, engaging in cutting-edge technological processes and international collaboration.",
+    "fullContent": "Kutaisi International University (KIU) Master's students are currently on a study visit to Shanghai's Global Center of Technology. Finance and Information Management (FIM) Master's program students, Lana Tchanturidze, Erekle Beridze, Lizi Areshidze, and Teimuraz Pkhakadze are participating in the School on Sustainable AI international summer school held in Shanghai, China.\n\nAs part of the program, they are visiting industrial zones and high-tech companies in Shanghai, gaining firsthand insights into the practical applications of AI systems across different sectors. At this global hub of modern technologies, KIU students are building international professional networks with representatives of leading technology companies and universities, while learning about current industry trends.\n\n[QUOTE_BLOCK]\n\nThe study visit to China is supported by KIU's invited professor, Louis Seco (University of Toronto), who is currently in Shanghai and is one of the keynote speakers of the summer school.",
+    "quote": {
+      "text": "The summer school is an amazing opportunity. Students not only learn the technical basics of AI, but also see how it can solve real-life challenges. KIU students are very curious and open to new academic experiences. They have strong potential to create and develop new technologies in the future.",
+      "author": "Louis Seco",
+      "title": "Invited Professor at KIU and Professor at the University of Toronto",
+      "image": "/NewsFigureImages/louis-seco.jpg"
+    },
+    "eventDuration": "July 20-30, 2025",
+    "location": "Shanghai, China"
   },
   {
     "id": 2,
@@ -13,7 +22,11 @@
     "category": "TECHNOLOGY",
     "date": "2025-07-17",
     "image": "/NewsImages/toshanghai.jpg",
-    "content": "Students Lana Tchanturidze, Erekle Beridze, Lizi Areshidze will attend a sustainable AI course at the Global Technology School."
+    "content": "Students Lana Tchanturidze, Erekle Beridze, Lizi Areshidze will attend a sustainable AI course at the Global Technology School.",
+    "fullContent": "Students Lana Tchanturidze, Erekle Beridze, Lizi Areshidze will attend a sustainable AI course at the Global Technology School.",
+    "quote": null,
+    "eventDuration": "July 17-24, 2025",
+    "location": "Shanghai, China"
   },
   {
     "id": 3,
@@ -21,7 +34,11 @@
     "category": "RESEARCH",
     "date": "2025-07-09",
     "image": "/NewsImages/intaischool.jpg",
-    "content": "A five-day program on Symbolic and Statistical Methods for Reasoning and Processing Formal Expressions attracts global participants."
+    "content": "A five-day program on Symbolic and Statistical Methods for Reasoning and Processing Formal Expressions attracts global participants.",
+    "fullContent": "A five-day program on Symbolic and Statistical Methods for Reasoning and Processing Formal Expressions attracts global participants.",
+    "quote": null,
+    "eventDuration": "July 9-14, 2025",
+    "location": "Kutaisi, Georgia"
   },
   {
     "id": 4,
@@ -29,7 +46,11 @@
     "category": "CAMPUS",
     "date": "2025-06-30",
     "image": "/NewsImages/campustour.jpg",
-    "content": "KIU welcomed applicants and prospective students for a comprehensive campus tour showcasing facilities and programs."
+    "content": "KIU welcomed applicants and prospective students for a comprehensive campus tour showcasing facilities and programs.",
+    "fullContent": "KIU welcomed applicants and prospective students for a comprehensive campus tour showcasing facilities and programs.",
+    "quote": null,
+    "eventDuration": "June 30, 2025",
+    "location": "Kutaisi, Georgia"
   },
   {
     "id": 5,
@@ -37,7 +58,11 @@
     "category": "PARTNERSHIP",
     "date": "2025-06-24",
     "image": "/NewsImages/chiaturapartnership.jpg",
-    "content": "KIU hosted students from the Chiatura Multifunctional Center who completed a joint mathematics curriculum program."
+    "content": "KIU hosted students from the Chiatura Multifunctional Center who completed a joint mathematics curriculum program.",
+    "fullContent": "KIU hosted students from the Chiatura Multifunctional Center who completed a joint mathematics curriculum program.",
+    "quote": null,
+    "eventDuration": "June 24, 2025",
+    "location": "Kutaisi, Georgia"
   },
   {
     "id": 6,
@@ -45,14 +70,22 @@
     "category": "LECTURE",
     "date": "2025-06-19",
     "image": "/NewsImages/ombudsmanlecture.jpg",
-    "content": "A public lecture titled \"Know Your Rights in the Field of Communications\" was held at Kutaisi International University."
+    "content": "A public lecture titled \"Know Your Rights in the Field of Communications\" was held at Kutaisi International University.",
+    "fullContent": "A public lecture titled \"Know Your Rights in the Field of Communications\" was held at Kutaisi International University.",
+    "quote": null,
+    "eventDuration": "June 19, 2025",
+    "location": "Kutaisi, Georgia"
   },
   {
     "id": 7,
-    "title": "Communications Ombudsman Public Lecture",
+    "title": "KIU Rector Gives Public Lecture at Local School",
     "category": "LECTURE",
-    "date": "2025-06-19",
+    "date": "2025-06-15",
     "image": "/NewsImages/ombudsmanlecture.jpg",
-    "content": "A public lecture titled \"Know Your Rights in the Field of Communications\" was held at Kutaisi International University."
+    "content": "The Rector of Kutaisi International University delivered an inspiring lecture to students at the local public school.",
+    "fullContent": "The Rector of Kutaisi International University delivered an inspiring lecture to students at the local public school.",
+    "quote": null,
+    "eventDuration": "June 15, 2025",
+    "location": "Kutaisi, Georgia"
   }
 ]
