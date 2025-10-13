@@ -77,7 +77,7 @@ export default function Header() {
             <button
               onClick={() => handleLanguageSwitch("en")}
               className={`flex items-center justify-center w-[48px] h-[32px] rounded-full 
-      transition-all duration-300 
+      transition-all duration-300 cursor-pointer
       ${
         lang === "en"
           ? "bg-[#F3F4F6] shadow-[-4px_-4px_8px_0px_#FFFFFF,4px_4px_8px_0px_#D1D5DB]"
@@ -97,7 +97,7 @@ export default function Header() {
             <button
               onClick={() => handleLanguageSwitch("ge")}
               className={`flex items-center justify-center w-[48px] h-[32px] rounded-full 
-      transition-all duration-300 
+      transition-all duration-300 cursor-pointer
       ${
         lang === "ge"
           ? "bg-[#F3F4F6] shadow-[-4px_-4px_8px_0px_#FFFFFF,4px_4px_8px_0px_#D1D5DB]"
@@ -149,7 +149,7 @@ export default function Header() {
               <button
                 onClick={() => handleLanguageSwitch("en")}
                 className={`flex items-center justify-center w-[48px] h-[32px] rounded-full 
-       transition-all duration-300 
+       transition-all duration-300 cursor-pointer
        ${
          lang === "en"
            ? "bg-[#F3F4F6] shadow-[-4px_-4px_8px_0px_#FFFFFF,4px_4px_8px_0px_#D1D5DB]"
@@ -169,7 +169,7 @@ export default function Header() {
               <button
                 onClick={() => handleLanguageSwitch("ge")}
                 className={`flex items-center justify-center w-[48px] h-[32px] rounded-full 
-       transition-all duration-300 
+       transition-all duration-300 cursor-pointer 
        ${
          lang === "ge"
            ? "bg-[#F3F4F6] shadow-[-4px_-4px_8px_0px_#FFFFFF,4px_4px_8px_0px_#D1D5DB]"
@@ -188,7 +188,7 @@ export default function Header() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="ml-4 p-2 rounded-md text-gray-700 hover:bg-gray-100"
+              className="ml-4 p-2 rounded-md text-gray-700 hover:bg-gray-100 cursor-pointer "
             >
               <svg
                 className="w-6 h-6"
