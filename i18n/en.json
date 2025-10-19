@@ -20,5 +20,148 @@
     "news": "News",
     "campus": "Campus",
     "vacancies": "Vacancies"
+  },
+  "footer": {
+    "usefulLinks": "Useful Links",
+    "contactUs": "Contact Us",
+    "legalAddress": "Legal address:",
+    "address": "Akhalgazrdoba Ave. Lane 5/7, Kutaisi, 4600 Georgia",
+    "internationalEnquiries": "For international student and visitor enquiries:",
+    "email": "international@kiu.edu.ge",
+    "phone": "(+995) 577 477197",
+    "infoEmail": "info@kiu.edu.ge",
+    "copyright": "2025 kiu.edu.ge © All rights reserved"
+  },
+  "homepage": {
+    "latestNews": {
+      "title": "Latest News & Updates",
+      "news": [
+        {
+          "tag": "ADMISSION",
+          "tagColor": "yellow",
+          "title": "Applications Open for 2025",
+          "description": "Join the next generation of leaders at KIU with our comprehensive programs.",
+          "link": "Read More >"
+        },
+        {
+          "tag": "RESEARCH",
+          "tagColor": "blue",
+          "title": "New Research Center Opens",
+          "description": "State-of-the-art facilities for cutting-edge research and innovation.",
+          "link": "Read More >"
+        },
+        {
+          "tag": "CAMPUS LIFE",
+          "tagColor": "blue",
+          "title": "Student Activities Week",
+          "description": "Discover clubs and organizations on our vibrant campus.",
+          "link": "Read More >"
+        },
+        {
+          "tag": "PARTNERSHIP",
+          "tagColor": "yellow",
+          "title": "TUM Collaboration",
+          "description": "New joint programs with University of Munich.",
+          "link": "Read More >"
+        }
+      ]
+    },
+    "hero": {
+      "title": "Where Knowledge Creates Future!",
+      "titleHighlight": "Future!",
+      "motto": "Hic Scientia futūrum creat!",
+      "description": "Kutaisi International University has opened its doors to the first cohort of students in 2020. Our goal is to gradually become an international hub of education, science and technology in the region.",
+      "applyButton": "Apply Now",
+      "exploreButton": "Explore Programs",
+      "imageCaption": "Modern Campus in Kutaisi",
+      "imageDescription": "State-of-the-art facilities for world-class education"
+    },
+    "whyChoose": {
+      "title": "Why Choose KIU?",
+      "subtitle": "Leading the future of education in Georgia and the region",
+      "features": [
+        {
+          "icon": "book.svg",
+          "title": "English Language Programs",
+          "description": "All undergraduate programs taught in English, preparing students for global careers.",
+          "bgColor": "light-blue"
+        },
+        {
+          "icon": "handshake.svg",
+          "title": "Partnership with TUM",
+          "description": "Collaboration with Technical University of Munich, Europe's leading technical university.",
+          "bgColor": "light-yellow"
+        },
+        {
+          "icon": "investment.svg",
+          "title": "1 Billion Euro Investment",
+          "description": "The Cartu Foundation's massive investment in cutting-edge facilities and resources.",
+          "bgColor": "light-gray"
+        }
+      ]
+    },
+    "about": {
+      "title": "About KIU",
+      "description": "Kutaisi International University Campus is located in the city of Kutaisi. KIU\nhas opened its doors to the first cohort of students in 2020. The goal of the\nuniversity is to gradually become an international hub of education, science\nand technology in the region. <a>KIU is currently offering undergraduate degree English language programs. \nKIU plans to add vocational, graduate, and post-graduate degree programs\nin the future. The aim of the university is to prepare highly qualified\nworkforce and human capital that will promote economic growth and\ndevelopment of Georgia and the entire region.\nThe Cartu Foundation is investing over 1 billion Euro into the development of\nthe Kutaisi International University (KIU) project. Kutaisi International\nUniversity is legal entity for public law (i.e a state university).\nKIU collaborates with Technical University of Munich (TUM), the leading\nEuropean university. The operational model of the university is developed in\npartnership with TUM and TUM International GmbH. The Honorary President\nof Kutaisi International University is Prof. Dr. Wolfgang A. Herrmann, former\nPresident of TUM.",
+      "stats": [
+        { "number": "2020", "label": "Founded" },
+        { "number": "1B€", "label": "Investment" },
+        { "number": "100%", "label": "English Programs" },
+        { "number": "TUM", "label": "Partnership" }
+      ]
+    },
+    "schools": {
+      "title": "Our Schools",
+      "titleHighlight": "Schools",
+      "subtitle": "Discover your path to academic excellence",
+      "programs": [
+        {
+          "icon": "hat.svg",
+          "title": "Bachelor's Program",
+          "description": "Comprehensive undergraduate education in various fields",
+          "color": "blue"
+        },
+        {
+          "icon": "masters-program.svg",
+          "title": "Master's Program",
+          "description": "Advanced graduate studies for specialized expertise",
+          "color": "yellow"
+        },
+        {
+          "icon": "chemestry.svg",
+          "title": "Doctoral Program",
+          "description": "Research-focused PhD programs for academic leaders",
+          "color": "dark-blue"
+        },
+        {
+          "icon": "arrow.svg",
+          "title": "Single-Cycle Program",
+          "description": "Integrated programs combining multiple academic levels",
+          "color": "green"
+        }
+      ]
+    },
+    "videoGallery": {
+      "title": "Video Gallery",
+      "titleHighlight": "Gallery",
+      "subtitle": "Experience KIU through our campus videos",
+      "videos": [
+        {
+          "title": "Founding View",
+          "description": "Interview with Bidzina Ivanishvili and Ekaterina Khvedelidze",
+          "thumbnail": "/videos/founding-view.jpg"
+        },
+        {
+          "title": "Foreign Connections",
+          "description": "President of Technical University of Munich about Kutaisi International University",
+          "thumbnail": "/videos/foreign-connections.jpg"
+        },
+        {
+          "title": "Campus",
+          "description": "Kutaisi International University Campus",
+          "thumbnail": "/videos/campus.jpg"
+        }
+      ]
+    }
   }
 }
