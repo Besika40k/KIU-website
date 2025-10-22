@@ -1,0 +1,137 @@
+[
+  {
+    "id": "youth-university",
+    "title": "Youth University",
+    "subtitle": "Educational Initiative for High School Students",
+    "icon": "graduation-cap",
+    "image": "/ProjectsImages/students-classroom2.png",
+    "overview": {
+      "title": "Program Overview",
+      "description": "Kutaisi International University (KIU) has launched a new initiative – the Youth University, a project designed for students in grades 9 to 12 from Imereti, Guria and Samegrelo-Zemo Svaneti regions."
+    },
+    "keyFeatures": [
+      "Public lectures by KIU professors and invited lecturers",
+      "Development of critical thinking and creativity",
+      "Early introduction to university life"
+    ],
+    "goals": {
+      "title": "Program Goals",
+      "description": "The aim of the Youth University is to increase young people's access to non-formal education, spark curiosity and a love of learning, and introduce them to university life from an early age. The program also supports the development of critical thinking, creativity, and social skills, while helping students broaden their career horizons and make informed choices about their future professions.",
+      "additionalInfo": "Due to high interest and demand, the project is gradually being made accessible to students from other regions as well."
+    }
+  },
+  {
+    "id": "advancing-frontiers",
+    "title": "Advancing the Frontiers",
+    "subtitle": "International Conference on Algebra, Analysis, and Applications",
+    "icon": "arrow-right",
+    "image": "/ProjectsImages/advancing-frontiers.png",
+    "conferenceDates": {
+      "dates": "September 8-10",
+      "year": "2025"
+    },
+    "registrationFees": {
+      "regular": "€60",
+      "students": "€30"
+    },
+    "about": {
+      "title": "About the Conference",
+      "description": "The International Conference \"Advancing the Frontiers — International Conference on Algebra, Analysis, and Applications\" will take place on September 8-10, 2025, at Kutaisi International University, Georgia.",
+      "additionalInfo": "This conference is a satellite event of the \"XV International Conference of the Georgian Mathematical Union\", which will be held on September 1-6, 2025, in Batumi, Georgia."
+    },
+    "scientificProgram": {
+      "title": "Scientific Program",
+      "items": [
+        {
+          "icon": "sun",
+          "title": "Morning Sessions",
+          "description": "45-minute plenary lectures"
+        },
+        {
+          "icon": "cloud",
+          "title": "Afternoon Parallel Sessions",
+          "description": "20-minute contributed talks"
+        }
+      ]
+    },
+    "accommodationEvents": {
+      "title": "Accommodation & Events",
+      "items": [
+        {
+          "icon": "home",
+          "title": "Free accommodation on KIU campus"
+        },
+        {
+          "icon": "utensils",
+          "title": "Conference dinner and excursion"
+        }
+      ]
+    },
+    "registration": {
+      "title": "Registration & Abstract Submission",
+      "description": "Registration is mandatory. Those wishing to present a contributed talk must submit their title and abstract by May 31, 2025.",
+      "submitTo": "conference@kiu.edu.ge",
+      "notification": "Abstract acceptance notifications will be sent by June 15.",
+      "downloadLink": "Download Abstract Template"
+    },
+    "scientificCommittee": [
+      { "name": "Anzor Beridze", "affiliation": "" },
+      { "name": "Ramaz Bokuchava", "affiliation": "" },
+      { "name": "Giorgi Chkadua", "affiliation": "" },
+      { "name": "Besik Dundua", "affiliation": "" },
+      { "name": "Laura Ephremidze", "affiliation": "" },
+      { "name": "Alexander Meskhi", "affiliation": "" },
+      { "name": "Giorgi Nadareishvili", "affiliation": "" },
+      { "name": "Markus Neuhauser", "affiliation": "" },
+      { "name": "Giorgi Oniani", "affiliation": "" },
+      { "name": "Florian Rupp", "affiliation": "" },
+      { "name": "Boris Vexler", "affiliation": "" }
+    ],
+    "plenarySpeakers": [
+      {
+        "name": "Inaki Paternain",
+        "affiliation": "University of Aberdeen, Scotland, UK"
+      },
+      {
+        "name": "Vladimir Goldshtein",
+        "affiliation": "Ben-Gurion University, Israel"
+      },
+      {
+        "name": "Detlef F. M. Torres",
+        "affiliation": "University of Aveiro, Portugal"
+      },
+      {
+        "name": "Peter Kloeden",
+        "affiliation": "Auburn University, United States"
+      },
+      {
+        "name": "Bernhard Heim",
+        "affiliation": "University of Cologne, Germany"
+      },
+      {
+        "name": "Bamze Vargas Giraldo",
+        "affiliation": "Instituto Superior Técnico, Lisbon, Portugal"
+      },
+      {
+        "name": "Pankaj Jain",
+        "affiliation": "South Asian University, New Delhi, India"
+      },
+      {
+        "name": "Boytcho Frayi Halpern",
+        "affiliation": "University of Iceland, Reykjavik, Iceland"
+      },
+      {
+        "name": "Peter Imkeller",
+        "affiliation": "Humboldt University, Berlin, Germany"
+      },
+      {
+        "name": "Thomas Hagen",
+        "affiliation": "University of Memphis, USA (online)"
+      },
+      {
+        "name": "Alexei Morozov",
+        "affiliation": "Stevens Institute of Technology, USA"
+      }
+    ]
+  }
+]

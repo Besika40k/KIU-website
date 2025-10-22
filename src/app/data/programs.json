@@ -1,0 +1,104 @@
+{
+  "schools": [
+    {
+      "id": "computer-science",
+      "name": "School of Computer Science",
+      "tagline": "Shaping the Future of Technology",
+      "icon": "monitor",
+      "studentCount": "300+",
+      "programCount": 15,
+      "description": "Cutting-edge technology education with hands-on experience in software development, AI, and cybersecurity.",
+      "backgroundColor": "bg-purple-50",
+      "borderColor": "border-purple-200"
+    },
+    {
+      "id": "mathematics",
+      "name": "School of Mathematics",
+      "tagline": "Advancing Pure and Applied Mathematics",
+      "icon": "calculator",
+      "studentCount": "200+",
+      "programCount": 8,
+      "description": "Pure and applied mathematics with focus on theoretical foundations and practical applications.",
+      "backgroundColor": "bg-blue-50",
+      "borderColor": "border-blue-200"
+    },
+    {
+      "id": "management",
+      "name": "School of Management",
+      "tagline": "Building Tomorrow's Business Leaders",
+      "icon": "briefcase",
+      "studentCount": "450+",
+      "programCount": 12,
+      "description": "Innovative leadership and strategic management education for the modern business world.",
+      "backgroundColor": "bg-green-50",
+      "borderColor": "border-green-200"
+    },
+    {
+      "id": "medicine",
+      "name": "School of Medicine",
+      "tagline": "Healing Lives, Advancing Research",
+      "icon": "heart-pulse",
+      "studentCount": "350+",
+      "programCount": 6,
+      "description": "Comprehensive medical education combining clinical practice with cutting-edge research.",
+      "backgroundColor": "bg-emerald-50",
+      "borderColor": "border-emerald-200"
+    },
+    {
+      "id": "law",
+      "name": "School of Law",
+      "tagline": "Shaping the Future of Justice",
+      "icon": "scale",
+      "studentCount": "280+",
+      "programCount": 7,
+      "description": "Legal education grounded in international law, human rights, and contemporary legal challenges.",
+      "backgroundColor": "bg-sky-50",
+      "borderColor": "border-sky-200"
+    },
+    {
+      "id": "psychology",
+      "name": "School of Psychology and Social Sciences",
+      "tagline": "Understanding Human Behavior and Society",
+      "icon": "users",
+      "studentCount": "320+",
+      "programCount": 10,
+      "description": "Interdisciplinary approach to understanding human behavior, cognition, and social dynamics.",
+      "backgroundColor": "bg-pink-50",
+      "borderColor": "border-pink-200"
+    },
+    {
+      "id": "architecture",
+      "name": "School of Architecture, Urban Planning, and Design",
+      "tagline": "Creating Spaces that Inspire",
+      "icon": "building",
+      "studentCount": "180+",
+      "programCount": 5,
+      "description": "Creative space design, sustainable architecture, and innovative urban planning solutions.",
+      "backgroundColor": "bg-amber-50",
+      "borderColor": "border-amber-200"
+    }
+  ],
+  "alumniStories": [
+    {
+      "id": 1,
+      "name": "Marie Garcia",
+      "degree": "BSc in Computer Science",
+      "image": "/kiuLogo.png",
+      "quote": "The program gave me the technical skills and the critical thinking ability to excel in my career at Google."
+    },
+    {
+      "id": 2,
+      "name": "David Chen",
+      "degree": "LLM in International Law",
+      "image": "/kiuLogo.png",
+      "quote": "KIU provided me with a global perspective that has been invaluable in my work at the UN."
+    },
+    {
+      "id": 3,
+      "name": "Sarah Johnson",
+      "degree": "MBA in Strategic Management",
+      "image": "/kiuLogo.png",
+      "quote": "I was able to discover learning paths that fit my career goals and helped me launch my own startup."
+    }
+  ]
+}
