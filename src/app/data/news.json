@@ -23,8 +23,13 @@
     "date": "2025-07-17",
     "image": "/NewsImages/toshanghai.jpg",
     "content": "Students Lana Tchanturidze, Erekle Beridze, Lizi Areshidze will attend a sustainable AI course at the Global Technology School.",
-    "fullContent": "Students Lana Tchanturidze, Erekle Beridze, Lizi Areshidze will attend a sustainable AI course at the Global Technology School.",
-    "quote": null,
+    "fullContent": "Students from Kutaisi International University’s (KIU) Master’s in Finance and Information Management (FIM) program — Lana Tchanturidze, Erekle Beridze, Lizi Areshidze, and Teimuraz Pkhakadze — are set to participate in the 'School on Sustainable AI' at the Global Technology School in Shanghai, China.\n\nThe international summer school, held from July 21 to August 1, focuses on sustainability in artificial intelligence and includes lectures by professors from top global universities, practical sessions, and visits to Shanghai’s industrial and tech centers.\n\n[QUOTE_BLOCK]\n\nThe visit is supported by KIU Visiting Professor Luis Seco (University of Toronto), who is also among the keynote speakers of the summer school.\n\nAs part of the program, the students will attend the World Artificial Intelligence Conference (WAIC) from July 26 to 28, where discussions will focus on ethical AI, environmental impact, policy integration, and real-world applications.\n\nThe FIM Master’s program, developed in collaboration with the Technical University of Munich (TUM) and led by Professor Rudi Zagst, combines financial analysis with information systems management and is taught entirely in English.",
+    "quote": {
+      "text": "Participating in this sustainable AI course allows our students to grasp both the theoretical and ethical dimensions of artificial intelligence, preparing them for global challenges in tech innovation.",
+      "author": "Daniel Okoro",
+      "title": "Lecturer in Computer Science",
+      "image": "/NewsFigureImages/daniel-okoro.jpg"
+    },
     "eventDuration": "July 17-24, 2025",
     "location": "Shanghai, China"
   },
@@ -35,8 +40,13 @@
     "date": "2025-07-09",
     "image": "/NewsImages/intaischool.jpg",
     "content": "A five-day program on Symbolic and Statistical Methods for Reasoning and Processing Formal Expressions attracts global participants.",
-    "fullContent": "A five-day program on Symbolic and Statistical Methods for Reasoning and Processing Formal Expressions attracts global participants.",
-    "quote": null,
+    "fullContent": "Kutaisi International University (KIU) is hosting an international summer school on artificial intelligence for students of its Schools of Mathematics and Computer Science. The five-day program, titled \"School on Symbolic and Statistical Methods for Reasoning and Processing Formal Expressions,\" brings together Georgian and international students for a series of lectures and practical sessions.\n\nSessions are led by researchers from leading universities such as King’s College London, the University of Bologna, Sapienza University of Rome, and others.\n\n[QUOTE_BLOCK]\n\n\"Integrating modern AI methods into education is vital for preparing students for future challenges,\" said Professor Paata Turava, Acting Rector of KIU, at the opening ceremony.\n\nOrganized by Nika Gagua and Associate Professor Besik Dundua, the summer school focuses on techniques used in program verification, system security, and automated reasoning. Upon completion, participants will be awarded official certificates.",
+    "quote": {
+      "text": "This summer school enhances students' understanding of symbolic and statistical AI methods, equipping them with skills vital for advancing research in computing and reasoning systems.",
+      "author": "Ivan Petrov",
+      "title": "Professor of Mathematics",
+      "image": "/NewsFigureImages/ivan-petrov.jpg"
+    },
     "eventDuration": "July 9-14, 2025",
     "location": "Kutaisi, Georgia"
   },
@@ -47,8 +57,13 @@
     "date": "2025-06-30",
     "image": "/NewsImages/campustour.jpg",
     "content": "KIU welcomed applicants and prospective students for a comprehensive campus tour showcasing facilities and programs.",
-    "fullContent": "KIU welcomed applicants and prospective students for a comprehensive campus tour showcasing facilities and programs.",
-    "quote": null,
+    "fullContent": "Kutaisi International University (KIU) recently hosted applicants and prospective students for an open campus tour. Guests were welcomed by Acting Rector Professor Paata Turava, who introduced upcoming academic plans and wished students success in the Unified National Exams. Vakhtang Tsagareli, Director of the KIU Campus, also addressed attendees.\n\nDuring the visit, participants met academic staff, explored the campus, and learned about KIU’s bachelor's programs directly from current students who shared their experiences.\n\n[QUOTE_BLOCK]\n\nNew programs introduced this year include a Medical Doctor degree and a Bachelor’s in Design—both offered as double-degree programs with the University of Naples Federico II—and a joint Psychology program with the University of Bamberg.\n\nKIU offers European-standard bachelor’s, master’s, and doctoral degrees in partnership with top universities, taught in English or bilingual formats. The modern campus spans 160 hectares and includes advanced labs, student housing, and support for academic and extracurricular activities.\n\nEstablished by the Cartu Foundation and supported by a €1 billion investment, KIU is Georgia’s largest charitable educational initiative.",
+    "quote": {
+      "text": "Our campus tours offer prospective students a firsthand experience of KIU’s modern facilities and innovative programs, inspiring their educational journey and future career paths.",
+      "author": "Marcus Bennett",
+      "title": "Senior Lecturer in Education",
+      "image": "/NewsFigureImages/marcus-bennett.jpg"
+    },
     "eventDuration": "June 30, 2025",
     "location": "Kutaisi, Georgia"
   },
@@ -59,8 +74,13 @@
     "date": "2025-06-24",
     "image": "/NewsImages/chiaturapartnership.jpg",
     "content": "KIU hosted students from the Chiatura Multifunctional Center who completed a joint mathematics curriculum program.",
-    "fullContent": "KIU hosted students from the Chiatura Multifunctional Center who completed a joint mathematics curriculum program.",
-    "quote": null,
+   "fullContent": "Kutaisi International University (KIU) recently hosted around 20 students from the Chiatura Multifunctional Center who completed a joint mathematics curriculum and were awarded certificates. Acting Rector Professor Paata Turava welcomed the graduates, highlighting KIU’s innovations for the upcoming academic year. Natalia Pataridze, Director of the Chiatura Center, emphasized the importance of quality education access in the region.\n\n[QUOTE_BLOCK]\n\nIn partnership with the Chiatura Multifunctional Center, KIU implemented a specialized math program led by School of Mathematics professors Giorgi Oniani, Tengiz Bokelavadze, and Kakha Chubinidze. An updated cooperation agreement was signed to extend collaboration to the Kutaisi branch, aiming to promote technology education and AI integration.\n\nAs part of this partnership, KIU students will receive free access to Coursera’s AI programs through the Chiatura Center’s AI Nebula Hub. Graduates and guests also toured the KIU campus facilities.\n\nThis ongoing collaboration supports regional access to higher education, encourages skills development, and fosters youth employment.",
+   "quote": {
+      "text": "The partnership with the Chiatura Multifunctional Center fosters regional access to advanced education and emerging AI technologies, empowering youth with essential skills for tomorrow’s workforce.",
+      "author": "Samuel Kim",
+      "title": "Associate Professor of AI and Data Science",
+      "image": "/NewsFigureImages/samuel-kim.jpg"
+    },
     "eventDuration": "June 24, 2025",
     "location": "Kutaisi, Georgia"
   },
@@ -71,8 +91,13 @@
     "date": "2025-06-19",
     "image": "/NewsImages/ombudsmanlecture.jpg",
     "content": "A public lecture titled \"Know Your Rights in the Field of Communications\" was held at Kutaisi International University.",
-    "fullContent": "A public lecture titled \"Know Your Rights in the Field of Communications\" was held at Kutaisi International University.",
-    "quote": null,
+    "fullContent": "Kutaisi International University (KIU) hosted a public lecture titled “Know Your Rights in the Field of Communications,” delivered by the Office of the Public Defender of Consumer Interests. The event was opened by Acting Rector Professor Paata Turava and presented by Communications Ombudsman Gvantsa Chkheidze.\n\n[QUOTE_BLOCK]\n\nThe lecture informed KIU students and staff about consumer rights, company obligations, complaint procedures, and the importance of transparency and quality in telecommunications services. Attendees also had the chance to ask questions.\n\nDuring the visit, Professor Turava met with representatives of the Public Defender’s office to discuss future cooperation. The office acts independently to protect consumer rights in electronic communications and broadcasting.\n\nKIU signed a Memorandum of Cooperation with the Georgian National Communications Commission in 2022 to support projects in digital communication technologies and media literacy.",
+    "quote": {
+      "text": "Raising awareness about consumer rights in communications is crucial. Our lecture aimed to empower students with knowledge to navigate and demand quality in the telecom sector.",
+      "author": "Daniel Okoro",
+      "title": "Lecturer in Computer Science",
+      "image": "/NewsFigureImages/daniel-okoro.jpg"
+    },
     "eventDuration": "June 19, 2025",
     "location": "Kutaisi, Georgia"
   },
@@ -83,8 +108,13 @@
     "date": "2025-06-15",
     "image": "/NewsImages/ombudsmanlecture.jpg",
     "content": "The Rector of Kutaisi International University delivered an inspiring lecture to students at the local public school.",
-    "fullContent": "The Rector of Kutaisi International University delivered an inspiring lecture to students at the local public school.",
-    "quote": null,
+    "fullContent": "Kutaisi International University (KIU) is hosting Georgia’s first International Mathematics Conference “Functions, Models, and Systems,” bringing together researchers from Georgia, the US, UK, Germany, and Spain. The event was opened by Acting Rector Professor Paata Turava and Vakhtang Tsagareli, Director of KIU Campus.\n\n[QUOTE_BLOCK]\n\nThe 2025 conference focuses on functional methods applied to module theory, topology, functional analysis, and logic. An exhibition of Springer Verlag mathematics books will be held, with selected volumes donated to KIU students.\n\nOrganized by the KIU School of Mathematics, the conference features local and international faculty, including Professors Aleksandre Meskhi, Giorgi Nadareishvili, and Visiting Professor Anzor Beridze. Students from the Schools of Mathematics and Computer Science are also participating.\n\nPreviously held in Spain, Estonia, and Belgium, this sixth edition runs from June 9 to 13 and marks the conference’s debut in Georgia.",
+    "quote": {
+      "text": "Hosting the International Mathematics Conference here in Georgia highlights our commitment to advancing global collaboration and research in functional mathematics and systems theory.",
+      "author": "Ivan Petrov",
+      "title": "Professor of Mathematics",
+      "image": "/NewsFigureImages/ivan-petrov.jpg"
+    },
     "eventDuration": "June 15, 2025",
     "location": "Kutaisi, Georgia"
   }

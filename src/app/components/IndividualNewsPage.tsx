@@ -1,5 +1,9 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "../context/LanguageContext";
+import { format } from 'date-fns';
+import { enUS, ka } from 'date-fns/locale';
 
 interface NewsItem {
   id: number;
@@ -37,15 +41,16 @@ const getCategoryColor = (category: string) => {
   );
 };
 
-const formatDate = (dateString: string) => {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    month: "long",
-    day: "2-digit",
-    year: "numeric",
-  });
+const formatDate = (dateString: string, lang: string) => {
+  const date = new Date(dateString);
+  const isEnglish = lang === "en";
+  const locale = isEnglish ? enUS : ka;
+  const dateFormat = isEnglish ? "MMMM dd, yyyy" : "dd MMMM, yyyy";
+  return format(date, dateFormat, { locale });
 };
 
 export function IndividualNewsPage({ news, latestNews }: IndividualNewsPageProps) {
+  const { lang, setLang } = useLanguage();
   return (
     <div className="bg-slate-50">
       <div className="container mx-auto flex flex-col lg:flex-row justify-center gap-12 py-12 px-4">
@@ -61,7 +66,7 @@ export function IndividualNewsPage({ news, latestNews }: IndividualNewsPageProps
                 priority
               />
             </div>
-            <div className="text-gray-500 text-base mb-3">{formatDate(news.date)}</div>
+            <div className="text-gray-500 text-base mb-3">{formatDate(news.date, lang)}</div>
             <h1 className="text-4xl md:text-5xl font-bold font-serif mb-6 leading-tight text-slate-800">
               {news.title}
             </h1>
@@ -120,22 +125,22 @@ export function IndividualNewsPage({ news, latestNews }: IndividualNewsPageProps
           <div className="space-y-8 sticky top-8">
             {/* Quick Facts Card */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="font-bold text-xl mb-4 text-slate-800">Quick Facts</h3>
+              <h3 className="font-bold text-xl mb-4 text-slate-800">{lang === "en" ? "Quick Facts" : "სწრაფი ფაქტები"}</h3>
               <div className="space-y-4">
                 <div className="bg-slate-50/70 rounded-lg p-4 shadow-sm">
-                  <p className="font-semibold text-slate-700">Event Duration</p>
-                  <p className="text-slate-600">{news.eventDuration || "N/A"}</p>
+                  <p className="font-semibold text-slate-700">{lang === "en" ? "Event Duration" : "ღონისძიების ხანგრძლივობა"}</p>
+                  <p className="text-slate-600">{news.eventDuration || (lang === "en" ? "N/A" : "არ არის მითითებული")}</p>
                 </div>
                 <div className="bg-slate-50/70 rounded-lg p-4 shadow-sm">
-                  <p className="font-semibold text-slate-700">Location</p>
-                  <p className="text-slate-600">{news.location || "N/A"}</p>
+                  <p className="font-semibold text-slate-700">{lang === "en" ? "Location" : "მდებარეობა"}</p>
+                  <p className="text-slate-600">{news.location || (lang === "en" ? "N/A" : "არ არის მითითებული")}</p>
                 </div>
               </div>
             </div>
 
             {/* Latest News Card */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="font-bold text-xl mb-4 text-slate-800">Latest News</h3>
+              <h3 className="font-bold text-xl mb-4 text-slate-800">{lang === "en" ? "Latest News" : "უახლესი ამბები"}</h3>
               <div className="space-y-5">
                 {latestNews.map((item) => (
                   <Link
@@ -148,7 +153,7 @@ export function IndividualNewsPage({ news, latestNews }: IndividualNewsPageProps
                       <p className="font-semibold text-slate-700 group-hover:text-blue-600 transition-colors leading-tight">
                         {item.title}
                       </p>
-                      <p className="text-sm text-slate-500">{formatDate(item.date)}</p>
+                      <p className="text-sm text-slate-500">{formatDate(item.date, lang)}</p>
                     </div>
                   </Link>
                 ))}
