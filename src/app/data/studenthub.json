@@ -1,0 +1,44 @@
+{
+  "grantsFund": {
+    "title": "KIU Students Grants Fund",
+    "subtitle": "Promoting Student Life Activities and Educational Projects",
+    "description": "Kutaisi International University is implementing students' projects financing program to promote student life activities and various educational projects.\n\nThe projects can be submitted only by KIU students with active status (i.e. current students). Projects can be submitted by one student or a group of students, students' club, union, or association.\n\nProgram funds projects in various categories. For details, please email us at:",
+    "contactEmail": "sgp@kiu.edu.ge"
+  },
+  "erasmusPrograms": {
+    "title": "Erasmus+ Programs",
+    "subtitle": "European exchange opportunities and international partnerships",
+    "programs": [
+      {
+        "id": "1",
+        "university": "Call Universitat Politècnica de València",
+        "description": "Engineering and technology programs in Spain",
+        "color": "blue"
+      },
+      {
+        "id": "2",
+        "university": "Call Universität Würzburg",
+        "description": "Research opportunities in Germany",
+        "color": "green"
+      },
+      {
+        "id": "3",
+        "university": "Call Université Paris-Saclay",
+        "description": "Science and innovation programs in France",
+        "color": "purple"
+      },
+      {
+        "id": "4",
+        "university": "Call Saarland University",
+        "description": "Computer science and engineering in Germany",
+        "color": "pink"
+      },
+      {
+        "id": "5",
+        "university": "Call Powislanski University",
+        "description": "Interdisciplinary studies in Poland",
+        "color": "yellow"
+      }
+    ]
+  }
+}
