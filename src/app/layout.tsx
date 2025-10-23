@@ -1,8 +1,6 @@
+// app/layout.tsx
 import "./globals.css";
-import { LanguageProvider } from "./context/LanguageContext";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import PageWrapper from "./components/PageWrapper";
+import ClientLayout from "./ClientLayout";
 
 export const metadata = {
   title: "XYZ University Demo",
@@ -16,14 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className=/*max-w-screen-md*/ "mx-auto">
-        <LanguageProvider>
-          <Header />
-          <div className="p-4">
-            <PageWrapper>{children}</PageWrapper>
-          </div>
-          <Footer />
-        </LanguageProvider>
+      <body className="mx-auto">
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
