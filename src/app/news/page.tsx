@@ -2,9 +2,13 @@
 
 import { NewsCarousel } from "../components/news-carousel";
 import { NewsGrid } from "../components/news-grid";
-import newsData from "../data/news.json";
+import newsDataENG from "../data/news.json";
+import newsDataGE from "../data/newsge.json";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function NewsPage() {
+  const { lang, setLang } = useLanguage();
+  const newsData = lang === "en" ? newsDataENG : newsDataGE;
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Carousel Section */}

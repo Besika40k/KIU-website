@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "../../components/ui/card";
+import { useLanguage } from "../context/LanguageContext";
 import {
   Carousel,
   CarouselContent,
@@ -12,6 +13,8 @@ import {
 } from "../../components/ui/carousel";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
+import { format } from 'date-fns';
+import { enUS, ka } from 'date-fns/locale';
 
 interface NewsItem {
   id: number;
@@ -27,6 +30,7 @@ interface NewsCarouselProps {
 }
 
 export function NewsCarousel({ news }: NewsCarouselProps) {
+   const { lang, setLang } = useLanguage();
   const [featuredNews, setFeaturedNews] = useState<NewsItem[]>([]);
 
   useEffect(() => {
@@ -34,13 +38,13 @@ export function NewsCarousel({ news }: NewsCarouselProps) {
     setFeaturedNews(news.slice(0, 3));
   }, [news]);
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  const isEnglish = lang === "en";
+  const locale = isEnglish ? enUS : ka;
+  const dateFormat = isEnglish ? "MMMM dd, yyyy" : "dd MMMM, yyyy";
+  return format(date, dateFormat, { locale });
+};
 
   return (
     <div className="relative w-full">
@@ -76,7 +80,7 @@ export function NewsCarousel({ news }: NewsCarouselProps) {
                         variant="outline"
                         className="bg-white/10 border-white/20 text-white hover:bg-white/20"
                       >
-                        Read Full Story
+                        {lang === "en" ? "Read Full Story" : "წაიკითხე სრული ამბავი"}
                       </Button>
                     </div>
                   </div>

@@ -14,6 +14,9 @@ import {
   PaginationPrevious,
 } from "../../components/ui/pagination";
 import Link from "next/link";
+import { format } from 'date-fns';
+import { enUS, ka } from 'date-fns/locale';
+import { useLanguage } from "../context/LanguageContext";
 
 interface NewsItem {
   id: number;
@@ -30,6 +33,7 @@ interface NewsGridProps {
 }
 
 export function NewsGrid({ news, itemsPerPage = 6 }: NewsGridProps) {
+     const { lang, setLang } = useLanguage();
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(news.length / itemsPerPage);
@@ -37,26 +41,35 @@ export function NewsGrid({ news, itemsPerPage = 6 }: NewsGridProps) {
   const endIndex = startIndex + itemsPerPage;
   const currentNews = news.slice(startIndex, endIndex);
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString("en-US", {
-      month: "short",
-      day: "2-digit",
-      year: "numeric",
-    });
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  const isEnglish = lang === "en";
+  const locale = isEnglish ? enUS : ka;
+  const dateFormat = isEnglish ? "MMMM dd, yyyy" : "dd MMMM, yyyy";
+  return format(date, dateFormat, { locale });
+};
+
+const getCategoryColor = (category: string) => {
+  const colors: Record<string, string> = {
+    TECHNOLOGY: "bg-blue-100 text-blue-800",
+    ტექნოლოგია: "bg-blue-100 text-blue-800",
+
+    RESEARCH: "bg-orange-100 text-orange-800",
+    კვლევა: "bg-orange-100 text-orange-800",
+
+    CAMPUS: "bg-green-100 text-green-800",
+    კამპუსი: "bg-green-100 text-green-800",
+
+    PARTNERSHIP: "bg-purple-100 text-purple-800",
+    პარტნიორობა: "bg-purple-100 text-purple-800",
+
+    LECTURE: "bg-red-100 text-red-800",
+    ლექცია: "bg-red-100 text-red-800",
   };
 
-  const getCategoryColor = (category: string) => {
-    const colors = {
-      TECHNOLOGY: "bg-blue-100 text-blue-800",
-      RESEARCH: "bg-orange-100 text-orange-800",
-      CAMPUS: "bg-green-100 text-green-800",
-      PARTNERSHIP: "bg-purple-100 text-purple-800",
-      LECTURE: "bg-red-100 text-red-800",
-    };
-    return (
-      colors[category as keyof typeof colors] || "bg-gray-100 text-gray-800"
-    );
-  };
+  return colors[category] || "bg-gray-100 text-gray-800";
+};
+
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -70,10 +83,10 @@ export function NewsGrid({ news, itemsPerPage = 6 }: NewsGridProps) {
     <div id="news-grid" className="w-full">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-          Latest News
+          {lang === "en" ? "Latest News" : "უახლესი ამბები"}
         </h2>
         <div className="text-sm text-muted-foreground">
-          Page {currentPage} of {totalPages}
+          {lang === "en" ? "Page" : "გვერდი"} {currentPage} / {totalPages}
         </div>
       </div>
 
@@ -117,7 +130,7 @@ export function NewsGrid({ news, itemsPerPage = 6 }: NewsGridProps) {
                 href={`/news/${item.id}`}
                 className="p-0 h-auto text-primary underline text-sm"
               >
-                Read more →
+                {lang === "en" ? "Read more →" : "წაიკითხე მეტი →"}
               </Link>
             </CardContent>
           </Card>
