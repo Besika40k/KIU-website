@@ -13,9 +13,7 @@ import {
 } from "../../components/ui/carousel";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
-import { format } from 'date-fns';
-import { enUS, ka } from 'date-fns/locale';
-
+import { formatDate } from "./NewsHelperFunctions";
 interface NewsItem {
   id: number;
   title: string;
@@ -30,21 +28,13 @@ interface NewsCarouselProps {
 }
 
 export function NewsCarousel({ news }: NewsCarouselProps) {
-   const { lang, setLang } = useLanguage();
+  const { lang, setLang } = useLanguage();
   const [featuredNews, setFeaturedNews] = useState<NewsItem[]>([]);
 
   useEffect(() => {
     // Take the first 3 news items for the carousel
     setFeaturedNews(news.slice(0, 3));
   }, [news]);
-
-const formatDate = (dateString: string) => {
-  const date = new Date(dateString);
-  const isEnglish = lang === "en";
-  const locale = isEnglish ? enUS : ka;
-  const dateFormat = isEnglish ? "MMMM dd, yyyy" : "dd MMMM, yyyy";
-  return format(date, dateFormat, { locale });
-};
 
   return (
     <div className="relative w-full">
@@ -80,7 +70,9 @@ const formatDate = (dateString: string) => {
                         variant="outline"
                         className="bg-white/10 border-white/20 text-white hover:bg-white/20"
                       >
-                        {lang === "en" ? "Read Full Story" : "წაიკითხე სრული ამბავი"}
+                        {lang === "en"
+                          ? "Read Full Story"
+                          : "წაიკითხე სრული ამბავი"}
                       </Button>
                     </div>
                   </div>
