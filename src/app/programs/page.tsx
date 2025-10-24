@@ -297,8 +297,8 @@ export default function ProgramsPage() {
       students: 45,
       projects: 12,
       established: 2021,
-      x: 180,
-      y: 120,
+      x: 120,
+      y: 100,
       description: 'Leading collaboration in artificial intelligence and machine learning research'
     },
     {
@@ -311,8 +311,8 @@ export default function ProgramsPage() {
       students: 32,
       projects: 8,
       established: 2020,
-      x: 380,
-      y: 110,
+      x: 360,
+      y: 50,
       description: 'Joint medical research and student exchange programs'
     },
     {
@@ -325,8 +325,8 @@ export default function ProgramsPage() {
       students: 67,
       projects: 25,
       established: 2019,
-      x: 420,
-      y: 115,
+      x: 380,
+      y: 70,
       description: 'Strategic partnership in engineering education and innovation'
     },
     {
@@ -339,8 +339,8 @@ export default function ProgramsPage() {
       students: 28,
       projects: 6,
       established: 2021,
-      x: 395,
-      y: 125,
+      x: 367,
+      y: 75,
       description: 'Student exchange and legal studies collaboration'
     },
     {
@@ -353,8 +353,8 @@ export default function ProgramsPage() {
       students: 23,
       projects: 9,
       established: 2022,
-      x: 200,
-      y: 105,
+      x: 130,
+      y: 50,
       description: 'Collaborative research in cognitive science and psychology'
     },
     {
@@ -367,8 +367,8 @@ export default function ProgramsPage() {
       students: 18,
       projects: 7,
       established: 2022,
-      x: 680,
-      y: 260,
+      x: 700,
+      y: 285,
       description: 'Environmental research and sustainability initiatives'
     },
     {
@@ -381,23 +381,23 @@ export default function ProgramsPage() {
       students: 35,
       projects: 14,
       established: 2021,
-      x: 650,
-      y: 135,
+      x: 680,
+      y: 170,
       description: 'Advanced robotics and technology research collaboration'
     },
     {
-      id: 'Singapore',
-      name: 'National University of Singapore',
-      country: 'Singapore',
-      flag: '🇸🇬',
-      field: 'Business & Innovation',
+      id: 'Shanghai',
+      name: 'Shanghai Jiao Tong University',
+      country: 'China',
+      flag: '🇨🇳',
+      field: 'Engineering & Innovation',
       type: 'both',
-      students: 41,
-      projects: 11,
-      established: 2020,
-      x: 600,
-      y: 180,
-      description: 'Business innovation and entrepreneurship programs'
+      students: 52,
+      projects: 18,
+      established: 2019,
+      x: 685,
+      y: 70,
+      description: 'Strategic partnership in engineering innovation and research collaboration'
     }
   ];
 
@@ -584,11 +584,6 @@ export default function ProgramsPage() {
         <div className="world-map rounded-2xl p-4 md:p-8 relative overflow-hidden scroll-reveal mb-8" data-scroll-delay="200" style={{ minHeight: '500px' }}>
           <svg viewBox="0 0 800 350" className="w-full h-full" style={{ minHeight: '450px' }}>
             <defs>
-              <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{ stopColor: '#15396F', stopOpacity: 0.1 }} />
-                <stop offset="100%" style={{ stopColor: '#3D5C84', stopOpacity: 0.2 }} />
-              </linearGradient>
-              
               <filter id="glow">
                 <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
                 <feMerge>
@@ -603,29 +598,19 @@ export default function ProgramsPage() {
               </radialGradient>
             </defs>
 
-            {/* Stylized World Map Background */}
-            <g opacity="0.15">
-              {/* North America */}
-              <path d="M50 80 Q100 60 150 80 L180 120 Q170 140 150 130 Q120 120 100 140 L60 130 Q40 110 50 80 Z" fill="url(#mapGradient)" stroke="#15396F" strokeWidth="1"/>
-              
-              {/* South America */}
-              <path d="M150 180 L180 200 Q190 240 170 270 Q150 280 140 260 L130 220 Q135 190 150 180 Z" fill="url(#mapGradient)" stroke="#15396F" strokeWidth="1"/>
-              
-              {/* Europe */}
-              <path d="M350 80 Q380 70 410 85 L430 110 Q425 125 405 120 L375 115 Q355 105 350 80 Z" fill="url(#mapGradient)" stroke="#15396F" strokeWidth="1"/>
-              
-              {/* Africa */}
-              <path d="M370 140 L400 140 Q420 180 410 220 Q390 250 370 245 Q355 220 360 180 Q365 150 370 140 Z" fill="url(#mapGradient)" stroke="#15396F" strokeWidth="1"/>
-              
-              {/* Asia */}
-              <path d="M450 60 Q520 50 600 70 L650 100 Q670 130 650 150 L600 160 Q550 140 500 130 L460 110 Q445 85 450 60 Z" fill="url(#mapGradient)" stroke="#15396F" strokeWidth="1"/>
-              
-              {/* Australia */}
-              <path d="M630 240 Q670 235 700 250 L710 270 Q700 285 670 280 Q640 270 630 240 Z" fill="url(#mapGradient)" stroke="#15396F" strokeWidth="1"/>
-            </g>
+            {/* World Map Background Image */}
+            <image 
+              href="/world-map-306338_1280.webp" 
+              x="0" 
+              y="0" 
+              width="800" 
+              height="350" 
+              opacity="0.15"
+              preserveAspectRatio="xMidYMid slice"
+            />
 
             {/* Grid Lines */}
-            <g opacity="0.1" stroke="#15396F" strokeWidth="0.5" strokeDasharray="5,5">
+            <g opacity="0.08" stroke="#15396F" strokeWidth="0.5" strokeDasharray="5,5">
               <line x1="0" y1="87.5" x2="800" y2="87.5"/>
               <line x1="0" y1="175" x2="800" y2="175"/>
               <line x1="0" y1="262.5" x2="800" y2="262.5"/>
@@ -638,8 +623,8 @@ export default function ProgramsPage() {
             {filteredPartners.map((partner, index) => (
               <g key={`connection-${partner.id}`}>
                 <line 
-                  x1="430" 
-                  y1="150" 
+                  x1="472" 
+                  y1="90" 
                   x2={partner.x} 
                   y2={partner.y}
                   stroke={selectedPartner === partner.id ? '#FED73C' : '#15396F'}
@@ -659,7 +644,7 @@ export default function ProgramsPage() {
                     <animateMotion
                       dur="2s"
                       repeatCount="indefinite"
-                      path={`M430,150 L${partner.x},${partner.y}`}
+                      path={`M472,90 L${partner.x},${partner.y}`}
                     />
                   </circle>
                 )}
@@ -728,18 +713,18 @@ export default function ProgramsPage() {
 
             {/* KIU Central Hub (Georgia) */}
             <g>
-              <circle cx="430" cy="150" r="25" fill="url(#pulseGradient)" opacity="0.4">
+              <circle cx="472" cy="90" r="25" fill="url(#pulseGradient)" opacity="0.4">
                 <animate attributeName="r" values="25;35;25" dur="3s" repeatCount="indefinite"/>
                 <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite"/>
               </circle>
               
-              <circle cx="430" cy="150" r="15" fill="#15396F" stroke="#FED73C" strokeWidth="3" filter="url(#glow)"/>
+              <circle cx="472" cy="90" r="15" fill="#15396F" stroke="#FED73C" strokeWidth="3" filter="url(#glow)"/>
               
-              <text x="430" y="155" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">
+              <text x="472" y="95" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">
                 KIU
               </text>
               
-              <text x="430" y="175" textAnchor="middle" fill="#15396F" fontSize="9" fontWeight="600">
+              <text x="472" y="115" textAnchor="middle" fill="#15396F" fontSize="9" fontWeight="600">
                 Georgia 🇬🇪
               </text>
             </g>
