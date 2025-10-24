@@ -7,26 +7,6 @@ export default function ComputerScienceSchoolPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const router = useRouter();
 
-  // Scroll reveal effect
-  useEffect(() => {
-    const revealOnScroll = () => {
-      const reveals = document.querySelectorAll('.scroll-reveal');
-      
-      reveals.forEach(reveal => {
-        const windowHeight = window.innerHeight;
-        const elementTop = reveal.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < windowHeight - elementVisible) {
-          reveal.classList.add('revealed');
-        }
-      });
-    };
-
-    revealOnScroll();
-    window.addEventListener('scroll', revealOnScroll);
-    return () => window.removeEventListener('scroll', revealOnScroll);
-  }, []);
 
   const showTab = (tabName: string) => {
     setActiveTab(tabName);
@@ -40,14 +20,14 @@ export default function ComputerScienceSchoolPage() {
           <div className="flex items-center space-x-2 text-sm text-secondary">
             <button 
               onClick={() => router.push('/')} 
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors cursor-pointer"
             >
               Home
             </button>
             <span>/</span>
             <button 
               onClick={() => router.push('/programs')} 
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors cursor-pointer"
             >
               Schools
             </button>
@@ -116,10 +96,10 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                <button className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer">
                   Apply Now
                 </button>
-                <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300">
+                <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300 cursor-pointer">
                   Schedule Visit
                 </button>
               </div>
@@ -138,10 +118,10 @@ export default function ComputerScienceSchoolPage() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12 scroll-reveal">
+        <div className="flex flex-wrap justify-center gap-2 mb-12">
           <button 
             onClick={() => showTab('overview')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
               activeTab === 'overview' 
                 ? 'tab-active' 
                 : 'tab-inactive'
@@ -151,7 +131,7 @@ export default function ComputerScienceSchoolPage() {
           </button>
           <button 
             onClick={() => showTab('programs')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
               activeTab === 'programs' 
                 ? 'tab-active' 
                 : 'tab-inactive'
@@ -161,7 +141,7 @@ export default function ComputerScienceSchoolPage() {
           </button>
           <button 
             onClick={() => showTab('faculty')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
               activeTab === 'faculty' 
                 ? 'tab-active' 
                 : 'tab-inactive'
@@ -171,7 +151,7 @@ export default function ComputerScienceSchoolPage() {
           </button>
           <button 
             onClick={() => showTab('facilities')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
               activeTab === 'facilities' 
                 ? 'tab-active' 
                 : 'tab-inactive'
@@ -181,7 +161,7 @@ export default function ComputerScienceSchoolPage() {
           </button>
           <button 
             onClick={() => showTab('research')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
               activeTab === 'research' 
                 ? 'tab-active' 
                 : 'tab-inactive'
@@ -191,7 +171,7 @@ export default function ComputerScienceSchoolPage() {
           </button>
           <button 
             onClick={() => showTab('admissions')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
               activeTab === 'admissions' 
                 ? 'tab-active' 
                 : 'tab-inactive'
@@ -207,7 +187,7 @@ export default function ComputerScienceSchoolPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
               {/* About Section */}
               <div className="lg:col-span-2">
-                <div className="neumorphic-card rounded-2xl p-8 scroll-reveal">
+                <div className="neumorphic-card rounded-2xl p-8 ">
                   <h2 className="text-3xl font-playfair font-bold text-primary mb-6">About Our School</h2>
                   <div className="prose prose-lg text-secondary">
                     <p className="mb-4">
@@ -231,7 +211,7 @@ export default function ComputerScienceSchoolPage() {
 
               {/* Quick Facts */}
               <div className="space-y-6">
-                <div className="neumorphic-card rounded-2xl p-6 scroll-reveal">
+                <div className="neumorphic-card rounded-2xl p-6 ">
                   <h3 className="text-xl font-playfair font-bold text-primary mb-4">Quick Facts</h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
@@ -257,7 +237,7 @@ export default function ComputerScienceSchoolPage() {
                   </div>
                 </div>
 
-                <div className="neumorphic-card rounded-2xl p-6 scroll-reveal">
+                <div className="neumorphic-card rounded-2xl p-6 ">
                   <h3 className="text-xl font-playfair font-bold text-primary mb-4">Accreditations</h3>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
@@ -278,7 +258,7 @@ export default function ComputerScienceSchoolPage() {
             </div>
 
             {/* Student Testimonials */}
-            <div className="scroll-reveal">
+            <div className="">
               <h2 className="text-3xl font-playfair font-bold text-primary mb-8 text-center">What Our Students Say</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="glassmorphism-dark rounded-2xl p-6">
@@ -328,7 +308,7 @@ export default function ComputerScienceSchoolPage() {
         {/* Programs Tab */}
         {activeTab === 'programs' && (
           <div className="tab-content">
-            <div className="text-center mb-12 scroll-reveal">
+            <div className="text-center mb-12 ">
               <h2 className="text-3xl font-playfair font-bold text-primary mb-4">Our Programs</h2>
               <p className="text-lg text-secondary max-w-2xl mx-auto">Choose from our comprehensive range of undergraduate
                 and graduate programs designed to meet industry demands.</p>
@@ -336,7 +316,7 @@ export default function ComputerScienceSchoolPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Undergraduate Programs */}
-              <div className="scroll-reveal">
+              <div className="">
                 <h3 className="text-2xl font-playfair font-bold text-primary mb-6">Undergraduate Programs</h3>
                 <div className="space-y-4">
                   <div className="program-card rounded-xl p-6">
@@ -389,7 +369,7 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               {/* Graduate Programs */}
-              <div className="scroll-reveal">
+              <div className="">
                 <h3 className="text-2xl font-playfair font-bold text-primary mb-6">Graduate Programs</h3>
                 <div className="space-y-4">
                   <div className="program-card rounded-xl p-6">
@@ -442,53 +422,126 @@ export default function ComputerScienceSchoolPage() {
         {/* Faculty Tab */}
         {activeTab === 'faculty' && (
           <div className="tab-content">
-            <div className="text-center mb-12 scroll-reveal">
+            <div className="text-center mb-12 ">
               <h2 className="text-3xl font-playfair font-bold text-primary mb-4">Our Faculty</h2>
               <p className="text-lg text-secondary max-w-2xl mx-auto">Learn from world-renowned experts and researchers
                 who are shaping the future of technology.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="faculty-card rounded-2xl p-6 text-center scroll-reveal">
+              <div className="faculty-card rounded-2xl p-6 text-center ">
                 <img src="https://www.kiu.edu.ge/uploads_script/banner_carusel/nika_gagua.JPG"
                   alt="Nika Gagua" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                 <h3 className="text-xl font-playfair font-bold text-primary mb-2">Nika Gagua</h3>
                 <p className="text-accent2 font-medium mb-2">Dean & Professor</p>
                 <p className="text-secondary text-sm mb-4">Head of the School of Computer Science at Kutaisi International University (KIU).
+                  
+                  
+                  
                   He received his education at Sokhumi State University, Faculty of Mathematics and Computer Science, and then continued
                   his ongoing professional development in modern areas of computer science - web development, software development, data
-                  science, DevOps, artificial intelligence, and RAG systems.</p>
+                  science, DevOps, artificial intelligence, and RAG systems.
+                  
+                  
+                  
+                  His professional experience includes a 10-year successful career in the technology industry - from IT support specialist
+                  to full-stack developer and leadership positions. He worked in fintech companies as a Python and Odoo developer, as well
+                  as in international technology companies as a Full-stack developer. Additionally, he collaborated on various projects as
+                  a freelancer, which involved working with diverse programming languages and technology stacks.</p>
                 <div className="flex justify-center gap-2">
                   <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">AI/ML</span>
                   <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">DevOps</span>
                 </div>
               </div>
 
-              <div className="faculty-card rounded-2xl p-6 text-center scroll-reveal">
+              <div className="faculty-card rounded-2xl p-6 text-center ">
                 <img src="https://www.kiu.edu.ge/uploads_script/banner_carusel/dundua01.png"
                   alt="Dr. Besik Dunda" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                 <h3 className="text-xl font-playfair font-bold text-primary mb-2">Dr. Besik Dunda</h3>
                 <p className="text-accent2 font-medium mb-2">Associated Professor</p>
                 <p className="text-secondary text-sm mb-4">He received his PhD in Computer Science from the University of Porto (Portugal). He then worked as a postdoctoral fellow
                 and visiting researcher in Brazil (University of Brasilia), Austria (Johannes Kepler University Linz) and Germany
-                (University of Stuttgart). His work focuses on declarative programming, computer logic and formal languages.</p>
+                (University of Stuttgart). His work focuses on declarative programming, computer logic and formal languages: the
+                foundations of formalisms, computational mechanisms and implementation. He has published more than 30 articles on these
+                topics, together with colleagues from universities in Austria, Brazil, Germany, Spain, Japan, Portugal, Romania, France
+                and Georgia, and has presented his results at more than 40 conferences.</p>
                 <div className="flex justify-center gap-2">
                   <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">Declarative Programming</span>
                   <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">Computer Logic</span>
                 </div>
               </div>
 
-              <div className="faculty-card rounded-2xl p-6 text-center scroll-reveal">
+              <div className="faculty-card rounded-2xl p-6 text-center ">
                 <img src="https://www.kiu.edu.ge/uploads_script/banner_carusel/Ia_Mosashvili.jpg"
                   alt="Dr. Ia Mosashvili" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                 <h3 className="text-xl font-playfair font-bold text-primary mb-2">Dr. Ia Mosashvili</h3>
                 <p className="text-accent2 font-medium mb-2">Associated Professor</p>
                 <p className="text-secondary text-sm mb-4">Doctor of Engineering Sciences, Ia Mosashvili is one of the first to introduce modern digital design and embedded
                 systems courses in STEM in Georgia. In 2008-2010, she studied at the Technical University of Kaiserslautern in Germany
-                with the funding of the Volkswagen Foundation.</p>
+                with the funding of the Volkswagen Foundation, after which she successfully implemented the courses she studied in
+                Georgia. She organized the Digital Systems and Remote Laboratories. Since 2022, she has been leading a preparatory,
+                intensive course at the Master's level at the University of Kaiserslautern-Landau in Germany: Design of Digital Circuits
+                at the Register Transfer Level. After completing a training course in the United States, from 2016 to 2024, she led
+                courses in Computer Engineering, Electrical Engineering, and Computer Science at San Diego State University (Georgia).</p>
                 <div className="flex justify-center gap-2">
                   <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">Systems</span>
                   <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">Architecture</span>
+                </div>
+              </div>
+
+              <div className="faculty-card rounded-2xl p-6 text-center ">
+                <img src="https://www.kiu.edu.ge/uploads_script/banner_carusel/dsc_5618_1.jpg"
+                  alt="Dr. Eva Maria Knirsch" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+                <h3 className="text-xl font-playfair font-bold text-primary mb-2">Dr. Eva Maria Knirsch</h3>
+                <p className="text-accent2 font-medium mb-2">Associate Professor of Data Science</p>
+                <p className="text-secondary text-sm mb-4">M.A. graduated in Computer Science and English. A DAAD full scholarship allowed her to get her Master at the State
+                University of New York. For more than 30 years she held different positions in the IT business, among those IT Project
+                Manager at the Robert Koch-Institut in Berlin (www.rki.de), Senior Engineer with SRA International in Fairfax, Virginia
+                (www.csra.com) and General Manager for the Forum für Informationssicherheit (https://www.forum-is.de, Berlin – Dresden).
+            
+            Since 2011 she has been teaching as an Adjunct Professor at the Hochschule für Technik und Wirtschaft (HTW), Berlin.
+            Databases and data analysis are her focus. Her teaching is application-oriented, driving students to build up knowledge
+            that is in high demand in the IT business world.</p>
+                <div className="flex justify-center gap-2">
+                  <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">Data Analysis</span>
+                  <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">Databases</span>
+                </div>
+              </div>
+
+              <div className="faculty-card rounded-2xl p-6 text-center ">
+                <img src="https://www.kiu.edu.ge/uploads/.jpg"
+                  alt="Dr. Konstantinos Kokkinos" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+                <h3 className="text-xl font-playfair font-bold text-primary mb-2">Dr. Konstantinos Kokkinos</h3>
+                <p className="text-accent2 font-medium mb-2">Invited Professor</p>
+                <p className="text-secondary text-sm mb-4">Greek scientist Dr. Konstantinos Kokkinos, Assistant Professor at the University of Thessaly, has joined the team of
+                Kutaisi International University (KIU). As an invited professor, Dr. Kokkinos will be teaching courses in the Bachelor's
+                program in Computer Science, including Fundamentals of Programming and Introduction to Informatics I.
+                
+                Dr. Konstantinos Kokkinos was awarded a B.Sc. in Physics, from the Aristotle's University of Thessaloniki, Greece
+                (1989), a M.Sc. and a PhD in Computer Science from C.S. Dept. Western Michigan University, U.S.A. (1995 and 2002
+                respectively). Dr. Kokkinos is an active member of IEEE Society, and an OpenMI-Association member.</p>
+                <div className="flex justify-center gap-2">
+                  <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">Informatics</span>
+                  <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">Physics</span>
+                </div>
+              </div>
+
+              <div className="faculty-card rounded-2xl p-6 text-center ">
+                <img src="https://www.kiu.edu.ge/uploads_script/banner_carusel/walter1.new.jpg"
+                  alt="Dr. Walter F. Tichy" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+                <h3 className="text-xl font-playfair font-bold text-primary mb-2">Dr. Walter F. Tichy</h3>
+                <p className="text-accent2 font-medium mb-2">Professor of Software Engineering</p>
+                <p className="text-secondary text-sm mb-4">He earned an M.S. and a PhD in Computer Science from Carnegie-Mellon University in 1976 and 1980, resp. He was a
+                Director at the Forschungszentrum Informatik, a Technology Transfer Institute in Karlsruhe.
+                He is a co-founder of ParTec, a company specializing in cluster computing, and ESCde, a consulting company.
+                
+                He has published almost 200 peer reviewed papers and graduated 35 Ph.Ds. He has been given two impact awards, several
+                teaching awards and the Intel Award for the Advancement of Parallel Computing. Dr. Tichy is a fellow of the ACM and a
+                member of ACM, GI and the IEEE.
+                For more information about his work and publications, go to : https://ps.ipd.kit.edu/english/index.php</p>
+                <div className="flex justify-center gap-2">
+                  <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">Software Engineering</span>
+                  <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">Parallelism</span>
                 </div>
               </div>
             </div>
@@ -498,14 +551,14 @@ export default function ComputerScienceSchoolPage() {
         {/* Facilities Tab */}
         {activeTab === 'facilities' && (
           <div className="tab-content">
-            <div className="text-center mb-12 scroll-reveal">
+            <div className="text-center mb-12 ">
               <h2 className="text-3xl font-playfair font-bold text-primary mb-4">State-of-the-Art Facilities</h2>
               <p className="text-lg text-secondary max-w-2xl mx-auto">Our modern facilities provide the perfect
                 environment for learning, research, and innovation.</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="neumorphic-card rounded-2xl p-8 scroll-reveal">
+              <div className="neumorphic-card rounded-2xl p-8 ">
                 <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
                   alt="Computer Labs" className="w-full h-48 object-cover rounded-xl mb-6" />
                 <h3 className="text-2xl font-playfair font-bold text-primary mb-4">Advanced Computer Labs</h3>
@@ -527,7 +580,7 @@ export default function ComputerScienceSchoolPage() {
                 </ul>
               </div>
 
-              <div className="neumorphic-card rounded-2xl p-8 scroll-reveal">
+              <div className="neumorphic-card rounded-2xl p-8 ">
                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
                   alt="AI Research Lab" className="w-full h-48 object-cover rounded-xl mb-6" />
                 <h3 className="text-2xl font-playfair font-bold text-primary mb-4">AI Research Laboratory</h3>
@@ -555,7 +608,7 @@ export default function ComputerScienceSchoolPage() {
         {/* Research Tab */}
         {activeTab === 'research' && (
           <div className="tab-content">
-            <div className="text-center mb-12 scroll-reveal">
+            <div className="text-center mb-12 ">
               <h2 className="text-3xl font-playfair font-bold text-primary mb-4">Research Excellence</h2>
               <p className="text-lg text-secondary max-w-2xl mx-auto">Our faculty and students are at the forefront of
                 groundbreaking research in computer science and technology.</p>
@@ -563,7 +616,7 @@ export default function ComputerScienceSchoolPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
               <div className="lg:col-span-2">
-                <div className="neumorphic-card rounded-2xl p-8 scroll-reveal">
+                <div className="neumorphic-card rounded-2xl p-8 ">
                   <h3 className="text-2xl font-playfair font-bold text-primary mb-6">Research Centers</h3>
 
                   <div className="space-y-6">
@@ -601,22 +654,22 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               <div className="space-y-6">
-                <div className="stats-counter rounded-2xl p-6 text-center scroll-reveal">
+                <div className="stats-counter rounded-2xl p-6 text-center ">
                   <div className="text-3xl font-bold text-white mb-2">$2.5M</div>
                   <div className="text-white/90">Annual Research Funding</div>
                 </div>
 
-                <div className="stats-counter rounded-2xl p-6 text-center scroll-reveal">
+                <div className="stats-counter rounded-2xl p-6 text-center ">
                   <div className="text-3xl font-bold text-white mb-2">150+</div>
                   <div className="text-white/90">Published Papers</div>
                 </div>
 
-                <div className="stats-counter rounded-2xl p-6 text-center scroll-reveal">
+                <div className="stats-counter rounded-2xl p-6 text-center ">
                   <div className="text-3xl font-bold text-white mb-2">25</div>
                   <div className="text-white/90">Active Projects</div>
                 </div>
 
-                <div className="stats-counter rounded-2xl p-6 text-center scroll-reveal">
+                <div className="stats-counter rounded-2xl p-6 text-center ">
                   <div className="text-3xl font-bold text-white mb-2">15</div>
                   <div className="text-white/90">Industry Partners</div>
                 </div>
@@ -628,7 +681,7 @@ export default function ComputerScienceSchoolPage() {
         {/* Admissions Tab */}
         {activeTab === 'admissions' && (
           <div className="tab-content">
-            <div className="text-center mb-12 scroll-reveal">
+            <div className="text-center mb-12 ">
               <h2 className="text-3xl font-playfair font-bold text-primary mb-4">Admissions Information</h2>
               <p className="text-lg text-secondary max-w-2xl mx-auto">Join our community of innovators and future
                 technology leaders. Learn about our admission requirements and application process.</p>
@@ -636,7 +689,7 @@ export default function ComputerScienceSchoolPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Undergraduate Admissions */}
-              <div className="neumorphic-card rounded-2xl p-8 scroll-reveal">
+              <div className="neumorphic-card rounded-2xl p-8 ">
                 <h3 className="text-2xl font-playfair font-bold text-primary mb-6">Undergraduate Admissions</h3>
 
                 <div className="space-y-6">
@@ -693,7 +746,7 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               {/* Graduate Admissions */}
-              <div className="neumorphic-card rounded-2xl p-8 scroll-reveal">
+              <div className="neumorphic-card rounded-2xl p-8 ">
                 <h3 className="text-2xl font-playfair font-bold text-primary mb-6">Graduate Admissions</h3>
 
                 <div className="space-y-6">
@@ -767,13 +820,13 @@ export default function ComputerScienceSchoolPage() {
             Join our community of innovators, researchers, and future technology leaders. Start your journey today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+            <button className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer">
               Apply Now
             </button>
-            <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300">
+            <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300 cursor-pointer">
               Schedule Campus Visit
             </button>
-            <button className="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300">
+            <button className="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 cursor-pointer">
               Download Brochure
             </button>
           </div>
@@ -803,10 +856,10 @@ export default function ComputerScienceSchoolPage() {
             <div>
               <h4 className="font-semibold text-primary mb-4">Quick Links</h4>
               <ul className="space-y-2 text-secondary">
-                <li><button className="hover:text-primary transition-colors">Programs</button></li>
-                <li><button className="hover:text-primary transition-colors">Faculty</button></li>
-                <li><button className="hover:text-primary transition-colors">Research</button></li>
-                <li><button className="hover:text-primary transition-colors">Admissions</button></li>
+                <li><button className="hover:text-primary transition-colors cursor-pointer">Programs</button></li>
+                <li><button className="hover:text-primary transition-colors cursor-pointer">Faculty</button></li>
+                <li><button className="hover:text-primary transition-colors cursor-pointer">Research</button></li>
+                <li><button className="hover:text-primary transition-colors cursor-pointer">Admissions</button></li>
               </ul>
             </div>
             <div>
