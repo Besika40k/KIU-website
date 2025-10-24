@@ -29,7 +29,7 @@ export function formatDate(dateString: string, lang: string): string;
 export function formatDate(dateString: string): string;
 export function formatDate(dateString: string, lang?: string): string {
   const date = new Date(dateString);
-  const isEnglish = lang ? lang === "en" : true; // Default to English if no language provided
+  const isEnglish = lang === "en" ? true : false; 
   const locale = isEnglish ? enUS : ka;
   const dateFormat = isEnglish ? "MMMM dd, yyyy" : "dd MMMM, yyyy";
   return format(date, dateFormat, { locale });
