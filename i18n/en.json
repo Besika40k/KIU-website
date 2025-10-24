@@ -42,56 +42,56 @@
           "tagColor": "yellow",
           "title": "KIU Master's Students Visit Shanghai's Global Technology Center",
           "description": "FIM students engage in cutting-edge AI processes and international collaboration in China.",
-          "link": "Read More >"
+          "link": "Read More"
         },
         {
           "tag": "RESEARCH",
           "tagColor": "blue",
           "title": "International Summer School on AI at KIU",
           "description": "Five-day program on Symbolic and Statistical Methods attracts global participants.",
-          "link": "Read More >"
+          "link": "Read More"
         },
         {
           "tag": "CAMPUS",
           "tagColor": "yellow",
           "title": "Prospective Students Campus Tour",
           "description": "KIU welcomes applicants with comprehensive campus tours showcasing facilities and programs.",
-          "link": "Read More >"
+          "link": "Read More"
         },
         {
           "tag": "PARTNERSHIP",
           "tagColor": "blue",
           "title": "KIU and Chiatura Center Expand Partnership",
           "description": "Joint mathematics curriculum and AI education initiatives strengthen regional collaboration.",
-          "link": "Read More >"
+          "link": "Read More"
         },
         {
           "tag": "TECHNOLOGY",
           "tagColor": "yellow",
           "title": "FIM Students Attend Sustainable AI Course",
           "description": "KIU students participate in the School on Sustainable AI in Shanghai, China.",
-          "link": "Read More >"
+          "link": "Read More"
         },
         {
           "tag": "LECTURE",
           "tagColor": "blue",
           "title": "Communications Ombudsman Public Lecture",
           "description": "\"Know Your Rights in the Field of Communications\" lecture held at KIU.",
-          "link": "Read More >"
+          "link": "Read More"
         },
         {
           "tag": "ADMISSION",
           "tagColor": "yellow",
           "title": "Applications Open for 2025",
           "description": "Join the next generation of leaders at KIU with our comprehensive programs.",
-          "link": "Read More >"
+          "link": "Read More"
         },
         {
           "tag": "RESEARCH",
           "tagColor": "blue",
           "title": "International Mathematics Conference",
           "description": "Georgia's first conference on Functions, Models, and Systems brings together global researchers.",
-          "link": "Read More >"
+          "link": "Read More"
         }
       ]
     },
@@ -424,6 +424,94 @@
       },
       "conferenceTitle": "Annual Research Conference",
       "conferenceDescription": "Join leading researchers and academics from around the world at our prestigious annual conference"
+    }
+  },
+  "projects": {
+    "hero": {
+      "title": "Our Projects",
+      "description": "Discover innovative initiatives and academic conferences that advance education and research at Kutaisi International University"
+    },
+    "currentProjects": "Current Projects",
+    "labels": {
+      "conferenceDates": "Conference Dates",
+      "keyFeatures": "Key Features",
+      "registrationFees": "Registration Fees",
+      "regular": "Regular:",
+      "students": "Students:",
+      "submitAbstracts": "Submit abstracts to:",
+      "scientificCommittee": "Scientific Committee",
+      "plenarySpeakers": "Plenary Speakers"
+    }
+  },
+  "students": {
+    "hero": {
+      "title": "Student Information Hub",
+      "description": "Your comprehensive guide to KIU student services and resources"
+    },
+    "services": {
+      "academicCalendar": {
+        "title": "Academic Calendar",
+        "description": "Important dates, semester schedules, and academic deadlines for the current year.",
+        "button": "View Calendar"
+      },
+      "legalDirectory": {
+        "title": "Legal Directory",
+        "description": "University regulations, policies, and legal documents for students.",
+        "button": "Access Directory"
+      },
+      "academicMobility": {
+        "title": "Academic Mobility",
+        "description": "Exchange programs and mobility opportunities for KIU students.",
+        "button": "Learn More",
+        "external": "External Mobility",
+        "internal": "Internal Mobility"
+      },
+      "tuitionFee": {
+        "title": "Tuition Fee",
+        "description": "Fee structure, payment schedules, and financial information.",
+        "button": "View Fees"
+      },
+      "library": {
+        "title": "Library",
+        "description": "Digital resources, catalog search, and library services for students.",
+        "button": "Access Library"
+      },
+      "studentGrant": {
+        "title": "Student Grant Program",
+        "description": "Funding opportunities for student projects and activities.",
+        "button": "Apply Now",
+        "current": "Current Grant Competition",
+        "financed": "Financed Projects"
+      }
+    }
+  },
+  "vacancies": {
+    "hero": {
+      "title": "Vacancies",
+      "description": "Join our academic community at Kutaisi International University"
+    },
+    "sections": {
+      "currentVacancy": "Current Vacancy",
+      "closedVacancies": "Closed Vacancies at KIU"
+    },
+    "emptyVacancies": {
+      "title": "No Current Vacancies",
+      "description": "There are currently no open positions. Please check back later or submit an expression of interest above."
+    },
+    "expressionOfInterest": {
+      "title": "Expression of Interest",
+      "intro": "If you are interested to work with us you can see our vacancies or contact us at:",
+      "description": "We are seeking expressions of interest (EoI) from the future academic personnel and teaching assistants to be involved in the teaching and research activities at Kutaisi International University (KIU). For detailed information and to fill out an expression of interest form, please",
+      "readGuidelines": "read the guidelines here",
+      "readyTitle": "Ready to Apply?",
+      "readyDescription": "Submit your expression of interest and join our academic community.",
+      "submitButton": "Submit Expression of Interest"
+    },
+    "cta": {
+      "title": "Interested in Future Opportunities?",
+      "description": "Stay updated with new vacancies and submit your expression of interest.",
+      "submitButton": "Submit Expression of Interest",
+      "contactButton": "Contact Us"
     }
   }
 }

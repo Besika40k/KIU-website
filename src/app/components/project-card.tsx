@@ -14,6 +14,9 @@ import {
   Utensils,
   Download,
 } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import en from "../../../i18n/en.json";
+import ge from "../../../i18n/ge.json";
 
 interface ProjectCardProps {
   project: {
@@ -88,6 +91,9 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const { lang } = useLanguage();
+  const t = lang === "en" ? en : ge;
+
   return (
     <Card className="overflow-hidden">
       <CardContent className="p-0">
@@ -119,7 +125,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <div className="mx-6 -mt-8 relative z-10">
             <Card className="bg-blue-900 text-white">
               <CardContent className="p-4">
-                <p className="text-sm font-medium mb-1">Conference Dates</p>
+                <p className="text-sm font-medium mb-1">{t.projects.labels.conferenceDates}</p>
                 <p className="text-2xl font-bold">
                   {project.conferenceDates.dates}
                 </p>
@@ -162,7 +168,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.keyFeatures && (
             <div>
               <h4 className="text-lg font-semibold text-blue-900 mb-3">
-                Key Features
+                {t.projects.labels.keyFeatures}
               </h4>
               <ul className="space-y-2">
                 {project.keyFeatures.map((feature, index) => (
@@ -182,12 +188,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.registrationFees && (
             <div className="bg-muted/50 rounded-lg p-4">
               <h4 className="text-lg font-semibold text-blue-900 mb-3">
-                Registration Fees
+                {t.projects.labels.registrationFees}
               </h4>
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-muted-foreground">
-                    Regular:
+                    {t.projects.labels.regular}
                   </span>
                   <span className="font-semibold">
                     {project.registrationFees.regular}
@@ -195,7 +201,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-muted-foreground">
-                    Students:
+                    {t.projects.labels.students}
                   </span>
                   <span className="font-semibold">
                     {project.registrationFees.students}
@@ -275,7 +281,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 {project.registration.description}
               </p>
               <p className="text-sm text-muted-foreground mb-2">
-                Submit abstracts to:{" "}
+                {t.projects.labels.submitAbstracts}{" "}
                 <a
                   href={`mailto:${project.registration.submitTo}`}
                   className="text-blue-600 hover:underline"
@@ -297,7 +303,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.scientificCommittee && (
             <div>
               <h4 className="text-lg font-semibold text-blue-900 mb-3">
-                Scientific Committee
+                {t.projects.labels.scientificCommittee}
               </h4>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {project.scientificCommittee.map((member, index) => (
@@ -318,7 +324,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.plenarySpeakers && (
             <div>
               <h4 className="text-lg font-semibold text-blue-900 mb-3">
-                Plenary Speakers
+                {t.projects.labels.plenarySpeakers}
               </h4>
               <div className="grid gap-3">
                 {project.plenarySpeakers.map((speaker, index) => (

@@ -468,10 +468,15 @@ export default function ProgramsPage() {
                 {t.programs.hero.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                <button 
+                  onClick={() => {
+                    document.getElementById('choose-path-section')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
+                >
                   {t.programs.hero.exploreButton}
                 </button>
-                <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300">
+                <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300 cursor-pointer">
                   {t.programs.hero.virtualTourButton}
                 </button>
               </div>
@@ -535,7 +540,7 @@ export default function ProgramsPage() {
         <div className="flex flex-wrap justify-center gap-3 mb-8 scroll-reveal" data-scroll-delay="150">
           <button 
             onClick={() => setFilterType('all')}
-            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 cursor-pointer ${
               filterType === 'all' 
                 ? 'bg-primary text-white shadow-lg' 
                 : 'glassmorphism text-primary hover:bg-primary hover:text-white'
@@ -545,7 +550,7 @@ export default function ProgramsPage() {
           </button>
           <button 
             onClick={() => setFilterType('research')}
-            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 cursor-pointer ${
               filterType === 'research' 
                 ? 'bg-accent text-primary shadow-lg' 
                 : 'glassmorphism text-primary hover:bg-accent'
@@ -555,7 +560,7 @@ export default function ProgramsPage() {
           </button>
           <button 
             onClick={() => setFilterType('exchange')}
-            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 cursor-pointer ${
               filterType === 'exchange' 
                 ? 'bg-secondary text-white shadow-lg' 
                 : 'glassmorphism text-primary hover:bg-secondary hover:text-white'
@@ -565,7 +570,7 @@ export default function ProgramsPage() {
           </button>
           <button 
             onClick={() => setFilterType('strategic')}
-            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 cursor-pointer ${
               filterType === 'strategic' 
                 ? 'bg-green-600 text-white shadow-lg' 
                 : 'glassmorphism text-primary hover:bg-green-600 hover:text-white'
@@ -797,7 +802,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Schools Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section id="choose-path-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12 scroll-reveal" data-scroll-delay="0">
           <h2 className="text-3xl font-playfair font-bold text-primary mb-4">{t.programs.choosePath.title}</h2>
           <p className="text-lg text-secondary max-w-2xl mx-auto">{t.programs.choosePath.subtitle}</p>
@@ -841,7 +846,7 @@ export default function ProgramsPage() {
                 
                 <div className="flex gap-2 justify-center">
                   <button 
-                    className="apply-cta text-primary font-medium px-4 py-2 rounded-lg text-sm"
+                    className="apply-cta text-primary font-medium px-4 py-2 rounded-lg text-sm cursor-pointer"
                     onClick={(e) => {
                       e.stopPropagation();
                       navigateToSchool(school.id);
@@ -850,7 +855,7 @@ export default function ProgramsPage() {
                     {t.programs.explorePrograms}
                   </button>
                   <button 
-                    className="bg-primary hover:bg-secondary text-white font-medium px-4 py-2 rounded-lg transition-all duration-300 text-sm"
+                    className="bg-primary hover:bg-secondary text-white font-medium px-4 py-2 rounded-lg transition-all duration-300 text-sm cursor-pointer"
                     onClick={(e) => {
                       e.stopPropagation();
                       quickApply(school.id);
@@ -950,19 +955,19 @@ export default function ProgramsPage() {
                 <div className="text-center">
                   <button 
                     onClick={closeExpandedCard}
-                    className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-secondary transition-colors mr-4"
+                    className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-secondary transition-colors mr-4 cursor-pointer"
                   >
                     {t.programs.close}
                   </button>
                   <button 
                     onClick={() => navigateToSchool(expandedSchool)}
-                    className="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors mr-4"
+                    className="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors mr-4 cursor-pointer"
                   >
                     {t.programs.learnMore}
                   </button>
                   <button 
                     onClick={() => quickApply(expandedSchool)}
-                    className="bg-accent text-primary px-8 py-3 rounded-lg hover:bg-yellow-400 transition-colors"
+                    className="bg-accent text-primary px-8 py-3 rounded-lg hover:bg-yellow-400 transition-colors cursor-pointer"
                   >
                     {t.programs.applyNow}
                   </button>

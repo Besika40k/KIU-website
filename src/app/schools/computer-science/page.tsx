@@ -59,14 +59,14 @@ export default function ComputerScienceSchoolPage() {
           <div className="flex items-center space-x-2 text-sm text-secondary">
             <button 
               onClick={() => router.push('/')} 
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors cursor-pointer"
             >
               {t.computerScience.breadcrumb.home}
             </button>
             <span>/</span>
             <button 
               onClick={() => router.push('/programs')} 
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors cursor-pointer"
             >
               {t.computerScience.breadcrumb.schools}
             </button>
@@ -134,10 +134,10 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                <button className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer">
                   {t.computerScience.hero.applyButton}
                 </button>
-                <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300">
+                <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300 cursor-pointer">
                   {t.computerScience.hero.scheduleVisitButton}
                 </button>
               </div>
@@ -159,7 +159,7 @@ export default function ComputerScienceSchoolPage() {
         <div className="flex flex-wrap justify-center gap-2 mb-12 scroll-reveal">
           <button 
             onClick={() => showTab('overview')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
               activeTab === 'overview' 
                 ? 'tab-active' 
                 : 'tab-inactive'
@@ -169,7 +169,7 @@ export default function ComputerScienceSchoolPage() {
           </button>
           <button 
             onClick={() => showTab('programs')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
               activeTab === 'programs' 
                 ? 'tab-active' 
                 : 'tab-inactive'
@@ -179,7 +179,7 @@ export default function ComputerScienceSchoolPage() {
           </button>
           <button 
             onClick={() => showTab('faculty')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
               activeTab === 'faculty' 
                 ? 'tab-active' 
                 : 'tab-inactive'
@@ -189,7 +189,7 @@ export default function ComputerScienceSchoolPage() {
           </button>
           <button 
             onClick={() => showTab('facilities')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
               activeTab === 'facilities' 
                 ? 'tab-active' 
                 : 'tab-inactive'
@@ -199,7 +199,7 @@ export default function ComputerScienceSchoolPage() {
           </button>
           <button 
             onClick={() => showTab('research')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
               activeTab === 'research' 
                 ? 'tab-active' 
                 : 'tab-inactive'
@@ -209,7 +209,7 @@ export default function ComputerScienceSchoolPage() {
           </button>
           <button 
             onClick={() => showTab('admissions')}
-            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
               activeTab === 'admissions' 
                 ? 'tab-active' 
                 : 'tab-inactive'
@@ -967,13 +967,13 @@ export default function ComputerScienceSchoolPage() {
             {t.computerScience.cta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+            <button className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer">
               {t.computerScience.cta.applyButton}
             </button>
-            <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300">
+            <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300 cursor-pointer">
               {t.computerScience.cta.scheduleButton}
             </button>
-            <button className="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300">
+            <button className="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 cursor-pointer">
               {t.computerScience.cta.downloadButton}
             </button>
           </div>
@@ -1003,10 +1003,10 @@ export default function ComputerScienceSchoolPage() {
             <div>
               <h4 className="font-semibold text-primary mb-4">{t.computerScience.footer.quickLinks}</h4>
               <ul className="space-y-2 text-secondary">
-                <li><button className="hover:text-primary transition-colors">{t.computerScience.tabs.programs}</button></li>
-                <li><button className="hover:text-primary transition-colors">{t.computerScience.tabs.faculty}</button></li>
-                <li><button className="hover:text-primary transition-colors">{t.computerScience.tabs.research}</button></li>
-                <li><button className="hover:text-primary transition-colors">{t.computerScience.tabs.admissions}</button></li>
+                <li><button className="hover:text-primary transition-colors cursor-pointer">{t.computerScience.tabs.programs}</button></li>
+                <li><button className="hover:text-primary transition-colors cursor-pointer">{t.computerScience.tabs.faculty}</button></li>
+                <li><button className="hover:text-primary transition-colors cursor-pointer">{t.computerScience.tabs.research}</button></li>
+                <li><button className="hover:text-primary transition-colors cursor-pointer">{t.computerScience.tabs.admissions}</button></li>
               </ul>
             </div>
             <div>
