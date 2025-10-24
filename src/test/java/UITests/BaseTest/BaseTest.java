@@ -14,13 +14,13 @@ public class BaseTest {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(
                 new BrowserType.LaunchOptions()
-                        .setHeadless(false)
-                        .setChannel("chrome")
+                        .setHeadless(true)
         );
 
         context = browser.newContext();
         page = context.newPage();
-        page.navigate("http://localhost:3000/");
+        String url = System.getenv().getOrDefault("APP_URL", "http://localhost:3000");
+        page.navigate(url);
     }
 
     @AfterClass
