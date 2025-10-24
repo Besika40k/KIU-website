@@ -2,7 +2,7 @@
 import { useLanguage } from "../context/LanguageContext";
 import en from "../../../i18n/en.json";
 import ge from "../../../i18n/ge.json";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import SearchButton from "./SearchButton";
 
@@ -11,12 +11,54 @@ export default function Header() {
   const t = lang === "en" ? en : ge;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [sidebarWidth, setSidebarWidth] = useState(50); // percentage
+  const [isResizing, setIsResizing] = useState(false);
+  const sidebarRef = useRef<HTMLDivElement>(null);
 
   const handleLanguageSwitch = (newLang: "en" | "ge") => {
     if (newLang !== lang) {
       setLang(newLang);
     }
   };
+
+  const handleMouseDown = () => {
+    setIsResizing(true);
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
+    if (!isResizing) return;
+    
+    const newWidth = (e.clientX / window.innerWidth) * 100;
+    // Limit width between 20% and 80%
+    if (newWidth >= 20 && newWidth <= 80) {
+      setSidebarWidth(newWidth);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsResizing(false);
+  };
+
+  useEffect(() => {
+    if (isResizing) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+      document.body.style.cursor = 'ew-resize';
+      document.body.style.userSelect = 'none';
+    } else {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    };
+  }, [isResizing]);
 
   const navigationItems = [
     { key: "home", href: "/" },
@@ -252,9 +294,13 @@ export default function Header() {
 
       {/* LMS Sidebar */}
       {isSidebarOpen && (
-        <div className="fixed top-0 left-0 h-full w-1/2 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out border-r-4 border-[#1E40AF]">
+        <div 
+          ref={sidebarRef}
+          className="fixed top-0 left-0 h-full bg-white shadow-2xl z-50 border-r-4 border-[#3D5C84]"
+          style={{ width: `${sidebarWidth}%` }}
+        >
           {/* Sidebar Header */}
-          <div className="flex items-center justify-between px-6 py-4 bg-[#1E40AF] text-white">
+          <div className="flex items-center justify-between px-6 py-4 bg-[#3D5C84] text-white">
             <div className="flex items-center space-x-3">
               <Image
                 src="/kiuLogo.png"
@@ -293,6 +339,14 @@ export default function Header() {
               title="KIU LMS"
               allow="fullscreen"
             />
+          </div>
+
+          {/* Resize Handle */}
+          <div
+            onMouseDown={handleMouseDown}
+            className="absolute top-0 right-0 w-2 h-full cursor-ew-resize hover:bg-[#3D5C84] hover:opacity-50 transition-all duration-200 group"
+          >
+            <div className="absolute top-1/2 right-0 transform -translate-y-1/2 w-1 h-16 bg-[#3D5C84] opacity-50 group-hover:opacity-100 rounded-l-full"></div>
           </div>
         </div>
       )}
