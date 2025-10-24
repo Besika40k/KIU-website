@@ -11,6 +11,7 @@
     "title": "Our Faculties"
   },
   "navigation": {
+    "home": "Home",
     "about": "About KIU",
     "programs": "Programs",
     "research": "Research",
@@ -20,6 +21,14 @@
     "news": "News",
     "campus": "Campus",
     "vacancies": "Vacancies"
+  },
+  "search": {
+    "placeholder": "Search pages, schools, news...",
+    "page": "Page",
+    "school": "School",
+    "news": "News",
+    "content": "Content",
+    "noResults": "No results found. Try a different search term."
   },
   "footer": {
     "usefulLinks": "Useful Links",
