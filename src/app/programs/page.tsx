@@ -269,6 +269,15 @@ export default function ProgramsPage() {
     closeExpandedCard();
   };
 
+  const navigateToSchool = (schoolId: string) => {
+    if (schoolId === 'computer-science') {
+      router.push('/schools/computer-science');
+    } else {
+      alert('Work in progress - This school page is coming soon!');
+    }
+    closeExpandedCard();
+  };
+
   const handleMapHover = (location: string, event: React.MouseEvent) => {
     const locations = {
       MIT: "🇺🇸 MIT - Computer Science",
@@ -325,7 +334,7 @@ export default function ProgramsPage() {
 
       {/* Header Section */}
       <section className="relative bg-gradient-to-br from-primary via-secondary to-primary overflow-hidden">
-        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+        <div className="absolute inset-0 bg-blue bg-opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-white z-10">
@@ -462,7 +471,7 @@ export default function ProgramsPage() {
                     className="apply-cta text-primary font-medium px-4 py-2 rounded-lg text-sm"
                     onClick={(e) => {
                       e.stopPropagation();
-                      handleSchoolClick(school.id);
+                      navigateToSchool(school.id);
                     }}
                   >
                     Explore Programs
@@ -527,7 +536,7 @@ export default function ProgramsPage() {
       {/* Expanded Card Modal */}
       {showOverlay && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-primary bg-opacity-50 z-50 flex items-center justify-center p-4"
           onClick={closeExpandedCard}
         >
           <div 
@@ -573,7 +582,7 @@ export default function ProgramsPage() {
                     Close
                   </button>
                   <button 
-                    onClick={() => alert(`Navigating to individual page about the ${extendedSchoolsData[expandedSchool as keyof typeof extendedSchoolsData].name} school...`)}
+                    onClick={() => navigateToSchool(expandedSchool)}
                     className="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors mr-4"
                   >
                     Learn More

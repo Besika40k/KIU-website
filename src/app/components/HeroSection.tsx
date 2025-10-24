@@ -20,19 +20,20 @@ export default function HeroSection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-5xl font-bold text-[#0a0a0a] leading-tight" style={{ fontFamily: "Playfair Display, serif" }}>
-                Where Knowledge Creates <span className="text-[#15396F]">Future!</span>
+                {t.homepage.hero.title.split(t.homepage.hero.titleHighlight)[0]}
+                <span className="text-[#15396F]">{t.homepage.hero.titleHighlight}</span>
               </h2>
-              <p className="text-lg text-[#3D5C84] italic font-medium">Hic Scientia futūrum creat!</p>
+              <p className="text-lg text-[#3D5C84] italic font-medium">{t.homepage.hero.motto}</p>
             </div>
             <p className="text-xl text-[#3D5C84] leading-relaxed">
-              Kutaisi International University has opened its doors to the first cohort of students in 2020. Our goal is to gradually become an international hub of education, science and technology in the region.
+              {t.homepage.hero.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-[#15396F] text-white px-8 py-4 rounded-lg shadow-light font-semibold hover:bg-[#3D5C84] transition-all duration-200 transform hover:scale-105">
-                Apply Now
+                {t.homepage.hero.applyButton}
               </button>
               <button className="bg-[#FED73C] text-[#0a0a0a] px-8 py-4 rounded-lg shadow-light font-semibold hover:bg-yellow-400 transition-all duration-200 transform hover:scale-105">
-                Explore Programs
+                {t.homepage.hero.exploreButton}
               </button>
             </div>
           </div>
@@ -47,9 +48,9 @@ export default function HeroSection() {
               />
               <div className="mt-6 text-center">
                 <h3 className="text-xl font-semibold text-[#0a0a0a]" style={{ fontFamily: "Playfair Display, serif" }}>
-                  Modern Campus in Kutaisi
+                  {t.homepage.hero.imageCaption}
                 </h3>
-                <p className="text-[#3D5C84] mt-2">State-of-the-art facilities for world-class education</p>
+                <p className="text-[#3D5C84] mt-2">{t.homepage.hero.imageDescription}</p>
               </div>
             </div>
           </div>

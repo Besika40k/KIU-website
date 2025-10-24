@@ -35,6 +35,7 @@
   "homepage": {
     "latestNews": {
       "title": "Latest News & Updates",
+      "readFullStory": "Read Full Story",
       "news": [
         {
           "tag": "ADMISSION",
@@ -147,21 +148,128 @@
       "subtitle": "Experience KIU through our campus videos",
       "videos": [
         {
-          "title": "Founding View",
-          "description": "Interview with Bidzina Ivanishvili and Ekaterina Khvedelidze",
-          "thumbnail": "/videos/founding-view.jpg"
+          "title": "Campus Tour",
+          "description": "Take a virtual tour of our state-of-the-art facilities and beautiful campus grounds."
         },
         {
-          "title": "Foreign Connections",
-          "description": "President of Technical University of Munich about Kutaisi International University",
-          "thumbnail": "/videos/foreign-connections.jpg"
+          "title": "Student Life",
+          "description": "Discover the vibrant student community and exciting activities at KIU."
         },
         {
-          "title": "Campus",
-          "description": "Kutaisi International University Campus",
-          "thumbnail": "/videos/campus.jpg"
+          "title": "Research Excellence",
+          "description": "Explore our cutting-edge research facilities and innovative projects."
         }
       ]
+    }
+  },
+  "research": {
+    "hero": {
+      "tag": "RESEARCH EXCELLENCE",
+      "title1": "Research at",
+      "title2": "KIU",
+      "description": "Advancing scientific knowledge and innovation through cutting-edge research facilities, international collaborations, and state-of-the-art infrastructure"
+    },
+    "strategy": {
+      "tag": "OUR VISION",
+      "title1": "Research",
+      "title2": "Strategy",
+      "content1": "KIU is aiming to become an international research and education hub in the region. The research strategy of KIU includes development of the state-of-the-art facilities and modern research infrastructure.",
+      "content2": "Research facilities and labs will be organized to support development of the Masters, Doctoral, and Post-doctoral programs at KIU through attracting scientists and leading experts in the respective fields.",
+      "content3": "KIU's strategic development plan envisions establishment of a Hadron Therapy Center. This research center will offer its facilities for the scientific research in particle physics, radiation physics and biophysics, as well as support operations of the Proton Therapy Center, coupled with the faculty of Medicine at KIU.",
+      "highlight": {
+        "title": "International Collaborations",
+        "description": "KIU supports international scientific collaborations of academic, administrative, and research staff. For more information about partnerships, please visit KIU website (www.kiu.edu.ge) or contact us at info@kiu.edu.ge"
+      }
+    },
+    "htc": {
+      "tag": "ADVANCED TECHNOLOGY",
+      "title1": "Hadron Therapy",
+      "title2": "Center",
+      "title3": "(HTC)",
+      "subtitle": "Advanced particle accelerator technology for groundbreaking research and medical treatment",
+      "description": "The Kutaisi International University will house a Hadron Therapy Center. The center will be equipped with the cyclotron particle accelerators for conducting scientific research and medical treatment.",
+      "facilitiesTitle": "HTC will provide facilities and labs for research and education along the following main directions:",
+      "area1": {
+        "title": "Medical and Experimental Physics",
+        "description": "Advanced research in medical physics applications and experimental methodologies for cutting-edge healthcare solutions"
+      },
+      "area2": {
+        "title": "Medical and Radiation Biophysics",
+        "description": "Comprehensive study of biological effects of radiation and innovative medical applications"
+      },
+      "area3": {
+        "title": "Radiochemistry",
+        "description": "Advanced chemical processes involving radioactive materials and isotope research"
+      },
+      "cyclotron": {
+        "title": "State-of-the-Art Cyclotron Technology",
+        "description": "Advanced particle accelerator systems for precision research and treatment"
+      }
+    },
+    "campus": {
+      "tag": "LOCATION",
+      "title": "Kutaisi Campus",
+      "description": "The facilities at the Kutaisi International University Campus will be provided by IBA (Ion Beam Applications SA) cyclotrons. Center will be established to support both: scientific research, as well as treatment of cancer patients.",
+      "stats": {
+        "partner": "IBA",
+        "partnerLabel": "Technology Partner",
+        "year": "2024",
+        "yearLabel": "Expected Opening"
+      }
+    },
+    "protonClinic": {
+      "tag": "MEDICAL INNOVATION",
+      "title1": "Proton Therapy",
+      "title2": "Clinic",
+      "subtitle": "The most advanced form of radiation therapy for precision cancer treatment",
+      "description": "A Proton Therapy Clinic will be established at the Kutaisi International University Campus and will offer its patients a combined diagnostic and treatment facilities. Cancer research and treatment will be based on the state of the art proton therapy based methods.",
+      "highlight": {
+        "title": "Advanced Treatment Technology",
+        "content1": "Proton therapy is considered the most advanced form of radiation therapy that uses high-energy proton beam to irradiate tumors. The range of the applications of this cutting edge solution is expanding.",
+        "content2": "The center will join world's largest and most advanced networks of the proton therapy centers."
+      },
+      "feature1": {
+        "title": "Precision Treatment",
+        "description": "Targeted therapy with minimal side effects"
+      },
+      "feature2": {
+        "title": "Research Integration",
+        "description": "Combined treatment and research facilities"
+      },
+      "feature3": {
+        "title": "Global Network",
+        "description": "Connected to worldwide proton therapy centers"
+      }
+    },
+    "publications": {
+      "tag": "ACADEMIC EXCELLENCE",
+      "title1": "Research",
+      "title2": "Publications",
+      "subtitle": "Annual conferences showcasing cutting-edge research and scientific achievements across multiple disciplines",
+      "description": "Kutaisi International University holds annual conferences at the end of every academic year, where professors and scientists of the university can present their research. Conference is organized into parallel sessions, depending on the research topics.",
+      "conf2021": {
+        "title": "KIU Annual Conference 2021",
+        "track1": "Management",
+        "track2": "Mathematics and Computer Science",
+        "track3": "Physics"
+      },
+      "conf2022": {
+        "title": "KIU Annual Conference 2022",
+        "track1": "Management",
+        "track2": "Mathematics and Computer Science"
+      },
+      "conf2023": {
+        "title": "KIU Annual Conference 2023",
+        "track1": "Management",
+        "track2": "Mathematics and Computer Science"
+      },
+      "conf2024": {
+        "title": "KIU Annual Conference 2024",
+        "track1": "Management",
+        "track2": "Mathematics and Computer Science"
+      },
+      "conferenceTitle": "Annual Research Conference",
+      "conferenceDescription": "Join leading researchers and academics from around the world at our prestigious annual conference"
     }
   }
 }

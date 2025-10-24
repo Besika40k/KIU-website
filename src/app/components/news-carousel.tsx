@@ -14,6 +14,8 @@ import {
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { formatDate } from "./NewsHelperFunctions";
+import en from "../../../i18n/en.json";
+import ge from "../../../i18n/ge.json";
 interface NewsItem {
   id: number;
   title: string;
@@ -28,7 +30,8 @@ interface NewsCarouselProps {
 }
 
 export function NewsCarousel({ news }: NewsCarouselProps) {
-  const { lang, setLang } = useLanguage();
+  const { lang } = useLanguage();
+  const t = lang === "en" ? en : ge;
   const [featuredNews, setFeaturedNews] = useState<NewsItem[]>([]);
 
   useEffect(() => {
@@ -70,9 +73,7 @@ export function NewsCarousel({ news }: NewsCarouselProps) {
                         variant="outline"
                         className="bg-white/10 border-white/20 text-white hover:bg-white/20"
                       >
-                        {lang === "en"
-                          ? "Read Full Story"
-                          : "წაიკითხე სრული ამბავი"}
+                        {t.homepage.latestNews.readFullStory}
                       </Button>
                     </div>
                   </div>
