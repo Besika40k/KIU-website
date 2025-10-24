@@ -40,12 +40,12 @@ globals.css # Global styles (Tailwind + custom) <br />
 
 ## **Getting Started**
 
-### Clone the repository and run the project
+### Clone the repository and run the project, you will need to install node.js on your computer
 
 ```bash
-git clone https://github.com/<your-username>/nextjs-university-demo.git
-cd nextjs-university-demo
 
+# to run the project navigate into the dict KIU-WEBSITE-V1
+# and type this in the terminal
 
 npm install
 
