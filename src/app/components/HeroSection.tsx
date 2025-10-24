@@ -29,10 +29,10 @@ export default function HeroSection() {
               {t.homepage.hero.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#15396F] text-white px-8 py-4 rounded-lg shadow-light font-semibold hover:bg-[#3D5C84] transition-all duration-200 transform hover:scale-105">
+              <button className="bg-[#15396F] text-white px-8 py-4 rounded-lg shadow-light font-semibold hover:bg-[#3D5C84] transition-all duration-200 transform hover:scale-105 cursor-pointer">
                 {t.homepage.hero.applyButton}
               </button>
-              <button className="bg-[#FED73C] text-[#0a0a0a] px-8 py-4 rounded-lg shadow-light font-semibold hover:bg-yellow-400 transition-all duration-200 transform hover:scale-105">
+              <button className="bg-[#FED73C] text-[#0a0a0a] px-8 py-4 rounded-lg shadow-light font-semibold hover:bg-yellow-400 transition-all duration-200 transform hover:scale-105 cursor-pointer">
                 {t.homepage.hero.exploreButton}
               </button>
             </div>

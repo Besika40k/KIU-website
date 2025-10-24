@@ -70,7 +70,7 @@ export function NewsCarousel({ news }: NewsCarouselProps) {
                         {item.content}
                       </p>
                       <Button
-                        className="bg-[#FED73C] text-black font-semibold hover:bg-[#FED73C]/90 border-0"
+                        className="bg-[#FED73C] text-black font-semibold hover:bg-[#FED73C]/90 border-0 cursor-pointer"
                       >
                         {t.homepage.latestNews.readFullStory}
                       </Button>

@@ -95,11 +95,29 @@ export function NewsGrid({ news, itemsPerPage = 6 }: NewsGridProps) {
               <p className="text-sm text-muted-foreground mb-4 text-pretty leading-relaxed">
                 {item.content}
               </p>
-              <Link
-                href={`/news/${item.id}`}
-                className="p-0 h-auto text-[#15396F] font-semibold text-sm hover:underline inline-flex items-center"
-              >
-                {lang === "en" ? "Read more →" : "წაიკითხე მეტი →"}
+              <Link href={`/news/${item.id}`}>
+                <Button
+                  variant="outline"
+                  className="group relative overflow-hidden border-2 border-[#15396F] text-[#15396F] hover:text-white hover:border-[#15396F] transition-all duration-300 font-semibold cursor-pointer"
+                >
+                  <span className="absolute inset-0 bg-[#15396F] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
+                  <span className="relative flex items-center gap-2">
+                    {lang === "en" ? "Read More" : "წაიკითხე მეტი"}
+                    <svg
+                      className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </span>
+                </Button>
               </Link>
             </CardContent>
           </Card>

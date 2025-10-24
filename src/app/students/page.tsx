@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Calendar,
   FileText,
@@ -9,63 +11,73 @@ import {
 import { ServiceCard } from "../components/service-card";
 import { GrantsFundSection } from "../components/grants-fund-section";
 import { ErasmusProgramCard } from "../components/erasmus-program-card";
-import studentHubData from "../data/studenthub.json";
+import studentHubDataEn from "../data/studenthub.json";
+import studentHubDataGe from "../data/studenthubge.json";
+import { useLanguage } from "../context/LanguageContext";
+import en from "../../../i18n/en.json";
+import ge from "../../../i18n/ge.json";
+
 export default function StudentsPage() {
+  const { lang } = useLanguage();
+  const t = lang === "en" ? en : ge;
+  const studentHubData = lang === "en" ? studentHubDataEn : studentHubDataGe;
+
   const services = [
     {
-      title: "Academic Calendar",
-      description:
-        "Important dates, semester schedules, and academic deadlines for the current year.",
+      title: t.students.services.academicCalendar.title,
+      description: t.students.services.academicCalendar.description,
       icon: Calendar,
       iconColor: "bg-blue-600",
-      buttonText: "View Calendar",
+      buttonText: t.students.services.academicCalendar.button,
       buttonColor: "bg-blue-900 hover:bg-blue-800 text-white",
     },
     {
-      title: "Legal Directory",
-      description:
-        "University regulations, policies, and legal documents for students.",
+      title: t.students.services.legalDirectory.title,
+      description: t.students.services.legalDirectory.description,
       icon: FileText,
       iconColor: "bg-blue-600",
-      buttonText: "Access Directory",
+      buttonText: t.students.services.legalDirectory.button,
       buttonColor: "bg-blue-900 hover:bg-blue-800 text-white",
     },
     {
-      title: "Academic Mobility",
-      description:
-        "Exchange programs and mobility opportunities for KIU students.",
+      title: t.students.services.academicMobility.title,
+      description: t.students.services.academicMobility.description,
       icon: Globe,
       iconColor: "bg-yellow-500",
-      buttonText: "Learn More",
+      buttonText: t.students.services.academicMobility.button,
       buttonColor: "bg-yellow-500 hover:bg-yellow-600 text-white",
-      expandableItems: ["External Mobility", "Internal Mobility"],
+      expandableItems: [
+        t.students.services.academicMobility.external,
+        t.students.services.academicMobility.internal,
+      ],
     },
     {
-      title: "Tuition Fee",
-      description:
-        "Fee structure, payment schedules, and financial information.",
+      title: t.students.services.tuitionFee.title,
+      description: t.students.services.tuitionFee.description,
       icon: DollarSign,
       iconColor: "bg-green-600",
-      buttonText: "View Fees",
+      buttonText: t.students.services.tuitionFee.button,
       buttonColor: "bg-green-600 hover:bg-green-700 text-white",
     },
     {
-      title: "Library",
-      description:
-        "Digital resources, catalog search, and library services for students.",
+      title: t.students.services.library.title,
+      description: t.students.services.library.description,
       icon: BookOpen,
       iconColor: "bg-purple-600",
-      buttonText: "Access Library",
+      buttonText: t.students.services.library.button,
       buttonColor: "bg-purple-600 hover:bg-purple-700 text-white",
     },
     {
-      title: "Student Grant Program",
-      description: "Funding opportunities for student projects and activities.",
+      title: t.students.services.studentGrant.title,
+      description: t.students.services.studentGrant.description,
       icon: Award,
       iconColor: "bg-yellow-500",
-      buttonText: "Apply Now",
+      buttonText: t.students.services.studentGrant.button,
       buttonColor: "bg-yellow-500 hover:bg-yellow-600 text-white",
-      expandableItems: ["Current Grant Competition", "Financed Projects"],
+      expandableItems: [
+        t.students.services.studentGrant.current,
+        t.students.services.studentGrant.financed,
+      ],
     },
   ];
 
@@ -75,10 +87,10 @@ export default function StudentsPage() {
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            Student Information Hub
+            {t.students.hero.title}
           </h1>
           <p className="text-base md:text-lg text-gray-600">
-            Your comprehensive guide to KIU student services and resources
+            {t.students.hero.description}
           </p>
         </div>
       </div>

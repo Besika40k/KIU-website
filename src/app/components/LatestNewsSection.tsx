@@ -50,7 +50,7 @@ export default function LatestNewsSection() {
                       {newsItem.description}
                     </p>
                   </div>
-                  <a href="#" className="text-[#15396F] font-bold hover:text-[#3D5C84] transition-colors text-sm flex items-center">
+                  <a href="#" className="text-[#15396F] font-bold hover:text-[#3D5C84] transition-colors text-sm flex items-center cursor-pointer">
                     {newsItem.link}
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
