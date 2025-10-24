@@ -3,23 +3,26 @@ import { enUS, ka } from "date-fns/locale";
 
 export const getCategoryColor = (category: string) => {
   const colors: Record<string, string> = {
-    TECHNOLOGY: "bg-blue-100 text-blue-800",
-    ტექნოლოგია: "bg-blue-100 text-blue-800",
+    TECHNOLOGY: "bg-blue-500 text-white",
+    ტექნოლოგია: "bg-blue-500 text-white",
 
-    RESEARCH: "bg-orange-100 text-orange-800",
-    კვლევა: "bg-orange-100 text-orange-800",
+    RESEARCH: "bg-purple-600 text-white",
+    კვლევა: "bg-purple-600 text-white",
 
-    CAMPUS: "bg-green-100 text-green-800",
-    კამპუსი: "bg-green-100 text-green-800",
+    CAMPUS: "bg-green-600 text-white",
+    კამპუსი: "bg-green-600 text-white",
 
-    PARTNERSHIP: "bg-purple-100 text-purple-800",
-    პარტნიორობა: "bg-purple-100 text-purple-800",
+    PARTNERSHIP: "bg-orange-500 text-white",
+    პარტნიორობა: "bg-orange-500 text-white",
 
-    LECTURE: "bg-red-100 text-red-800",
-    ლექცია: "bg-red-100 text-red-800",
+    LECTURE: "bg-purple-700 text-white",
+    ლექცია: "bg-purple-700 text-white",
+
+    EDUCATION: "bg-green-500 text-white",
+    განათლება: "bg-green-500 text-white",
   };
 
-  return colors[category] || "bg-gray-100 text-gray-800";
+  return colors[category] || "bg-gray-600 text-white";
 };
 
 export function formatDate(dateString: string, lang: string): string;
