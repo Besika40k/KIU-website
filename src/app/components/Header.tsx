@@ -4,6 +4,7 @@ import en from "../../../i18n/en.json";
 import ge from "../../../i18n/ge.json";
 import { useState } from "react";
 import Image from "next/image";
+import SearchButton from "./SearchButton";
 
 export default function Header() {
   const { lang, setLang } = useLanguage();
@@ -67,8 +68,12 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Right Section - Language Switcher */}
-        <div className="flex items-center space-x-2">
+        {/* Right Section - Search and Language Switcher */}
+        <div className="flex items-center space-x-3">
+          {/* Search Button */}
+          <SearchButton />
+          
+          {/* Language Switcher */}
           <div
             className="relative flex items-center justify-center w-[102px] h-[44px] rounded-full bg-[#F3F4F6] 
   shadow-[8px_8px_16px_0px_#D1D5DB_inset,-8px_-8px_16px_0px_#D1D5DB_inset] px-[6px] gap-1"
@@ -145,6 +150,10 @@ export default function Header() {
           </div>
 
           <div className="flex items-center space-x-2">
+            {/* Search Button */}
+            <SearchButton />
+            
+            {/* Language Switcher */}
             <div
               className="relative flex items-center justify-center w-[102px] h-[44px] rounded-full bg-[#F3F4F6] 
   shadow-[8px_8px_16px_0px_#D1D5DB_inset,-8px_-8px_16px_0px_#D1D5DB_inset] px-[6px] gap-1"
