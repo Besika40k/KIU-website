@@ -38,6 +38,48 @@
       "readFullStory": "Read Full Story",
       "news": [
         {
+          "tag": "TECHNOLOGY",
+          "tagColor": "yellow",
+          "title": "KIU Master's Students Visit Shanghai's Global Technology Center",
+          "description": "FIM students engage in cutting-edge AI processes and international collaboration in China.",
+          "link": "Read More >"
+        },
+        {
+          "tag": "RESEARCH",
+          "tagColor": "blue",
+          "title": "International Summer School on AI at KIU",
+          "description": "Five-day program on Symbolic and Statistical Methods attracts global participants.",
+          "link": "Read More >"
+        },
+        {
+          "tag": "CAMPUS",
+          "tagColor": "yellow",
+          "title": "Prospective Students Campus Tour",
+          "description": "KIU welcomes applicants with comprehensive campus tours showcasing facilities and programs.",
+          "link": "Read More >"
+        },
+        {
+          "tag": "PARTNERSHIP",
+          "tagColor": "blue",
+          "title": "KIU and Chiatura Center Expand Partnership",
+          "description": "Joint mathematics curriculum and AI education initiatives strengthen regional collaboration.",
+          "link": "Read More >"
+        },
+        {
+          "tag": "TECHNOLOGY",
+          "tagColor": "yellow",
+          "title": "FIM Students Attend Sustainable AI Course",
+          "description": "KIU students participate in the School on Sustainable AI in Shanghai, China.",
+          "link": "Read More >"
+        },
+        {
+          "tag": "LECTURE",
+          "tagColor": "blue",
+          "title": "Communications Ombudsman Public Lecture",
+          "description": "\"Know Your Rights in the Field of Communications\" lecture held at KIU.",
+          "link": "Read More >"
+        },
+        {
           "tag": "ADMISSION",
           "tagColor": "yellow",
           "title": "Applications Open for 2025",
@@ -47,22 +89,8 @@
         {
           "tag": "RESEARCH",
           "tagColor": "blue",
-          "title": "New Research Center Opens",
-          "description": "State-of-the-art facilities for cutting-edge research and innovation.",
-          "link": "Read More >"
-        },
-        {
-          "tag": "CAMPUS LIFE",
-          "tagColor": "blue",
-          "title": "Student Activities Week",
-          "description": "Discover clubs and organizations on our vibrant campus.",
-          "link": "Read More >"
-        },
-        {
-          "tag": "PARTNERSHIP",
-          "tagColor": "yellow",
-          "title": "TUM Collaboration",
-          "description": "New joint programs with University of Munich.",
+          "title": "International Mathematics Conference",
+          "description": "Georgia's first conference on Functions, Models, and Systems brings together global researchers.",
           "link": "Read More >"
         }
       ]
@@ -160,6 +188,132 @@
           "description": "Explore our cutting-edge research facilities and innovative projects."
         }
       ]
+    }
+  },
+  "programs": {
+    "hero": {
+      "title": "Schools at Kutaisi International University",
+      "subtitle": "Discover our diverse academic schools, each dedicated to excellence in education, research, and innovation.",
+      "exploreButton": "Explore All Schools",
+      "virtualTourButton": "Virtual Campus Tour"
+    },
+    "globalNetwork": {
+      "title": "Global Academic Network",
+      "subtitle": "Our schools maintain partnerships with leading universities worldwide",
+      "partnerTitle": "Partner Universities"
+    },
+    "choosePath": {
+      "title": "Choose Your Academic Path",
+      "subtitle": "Each school offers unique opportunities for growth, discovery, and professional development."
+    },
+    "alumniStories": {
+      "title": "Alumni Success Stories",
+      "subtitle": "Our graduates are making impact worldwide"
+    },
+    "explorePrograms": "Explore Programs",
+    "applyNow": "Apply Now",
+    "students": "Students",
+    "programs": "Programs",
+    "close": "Close",
+    "learnMore": "Learn More"
+  },
+  "computerScience": {
+    "breadcrumb": {
+      "home": "Home",
+      "schools": "Schools",
+      "computerScience": "Computer Science"
+    },
+    "hero": {
+      "title": "School of Computer Science",
+      "tagline": "Innovating Tomorrow's Digital World",
+      "description": "Leading the future of technology through cutting-edge education, groundbreaking research, and industry partnerships.",
+      "stats": {
+        "students": "Students",
+        "programs": "Programs",
+        "partners": "Partners",
+        "researchCenters": "Research Centers"
+      },
+      "applyButton": "Apply Now",
+      "scheduleVisitButton": "Schedule Visit"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "programs": "Programs",
+      "faculty": "Faculty",
+      "facilities": "Facilities",
+      "research": "Research",
+      "admissions": "Admissions"
+    },
+    "overview": {
+      "aboutTitle": "About Our School",
+      "aboutP1": "The School of Computer Science at Kutaisi International University stands at the forefront of technological innovation and education. Our comprehensive programs combine theoretical foundations with practical applications, preparing students for successful careers in the rapidly evolving tech industry.",
+      "aboutP2": "With state-of-the-art facilities, world-class faculty, and strong industry partnerships, we provide an environment where students can explore cutting-edge technologies including artificial intelligence, machine learning, cybersecurity, and software engineering.",
+      "aboutP3": "Our graduates are highly sought after by leading technology companies worldwide, with a 95% employment rate within six months of graduation.",
+      "quickFacts": "Quick Facts",
+      "founded": "Founded",
+      "faculty": "Faculty",
+      "employmentRate": "Employment Rate",
+      "averageSalary": "Average Salary",
+      "accreditations": "Accreditations",
+      "testimonials": "What Our Students Say"
+    },
+    "programsTab": {
+      "title": "Our Programs",
+      "subtitle": "Choose from our comprehensive range of undergraduate and graduate programs designed to meet industry demands.",
+      "undergraduate": "Undergraduate Programs",
+      "graduate": "Graduate Programs",
+      "duration": "Years",
+      "credits": "Credits",
+      "research": "Research"
+    },
+    "facultyTab": {
+      "title": "Our Faculty",
+      "subtitle": "Learn from world-renowned experts and researchers who are shaping the future of technology."
+    },
+    "facilitiesTab": {
+      "title": "State-of-the-Art Facilities",
+      "subtitle": "Our modern facilities provide the perfect environment for learning, research, and innovation."
+    },
+    "researchTab": {
+      "title": "Research Excellence",
+      "subtitle": "Our faculty and students are at the forefront of groundbreaking research in computer science and technology.",
+      "researchCenters": "Research Centers",
+      "annualFunding": "Annual Research Funding",
+      "publishedPapers": "Published Papers",
+      "activeProjects": "Active Projects",
+      "industryPartners": "Industry Partners",
+      "recentPublications": "Recent Publications"
+    },
+    "admissionsTab": {
+      "title": "Admissions Information",
+      "subtitle": "Join our community of innovators and future technology leaders. Learn about our admission requirements and application process.",
+      "undergrad": "Undergraduate Admissions",
+      "graduate": "Graduate Admissions",
+      "requirements": "Requirements",
+      "importantDates": "Important Dates",
+      "tuitionFees": "Tuition & Fees",
+      "perYear": "per academic year",
+      "applicationDeadlines": "Application Deadlines",
+      "financialAid": "Financial Aid & Scholarships",
+      "meritScholarships": "Merit Scholarships",
+      "meritDesc": "Up to $15,000 annually for outstanding academic achievement",
+      "needBasedAid": "Need-Based Aid",
+      "needDesc": "Financial assistance based on demonstrated need and family income",
+      "researchAssistantships": "Research Assistantships",
+      "researchDesc": "Graduate students can receive funding through research positions"
+    },
+    "cta": {
+      "title": "Ready to Shape the Future of Technology?",
+      "subtitle": "Join our community of innovators, researchers, and future technology leaders. Start your journey today.",
+      "applyButton": "Apply Now",
+      "scheduleButton": "Schedule Campus Visit",
+      "downloadButton": "Download Brochure"
+    },
+    "footer": {
+      "description": "Leading innovation in technology education and research.",
+      "quickLinks": "Quick Links",
+      "contact": "Contact",
+      "copyright": "Kutaisi International University - School of Computer Science. All rights reserved."
     }
   },
   "research": {

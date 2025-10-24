@@ -99,6 +99,55 @@
       "degree": "MBA in Strategic Management",
       "image": "/kiuLogo.png",
       "quote": "I was able to discover learning paths that fit my career goals and helped me launch my own startup."
+    },
+    {
+      "id": 4,
+      "name": "Dr. Aleksandr Petrov",
+      "degree": "PhD in Mathematics",
+      "image": "/kiuLogo.png",
+      "quote": "The rigorous mathematical training at KIU prepared me for groundbreaking research in quantum computing. I now lead a research team at MIT."
+    },
+    {
+      "id": 5,
+      "name": "Dr. Amara Okafor",
+      "degree": "MD in Medicine",
+      "image": "/kiuLogo.png",
+      "quote": "The clinical experience and research opportunities at KIU shaped my career in neurosurgery. The faculty mentorship was exceptional."
+    },
+    {
+      "id": 6,
+      "name": "Thomas Anderson",
+      "degree": "MSc in Artificial Intelligence",
+      "image": "/kiuLogo.png",
+      "quote": "KIU's AI program is world-class. The hands-on projects and collaboration with industry partners gave me the edge to join Microsoft's AI division."
+    },
+    {
+      "id": 7,
+      "name": "Elena Rodriguez",
+      "degree": "MA in Clinical Psychology",
+      "image": "/kiuLogo.png",
+      "quote": "The emphasis on evidence-based practice and real-world clinical training at KIU prepared me perfectly for my work in mental health advocacy."
+    },
+    {
+      "id": 8,
+      "name": "Luca Moretti",
+      "degree": "B.Arch in Architecture",
+      "image": "/kiuLogo.png",
+      "quote": "KIU's focus on sustainable design and innovative architecture helped me win the Young Architect Award. The design studios were incredible."
+    },
+    {
+      "id": 9,
+      "name": "Priya Sharma",
+      "degree": "MBA in International Business",
+      "image": "/kiuLogo.png",
+      "quote": "The global perspective and leadership training I received at KIU enabled me to become Director of Operations at a Fortune 500 company at age 32."
+    },
+    {
+      "id": 10,
+      "name": "James Mitchell",
+      "degree": "BSc in Data Science",
+      "image": "/kiuLogo.png",
+      "quote": "From machine learning to big data analytics, KIU gave me the complete toolkit. I now head the data science team at Amazon."
     }
   ]
 }

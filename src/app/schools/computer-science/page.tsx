@@ -2,8 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLanguage } from '../../context/LanguageContext';
+import enTranslations from '../../../../i18n/en.json';
+import geTranslations from '../../../../i18n/ge.json';
 
 export default function ComputerScienceSchoolPage() {
+  const { lang } = useLanguage();
+  const t = lang === 'en' ? enTranslations : geTranslations;
   const [activeTab, setActiveTab] = useState('overview');
   const router = useRouter();
 
@@ -56,17 +61,17 @@ export default function ComputerScienceSchoolPage() {
               onClick={() => router.push('/')} 
               className="hover:text-primary transition-colors"
             >
-              Home
+              {t.computerScience.breadcrumb.home}
             </button>
             <span>/</span>
             <button 
               onClick={() => router.push('/programs')} 
               className="hover:text-primary transition-colors"
             >
-              Schools
+              {t.computerScience.breadcrumb.schools}
             </button>
             <span>/</span>
-            <span className="text-primary font-medium">Computer Science</span>
+            <span className="text-primary font-medium">{t.computerScience.breadcrumb.computerScience}</span>
           </div>
         </div>
       </nav>
@@ -98,43 +103,42 @@ export default function ComputerScienceSchoolPage() {
                 </div>
                 <div>
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold leading-tight">
-                    School of Computer Science
+                    {t.computerScience.hero.title}
                   </h1>
-                  <p className="text-xl text-accent font-medium mt-2">&quot;Innovating Tomorrow&apos;s Digital World&quot;</p>
+                  <p className="text-xl text-accent font-medium mt-2">&quot;{t.computerScience.hero.tagline}&quot;</p>
                 </div>
               </div>
 
               <p className="text-xl lg:text-2xl mb-8 text-blue-100 leading-relaxed">
-                Leading the future of technology through cutting-edge education, groundbreaking research, and
-                industry partnerships.
+                {t.computerScience.hero.description}
               </p>
 
               {/* Quick Stats */}
               <div className="flex  flex-wrap gap-4 mb-8">
                 <div className="glassmorphism rounded-lg p-4 text-center inline-block">
                   <div className="text-2xl font-bold text-accent">500+</div>
-                  <div className="text-sm text-blue-100">Students</div>
+                  <div className="text-sm text-blue-100">{t.computerScience.hero.stats.students}</div>
                 </div>
                 <div className="glassmorphism rounded-lg p-4 text-center inline-block">
                   <div className="text-2xl font-bold text-accent">8</div>
-                  <div className="text-sm text-blue-100">Programs</div>
+                  <div className="text-sm text-blue-100">{t.computerScience.hero.stats.programs}</div>
                 </div>
                 <div className="glassmorphism rounded-lg p-4 text-center inline-block">
                   <div className="text-2xl font-bold text-accent">15</div>
-                  <div className="text-sm text-blue-100">Partners</div>
+                  <div className="text-sm text-blue-100">{t.computerScience.hero.stats.partners}</div>
                 </div>
                 <div className="glassmorphism rounded-lg p-4 text-center inline-block">
                   <div className="text-2xl font-bold text-accent">3</div>
-                  <div className="text-sm text-blue-100">Research Centers</div>
+                  <div className="text-sm text-blue-100">{t.computerScience.hero.stats.researchCenters}</div>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
-                  Apply Now
+                  {t.computerScience.hero.applyButton}
                 </button>
                 <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300">
-                  Schedule Visit
+                  {t.computerScience.hero.scheduleVisitButton}
                 </button>
               </div>
             </div>
@@ -161,7 +165,7 @@ export default function ComputerScienceSchoolPage() {
                 : 'tab-inactive'
             }`}
           >
-            Overview
+            {t.computerScience.tabs.overview}
           </button>
           <button 
             onClick={() => showTab('programs')}
@@ -171,7 +175,7 @@ export default function ComputerScienceSchoolPage() {
                 : 'tab-inactive'
             }`}
           >
-            Programs
+            {t.computerScience.tabs.programs}
           </button>
           <button 
             onClick={() => showTab('faculty')}
@@ -181,7 +185,7 @@ export default function ComputerScienceSchoolPage() {
                 : 'tab-inactive'
             }`}
           >
-            Faculty
+            {t.computerScience.tabs.faculty}
           </button>
           <button 
             onClick={() => showTab('facilities')}
@@ -191,7 +195,7 @@ export default function ComputerScienceSchoolPage() {
                 : 'tab-inactive'
             }`}
           >
-            Facilities
+            {t.computerScience.tabs.facilities}
           </button>
           <button 
             onClick={() => showTab('research')}
@@ -201,7 +205,7 @@ export default function ComputerScienceSchoolPage() {
                 : 'tab-inactive'
             }`}
           >
-            Research
+            {t.computerScience.tabs.research}
           </button>
           <button 
             onClick={() => showTab('admissions')}
@@ -211,7 +215,7 @@ export default function ComputerScienceSchoolPage() {
                 : 'tab-inactive'
             }`}
           >
-            Admissions
+            {t.computerScience.tabs.admissions}
           </button>
         </div>
 
@@ -222,22 +226,16 @@ export default function ComputerScienceSchoolPage() {
               {/* About Section */}
               <div className="lg:col-span-2">
                 <div className="neumorphic-card2 rounded-2xl p-8 scroll-reveal fade-in-up">
-                  <h2 className="text-3xl font-playfair font-bold text-primary mb-6">About Our School</h2>
+                  <h2 className="text-3xl font-playfair font-bold text-primary mb-6">{t.computerScience.overview.aboutTitle}</h2>
                   <div className="prose prose-lg text-secondary">
                     <p className="mb-4">
-                      The School of Computer Science at Kutaisi International University stands at the
-                      forefront of technological innovation and education. Our comprehensive programs combine
-                      theoretical foundations with practical applications, preparing students for successful
-                      careers in the rapidly evolving tech industry.
+                      {t.computerScience.overview.aboutP1}
                     </p>
                     <p className="mb-4">
-                      With state-of-the-art facilities, world-class faculty, and strong industry partnerships,
-                      we provide an environment where students can explore cutting-edge technologies including
-                      artificial intelligence, machine learning, cybersecurity, and software engineering.
+                      {t.computerScience.overview.aboutP2}
                     </p>
                     <p>
-                      Our graduates are highly sought after by leading technology companies worldwide, with a
-                      95% employment rate within six months of graduation.
+                      {t.computerScience.overview.aboutP3}
                     </p>
                   </div>
                 </div>
@@ -246,33 +244,33 @@ export default function ComputerScienceSchoolPage() {
               {/* Quick Facts */}
               <div className="space-y-6">
                 <div className="neumorphic-card2 rounded-2xl p-6 scroll-reveal fade-in-up">
-                  <h3 className="text-xl font-playfair font-bold text-primary mb-4">Quick Facts</h3>
+                  <h3 className="text-xl font-playfair font-bold text-primary mb-4">{t.computerScience.overview.quickFacts}</h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
-                      <span className="text-secondary">Founded</span>
+                      <span className="text-secondary">{t.computerScience.overview.founded}</span>
                       <span className="font-semibold text-primary">2010</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-secondary">Students</span>
+                      <span className="text-secondary">{t.computerScience.hero.stats.students}</span>
                       <span className="font-semibold text-primary">500+</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-secondary">Faculty</span>
+                      <span className="text-secondary">{t.computerScience.overview.faculty}</span>
                       <span className="font-semibold text-primary">45</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-secondary">Employment Rate</span>
+                      <span className="text-secondary">{t.computerScience.overview.employmentRate}</span>
                       <span className="font-semibold text-accent2">95%</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-secondary">Average Salary</span>
+                      <span className="text-secondary">{t.computerScience.overview.averageSalary}</span>
                       <span className="font-semibold text-accent2">$65,000</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="neumorphic-card2 rounded-2xl p-6 scroll-reveal fade-in-up">
-                  <h3 className="text-xl font-playfair font-bold text-primary mb-4">Accreditations</h3>
+                  <h3 className="text-xl font-playfair font-bold text-primary mb-4">{t.computerScience.overview.accreditations}</h3>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <div className="w-3 h-3 bg-accent rounded-full"></div>
@@ -293,7 +291,7 @@ export default function ComputerScienceSchoolPage() {
 
             {/* Student Testimonials */}
             <div className="scroll-reveal">
-              <h2 className="text-3xl font-playfair font-bold text-primary mb-8 text-center">What Our Students Say</h2>
+              <h2 className="text-3xl font-playfair font-bold text-primary mb-8 text-center">{t.computerScience.overview.testimonials}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="glassmorphism-dark rounded-2xl p-6">
                   <div className="flex items-center gap-4 mb-4">
@@ -343,15 +341,14 @@ export default function ComputerScienceSchoolPage() {
         {activeTab === 'programs' && (
           <div className="tab-content">
             <div className="text-center mb-12 scroll-reveal revealed">
-              <h2 className="text-3xl font-playfair font-bold text-primary mb-4">Our Programs</h2>
-              <p className="text-lg text-secondary max-w-2xl mx-auto">Choose from our comprehensive range of undergraduate
-                and graduate programs designed to meet industry demands.</p>
+              <h2 className="text-3xl font-playfair font-bold text-primary mb-4">{t.computerScience.programsTab.title}</h2>
+              <p className="text-lg text-secondary max-w-2xl mx-auto">{t.computerScience.programsTab.subtitle}</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Undergraduate Programs */}
               <div className="scroll-reveal revealed">
-                <h3 className="text-2xl font-playfair font-bold text-primary mb-6">Undergraduate Programs</h3>
+                <h3 className="text-2xl font-playfair font-bold text-primary mb-6">{t.computerScience.programsTab.undergraduate}</h3>
                 <div className="space-y-4">
                   <div className="program-card rounded-xl p-6 fade-in-up">
                     <h4 className="text-lg font-semibold text-primary mb-2">Bachelor of Science in Computer Science
@@ -359,9 +356,8 @@ export default function ComputerScienceSchoolPage() {
                     <p className="text-secondary mb-3">Comprehensive foundation in programming, algorithms, and
                       software development.</p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">4 Years</span>
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">120
-                        Credits</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">4 {t.computerScience.programsTab.duration}</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">120 {t.computerScience.programsTab.credits}</span>
                     </div>
                   </div>
 
@@ -371,9 +367,8 @@ export default function ComputerScienceSchoolPage() {
                     <p className="text-secondary mb-3">Focus on large-scale software systems design and development
                       methodologies.</p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">4 Years</span>
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">120
-                        Credits</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">4 {t.computerScience.programsTab.duration}</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">120 {t.computerScience.programsTab.credits}</span>
                     </div>
                   </div>
 
@@ -383,9 +378,8 @@ export default function ComputerScienceSchoolPage() {
                     <p className="text-secondary mb-3">Specialized training in information security and digital
                       forensics.</p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">4 Years</span>
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">120
-                        Credits</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">4 {t.computerScience.programsTab.duration}</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">120 {t.computerScience.programsTab.credits}</span>
                     </div>
                   </div>
 
@@ -394,9 +388,8 @@ export default function ComputerScienceSchoolPage() {
                     <p className="text-secondary mb-3">Statistical analysis, machine learning, and big data
                       technologies.</p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">4 Years</span>
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">120
-                        Credits</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">4 {t.computerScience.programsTab.duration}</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">120 {t.computerScience.programsTab.credits}</span>
                     </div>
                   </div>
                 </div>
@@ -404,7 +397,7 @@ export default function ComputerScienceSchoolPage() {
 
               {/* Graduate Programs */}
               <div className="scroll-reveal revealed">
-                <h3 className="text-2xl font-playfair font-bold text-primary mb-6">Graduate Programs</h3>
+                <h3 className="text-2xl font-playfair font-bold text-primary mb-6">{t.computerScience.programsTab.graduate}</h3>
                 <div className="space-y-4">
                   <div className="program-card rounded-xl p-6 fade-in-up">
                     <h4 className="text-lg font-semibold text-primary mb-2">Master of Science in Computer Science
@@ -412,8 +405,8 @@ export default function ComputerScienceSchoolPage() {
                     <p className="text-secondary mb-3">Advanced study in algorithms, systems, and theoretical
                       computer science.</p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">2 Years</span>
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">36 Credits</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">2 {t.computerScience.programsTab.duration}</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">36 {t.computerScience.programsTab.credits}</span>
                     </div>
                   </div>
 
@@ -423,8 +416,8 @@ export default function ComputerScienceSchoolPage() {
                     <p className="text-secondary mb-3">Cutting-edge research in machine learning and neural
                       networks.</p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">2 Years</span>
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">36 Credits</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">2 {t.computerScience.programsTab.duration}</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">36 {t.computerScience.programsTab.credits}</span>
                     </div>
                   </div>
 
@@ -433,8 +426,8 @@ export default function ComputerScienceSchoolPage() {
                       Security</h4>
                     <p className="text-secondary mb-3">Advanced cybersecurity concepts and risk management.</p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">2 Years</span>
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">36 Credits</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">2 {t.computerScience.programsTab.duration}</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">36 {t.computerScience.programsTab.credits}</span>
                     </div>
                   </div>
 
@@ -443,8 +436,8 @@ export default function ComputerScienceSchoolPage() {
                     <p className="text-secondary mb-3">Original research contributing to the advancement of computer
                       science.</p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">4-6 Years</span>
-                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">Research</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">4-6 {t.computerScience.programsTab.duration}</span>
+                      <span className="bg-accent/20 text-primary px-3 py-1 rounded-full text-sm">{t.computerScience.programsTab.research}</span>
                     </div>
                   </div>
                 </div>
@@ -457,9 +450,8 @@ export default function ComputerScienceSchoolPage() {
         {activeTab === 'faculty' && (
           <div className="tab-content">
             <div className="text-center mb-12 scroll-reveal revealed">
-              <h2 className="text-3xl font-playfair font-bold text-primary mb-4">Our Faculty</h2>
-              <p className="text-lg text-secondary max-w-2xl mx-auto">Learn from world-renowned experts and researchers
-                who are shaping the future of technology.</p>
+              <h2 className="text-3xl font-playfair font-bold text-primary mb-4">{t.computerScience.facultyTab.title}</h2>
+              <p className="text-lg text-secondary max-w-2xl mx-auto">{t.computerScience.facultyTab.subtitle}</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -587,9 +579,8 @@ export default function ComputerScienceSchoolPage() {
         {activeTab === 'facilities' && (
           <div className="tab-content">
             <div className="text-center mb-12 scroll-reveal revealed">
-              <h2 className="text-3xl font-playfair font-bold text-primary mb-4">State-of-the-Art Facilities</h2>
-              <p className="text-lg text-secondary max-w-2xl mx-auto">Our modern facilities provide the perfect
-                environment for learning, research, and innovation.</p>
+              <h2 className="text-3xl font-playfair font-bold text-primary mb-4">{t.computerScience.facilitiesTab.title}</h2>
+              <p className="text-lg text-secondary max-w-2xl mx-auto">{t.computerScience.facilitiesTab.subtitle}</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -688,15 +679,14 @@ export default function ComputerScienceSchoolPage() {
         {activeTab === 'research' && (
           <div className="tab-content">
             <div className="text-center mb-12 scroll-reveal revealed">
-              <h2 className="text-3xl font-playfair font-bold text-primary mb-4">Research Excellence</h2>
-              <p className="text-lg text-secondary max-w-2xl mx-auto">Our faculty and students are at the forefront of
-                groundbreaking research in computer science and technology.</p>
+              <h2 className="text-3xl font-playfair font-bold text-primary mb-4">{t.computerScience.researchTab.title}</h2>
+              <p className="text-lg text-secondary max-w-2xl mx-auto">{t.computerScience.researchTab.subtitle}</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
               <div className="lg:col-span-2">
                 <div className="neumorphic-card2 rounded-2xl p-8 scroll-reveal revealed fade-in-up">
-                  <h3 className="text-2xl font-playfair font-bold text-primary mb-6">Research Centers</h3>
+                  <h3 className="text-2xl font-playfair font-bold text-primary mb-6">{t.computerScience.researchTab.researchCenters}</h3>
 
                   <div className="space-y-6">
                     <div className="glassmorphism-dark rounded-xl p-6">
@@ -746,28 +736,28 @@ export default function ComputerScienceSchoolPage() {
               <div className="space-y-6">
                 <div className="stats-counter rounded-2xl p-6 text-center scroll-reveal revealed">
                   <div className="text-3xl font-bold text-white mb-2">$2.5M</div>
-                  <div className="text-white/90">Annual Research Funding</div>
+                  <div className="text-white/90">{t.computerScience.researchTab.annualFunding}</div>
                 </div>
 
                 <div className="stats-counter rounded-2xl p-6 text-center scroll-reveal revealed">
                   <div className="text-3xl font-bold text-white mb-2">150+</div>
-                  <div className="text-white/90">Published Papers</div>
+                  <div className="text-white/90">{t.computerScience.researchTab.publishedPapers}</div>
                 </div>
 
                 <div className="stats-counter rounded-2xl p-6 text-center scroll-reveal revealed">
                   <div className="text-3xl font-bold text-white mb-2">25</div>
-                  <div className="text-white/90">Active Projects</div>
+                  <div className="text-white/90">{t.computerScience.researchTab.activeProjects}</div>
                 </div>
 
                 <div className="stats-counter rounded-2xl p-6 text-center scroll-reveal revealed">
                   <div className="text-3xl font-bold text-white mb-2">15</div>
-                  <div className="text-white/90">Industry Partners</div>
+                  <div className="text-white/90">{t.computerScience.researchTab.industryPartners}</div>
                 </div>
               </div>
             </div>
 
             <div className="neumorphic-card2 rounded-2xl p-8 scroll-reveal revealed fade-in-up">
-              <h3 className="text-2xl font-playfair font-bold text-primary mb-6">Recent Publications</h3>
+              <h3 className="text-2xl font-playfair font-bold text-primary mb-6">{t.computerScience.researchTab.recentPublications}</h3>
               <div className="space-y-4">
                 <div className="border-l-4 border-accent pl-6">
                   <h4 className="font-semibold text-primary mb-1">&quot;Deep Learning Approaches for Medical Image
@@ -802,19 +792,18 @@ export default function ComputerScienceSchoolPage() {
         {activeTab === 'admissions' && (
           <div className="tab-content">
             <div className="text-center mb-12 scroll-reveal revealed">
-              <h2 className="text-3xl font-playfair font-bold text-primary mb-4">Admissions Information</h2>
-              <p className="text-lg text-secondary max-w-2xl mx-auto">Join our community of innovators and future
-                technology leaders. Learn about our admission requirements and application process.</p>
+              <h2 className="text-3xl font-playfair font-bold text-primary mb-4">{t.computerScience.admissionsTab.title}</h2>
+              <p className="text-lg text-secondary max-w-2xl mx-auto">{t.computerScience.admissionsTab.subtitle}</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Undergraduate Admissions */}
               <div className="neumorphic-card2 rounded-2xl p-8 scroll-reveal revealed fade-in-up">
-                <h3 className="text-2xl font-playfair font-bold text-primary mb-6">Undergraduate Admissions</h3>
+                <h3 className="text-2xl font-playfair font-bold text-primary mb-6">{t.computerScience.admissionsTab.undergrad}</h3>
 
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-semibold text-primary mb-3">Requirements</h4>
+                    <h4 className="font-semibold text-primary mb-3">{t.computerScience.admissionsTab.requirements}</h4>
                     <ul className="space-y-2 text-secondary">
                       <li className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-accent rounded-full"></div>
@@ -840,7 +829,7 @@ export default function ComputerScienceSchoolPage() {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-primary mb-3">Important Dates</h4>
+                    <h4 className="font-semibold text-primary mb-3">{t.computerScience.admissionsTab.importantDates}</h4>
                     <div className="space-y-2 text-secondary">
                       <div className="flex justify-between">
                         <span>Early Decision</span>
@@ -858,20 +847,20 @@ export default function ComputerScienceSchoolPage() {
                   </div>
 
                   <div className="glassmorphism-dark rounded-lg p-4">
-                    <h4 className="font-semibold text-primary mb-2">Tuition &amp; Fees</h4>
+                    <h4 className="font-semibold text-primary mb-2">{t.computerScience.admissionsTab.tuitionFees}</h4>
                     <div className="text-2xl font-bold text-accent2 mb-1">$25,000</div>
-                    <div className="text-sm text-secondary">per academic year</div>
+                    <div className="text-sm text-secondary">{t.computerScience.admissionsTab.perYear}</div>
                   </div>
                 </div>
               </div>
 
               {/* Graduate Admissions */}
               <div className="neumorphic-card2 rounded-2xl p-8 scroll-reveal revealed fade-in-up">
-                <h3 className="text-2xl font-playfair font-bold text-primary mb-6">Graduate Admissions</h3>
+                <h3 className="text-2xl font-playfair font-bold text-primary mb-6">{t.computerScience.admissionsTab.graduate}</h3>
 
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-semibold text-primary mb-3">Requirements</h4>
+                    <h4 className="font-semibold text-primary mb-3">{t.computerScience.admissionsTab.requirements}</h4>
                     <ul className="space-y-2 text-secondary">
                       <li className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-accent rounded-full"></div>
@@ -901,7 +890,7 @@ export default function ComputerScienceSchoolPage() {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-primary mb-3">Application Deadlines</h4>
+                    <h4 className="font-semibold text-primary mb-3">{t.computerScience.admissionsTab.applicationDeadlines}</h4>
                     <div className="space-y-2 text-secondary">
                       <div className="flex justify-between">
                         <span>Fall Admission</span>
@@ -919,9 +908,9 @@ export default function ComputerScienceSchoolPage() {
                   </div>
 
                   <div className="glassmorphism-dark rounded-lg p-4">
-                    <h4 className="font-semibold text-primary mb-2">Graduate Tuition</h4>
+                    <h4 className="font-semibold text-primary mb-2">{t.computerScience.admissionsTab.tuitionFees}</h4>
                     <div className="text-2xl font-bold text-accent2 mb-1">$18,000</div>
-                    <div className="text-sm text-secondary">per academic year</div>
+                    <div className="text-sm text-secondary">{t.computerScience.admissionsTab.perYear}</div>
                   </div>
                 </div>
               </div>
@@ -929,7 +918,7 @@ export default function ComputerScienceSchoolPage() {
 
             {/* Financial Aid */}
             <div className="neumorphic-card2 rounded-2xl p-8 mt-8 scroll-reveal revealed fade-in-up">
-              <h3 className="text-2xl font-playfair font-bold text-primary mb-6 text-center">Financial Aid &amp; Scholarships
+              <h3 className="text-2xl font-playfair font-bold text-primary mb-6 text-center">{t.computerScience.admissionsTab.financialAid}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="glassmorphism-dark rounded-xl p-6 text-center">
@@ -938,8 +927,8 @@ export default function ComputerScienceSchoolPage() {
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
                   </div>
-                  <h4 className="font-semibold text-primary mb-2">Merit Scholarships</h4>
-                  <p className="text-secondary text-sm">Up to $15,000 annually for outstanding academic achievement
+                  <h4 className="font-semibold text-primary mb-2">{t.computerScience.admissionsTab.meritScholarships}</h4>
+                  <p className="text-secondary text-sm">{t.computerScience.admissionsTab.meritDesc}
                   </p>
                 </div>
 
@@ -949,9 +938,8 @@ export default function ComputerScienceSchoolPage() {
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                     </svg>
                   </div>
-                  <h4 className="font-semibold text-primary mb-2">Need-Based Aid</h4>
-                  <p className="text-secondary text-sm">Financial assistance based on demonstrated need and family
-                    income</p>
+                  <h4 className="font-semibold text-primary mb-2">{t.computerScience.admissionsTab.needBasedAid}</h4>
+                  <p className="text-secondary text-sm">{t.computerScience.admissionsTab.needDesc}</p>
                 </div>
 
                 <div className="glassmorphism-dark rounded-xl p-6 text-center">
@@ -960,9 +948,8 @@ export default function ComputerScienceSchoolPage() {
                       <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z" />
                     </svg>
                   </div>
-                  <h4 className="font-semibold text-primary mb-2">Research Assistantships</h4>
-                  <p className="text-secondary text-sm">Graduate students can receive funding through research
-                    positions</p>
+                  <h4 className="font-semibold text-primary mb-2">{t.computerScience.admissionsTab.researchAssistantships}</h4>
+                  <p className="text-secondary text-sm">{t.computerScience.admissionsTab.researchDesc}</p>
                 </div>
               </div>
             </div>
@@ -974,20 +961,20 @@ export default function ComputerScienceSchoolPage() {
       <section className="bg-gradient-to-br from-primary via-secondary to-primary py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-playfair font-bold text-white mb-6">
-            Ready to Shape the Future of Technology?
+            {t.computerScience.cta.title}
           </h2>
           <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-            Join our community of innovators, researchers, and future technology leaders. Start your journey today.
+            {t.computerScience.cta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
-              Apply Now
+              {t.computerScience.cta.applyButton}
             </button>
             <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300">
-              Schedule Campus Visit
+              {t.computerScience.cta.scheduleButton}
             </button>
             <button className="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300">
-              Download Brochure
+              {t.computerScience.cta.downloadButton}
             </button>
           </div>
         </div>
@@ -998,9 +985,9 @@ export default function ComputerScienceSchoolPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <h3 className="text-xl font-playfair font-bold text-primary mb-4">School of Computer Science</h3>
+              <h3 className="text-xl font-playfair font-bold text-primary mb-4">{t.computerScience.hero.title}</h3>
               <p className="text-secondary mb-4">Kutaisi International University</p>
-              <p className="text-secondary mb-4">Leading innovation in technology education and research.</p>
+              <p className="text-secondary mb-4">{t.computerScience.footer.description}</p>
               <div className="flex space-x-4">
                 <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold">f</span>
@@ -1014,16 +1001,16 @@ export default function ComputerScienceSchoolPage() {
               </div>
             </div>
             <div>
-              <h4 className="font-semibold text-primary mb-4">Quick Links</h4>
+              <h4 className="font-semibold text-primary mb-4">{t.computerScience.footer.quickLinks}</h4>
               <ul className="space-y-2 text-secondary">
-                <li><button className="hover:text-primary transition-colors">Programs</button></li>
-                <li><button className="hover:text-primary transition-colors">Faculty</button></li>
-                <li><button className="hover:text-primary transition-colors">Research</button></li>
-                <li><button className="hover:text-primary transition-colors">Admissions</button></li>
+                <li><button className="hover:text-primary transition-colors">{t.computerScience.tabs.programs}</button></li>
+                <li><button className="hover:text-primary transition-colors">{t.computerScience.tabs.faculty}</button></li>
+                <li><button className="hover:text-primary transition-colors">{t.computerScience.tabs.research}</button></li>
+                <li><button className="hover:text-primary transition-colors">{t.computerScience.tabs.admissions}</button></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-primary mb-4">Contact</h4>
+              <h4 className="font-semibold text-primary mb-4">{t.computerScience.footer.contact}</h4>
               <ul className="space-y-2 text-secondary">
                 <li>+995 431 25 25 25</li>
                 <li>cs@kiu.edu.ge</li>
@@ -1033,7 +1020,7 @@ export default function ComputerScienceSchoolPage() {
             </div>
           </div>
           <div className="border-t border-gray-200 mt-8 pt-8 text-center text-secondary">
-            <p>&copy; 2024 Kutaisi International University - School of Computer Science. All rights reserved.</p>
+            <p>&copy; 2024 {t.computerScience.footer.copyright}</p>
           </div>
         </div>
       </footer>

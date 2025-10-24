@@ -51,11 +51,11 @@ export function NewsGrid({ news, itemsPerPage = 6 }: NewsGridProps) {
   return (
     <div id="news-grid" className="w-full">
       <div className="flex items-center justify-between mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#15396F]">
           {lang === "en" ? "Latest News" : "უახლესი ამბები"}
         </h2>
         <div className="text-sm text-muted-foreground">
-          {lang === "en" ? "Page" : "გვერდი"} {currentPage} / {totalPages}
+          {lang === "en" ? "Page" : "გვერდი"} {currentPage} {lang === "en" ? "of" : "/"} {totalPages}
         </div>
       </div>
 
@@ -63,7 +63,7 @@ export function NewsGrid({ news, itemsPerPage = 6 }: NewsGridProps) {
         {currentNews.map((item) => (
           <Card
             key={item.id}
-            className="overflow-hidden hover:shadow-lg transition-shadow"
+            className="overflow-hidden hover:shadow-lg transition-shadow border border-gray-200"
           >
             <div className="relative h-48">
               <Image
@@ -74,30 +74,30 @@ export function NewsGrid({ news, itemsPerPage = 6 }: NewsGridProps) {
               />
             </div>
             <CardHeader className="pb-3">
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-between mb-3">
                 <Badge
                   variant="secondary"
-                  className={`text-xs font-medium ${getCategoryColor(
+                  className={`text-xs font-semibold uppercase border-0 ${getCategoryColor(
                     item.category
                   )}`}
                 >
                   {item.category}
                 </Badge>
-                <span className="text-xs text-muted-foreground">
+                <span className="text-xs text-muted-foreground font-medium">
                   {formatDate(item.date)}
                 </span>
               </div>
-              <h3 className="font-semibold text-lg leading-tight text-balance">
+              <h3 className="font-bold text-lg leading-tight text-balance text-[#15396F]">
                 {item.title}
               </h3>
             </CardHeader>
             <CardContent className="pt-0">
-              <p className="text-sm text-muted-foreground mb-4 text-pretty">
+              <p className="text-sm text-muted-foreground mb-4 text-pretty leading-relaxed">
                 {item.content}
               </p>
               <Link
                 href={`/news/${item.id}`}
-                className="p-0 h-auto text-primary underline text-sm"
+                className="p-0 h-auto text-[#15396F] font-semibold text-sm hover:underline inline-flex items-center"
               >
                 {lang === "en" ? "Read more →" : "წაიკითხე მეტი →"}
               </Link>

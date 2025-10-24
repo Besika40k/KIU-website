@@ -59,7 +59,7 @@ export function NewsCarousel({ news }: NewsCarouselProps) {
                     <div className="max-w-4xl">
                       <Badge
                         variant="secondary"
-                        className="mb-4 bg-yellow-500 text-black font-medium"
+                        className="mb-4 bg-[#FED73C] text-black font-semibold border-0 px-4 py-2 text-sm"
                       >
                         {formatDate(item.date)}
                       </Badge>
@@ -70,8 +70,7 @@ export function NewsCarousel({ news }: NewsCarouselProps) {
                         {item.content}
                       </p>
                       <Button
-                        variant="outline"
-                        className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+                        className="bg-[#FED73C] text-black font-semibold hover:bg-[#FED73C]/90 border-0"
                       >
                         {t.homepage.latestNews.readFullStory}
                       </Button>

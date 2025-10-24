@@ -2,7 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLanguage } from '../context/LanguageContext';
 import programsData from '../data/programs.json';
+import enTranslations from '../../../i18n/en.json';
+import geTranslations from '../../../i18n/ge.json';
 
 interface School {
   id: string;
@@ -245,6 +248,8 @@ const getIcon = (iconName: string) => {
 };
 
 export default function ProgramsPage() {
+  const { lang } = useLanguage();
+  const t = lang === 'en' ? enTranslations : geTranslations;
   const [expandedSchool, setExpandedSchool] = useState<string | null>(null);
   const [showOverlay, setShowOverlay] = useState(false);
   const [tooltip, setTooltip] = useState({ visible: false, content: '', x: 0, y: 0 });
@@ -278,18 +283,128 @@ export default function ProgramsPage() {
     closeExpandedCard();
   };
 
-  const handleMapHover = (location: string, event: React.MouseEvent) => {
-    const locations = {
-      MIT: "🇺🇸 MIT - Computer Science",
-      Oxford: "🇬🇧 Oxford - Medicine",
-      TUM: "🇩🇪 TUM - Architecture",
-      Sorbonne: "🇫🇷 Sorbonne - Law",
-      UofT: "🇨🇦 UofT - Psychology"
-    };
-    
+  const [selectedPartner, setSelectedPartner] = useState<string | null>(null);
+  const [filterType, setFilterType] = useState<string>('all');
+
+  const partnerUniversities = [
+    {
+      id: 'MIT',
+      name: 'Massachusetts Institute of Technology',
+      country: 'USA',
+      flag: '🇺🇸',
+      field: 'Computer Science & AI',
+      type: 'research',
+      students: 45,
+      projects: 12,
+      established: 2021,
+      x: 180,
+      y: 120,
+      description: 'Leading collaboration in artificial intelligence and machine learning research'
+    },
+    {
+      id: 'Oxford',
+      name: 'University of Oxford',
+      country: 'United Kingdom',
+      flag: '🇬🇧',
+      field: 'Medicine & Life Sciences',
+      type: 'both',
+      students: 32,
+      projects: 8,
+      established: 2020,
+      x: 380,
+      y: 110,
+      description: 'Joint medical research and student exchange programs'
+    },
+    {
+      id: 'TUM',
+      name: 'Technical University of Munich',
+      country: 'Germany',
+      flag: '🇩🇪',
+      field: 'Architecture & Engineering',
+      type: 'strategic',
+      students: 67,
+      projects: 25,
+      established: 2019,
+      x: 420,
+      y: 115,
+      description: 'Strategic partnership in engineering education and innovation'
+    },
+    {
+      id: 'Sorbonne',
+      name: 'Sorbonne University',
+      country: 'France',
+      flag: '🇫🇷',
+      field: 'Law & Social Sciences',
+      type: 'exchange',
+      students: 28,
+      projects: 6,
+      established: 2021,
+      x: 395,
+      y: 125,
+      description: 'Student exchange and legal studies collaboration'
+    },
+    {
+      id: 'UofT',
+      name: 'University of Toronto',
+      country: 'Canada',
+      flag: '🇨🇦',
+      field: 'Psychology & Neuroscience',
+      type: 'research',
+      students: 23,
+      projects: 9,
+      established: 2022,
+      x: 200,
+      y: 105,
+      description: 'Collaborative research in cognitive science and psychology'
+    },
+    {
+      id: 'Melbourne',
+      name: 'University of Melbourne',
+      country: 'Australia',
+      flag: '🇦🇺',
+      field: 'Environmental Science',
+      type: 'research',
+      students: 18,
+      projects: 7,
+      established: 2022,
+      x: 680,
+      y: 260,
+      description: 'Environmental research and sustainability initiatives'
+    },
+    {
+      id: 'Tokyo',
+      name: 'University of Tokyo',
+      country: 'Japan',
+      flag: '🇯🇵',
+      field: 'Robotics & Technology',
+      type: 'research',
+      students: 35,
+      projects: 14,
+      established: 2021,
+      x: 650,
+      y: 135,
+      description: 'Advanced robotics and technology research collaboration'
+    },
+    {
+      id: 'Singapore',
+      name: 'National University of Singapore',
+      country: 'Singapore',
+      flag: '🇸🇬',
+      field: 'Business & Innovation',
+      type: 'both',
+      students: 41,
+      projects: 11,
+      established: 2020,
+      x: 600,
+      y: 180,
+      description: 'Business innovation and entrepreneurship programs'
+    }
+  ];
+
+  const handleMapHover = (partner: typeof partnerUniversities[0], event: React.MouseEvent) => {
     setTooltip({
       visible: true,
-      content: locations[location as keyof typeof locations] || '',
+      content: `${partner.flag} ${partner.name}`,
       x: event.pageX + 15,
       y: event.pageY + 15
     });
@@ -298,6 +413,14 @@ export default function ProgramsPage() {
   const handleMapLeave = () => {
     setTooltip({ visible: false, content: '', x: 0, y: 0 });
   };
+
+  const handlePartnerClick = (partnerId: string) => {
+    setSelectedPartner(selectedPartner === partnerId ? null : partnerId);
+  };
+
+  const filteredPartners = filterType === 'all' 
+    ? partnerUniversities 
+    : partnerUniversities.filter(p => p.type === filterType || p.type === 'both');
 
   // Scroll reveal effect
   useEffect(() => {
@@ -339,17 +462,17 @@ export default function ProgramsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-white z-10">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold mb-6 leading-tight">
-                Schools at Kutaisi International University
+                {t.programs.hero.title}
               </h1>
               <p className="text-xl lg:text-2xl mb-8 text-blue-100 leading-relaxed">
-                Discover our diverse academic schools, each dedicated to excellence in education, research, and innovation.
+                {t.programs.hero.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="bg-accent hover:bg-yellow-400 text-primary font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
-                  Explore All Schools
+                  {t.programs.hero.exploreButton}
                 </button>
                 <button className="glassmorphism text-white hover:bg-white hover:bg-opacity-20 font-semibold px-8 py-4 rounded-xl transition-all duration-300">
-                  Virtual Campus Tour
+                  {t.programs.hero.virtualTourButton}
                 </button>
               </div>
             </div>
@@ -383,51 +506,301 @@ export default function ProgramsPage() {
 
       {/* Global Academic Network Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12 scroll-reveal" data-scroll-delay="0">
-          <h2 className="text-3xl font-playfair font-bold text-primary mb-4">Global Academic Network</h2>
-          <p className="text-lg text-secondary max-w-2xl mx-auto">Our schools maintain partnerships with leading universities worldwide</p>
+        <div className="text-center mb-8 scroll-reveal" data-scroll-delay="0">
+          <h2 className="text-3xl font-playfair font-bold text-primary mb-4">{t.programs.globalNetwork.title}</h2>
+          <p className="text-lg text-secondary max-w-2xl mx-auto">{t.programs.globalNetwork.subtitle}</p>
         </div>
         
-        <div className="world-map rounded-2xl p-8 h-96 relative overflow-hidden scroll-reveal" data-scroll-delay="200">
-          <svg viewBox="0 0 800 400" className="w-full h-full">
-            <path d="M100 150 Q 200 120 300 150 T 500 150 Q 600 130 700 150" stroke="#15396F" strokeWidth="2" fill="none" opacity="0.3"></path>
-            <path d="M150 200 Q 250 180 350 200 T 550 200 Q 650 180 750 200" stroke="#15396F" strokeWidth="2" fill="none" opacity="0.3"></path>
-            <path d="M120 250 Q 220 230 320 250 T 520 250 Q 620 230 720 250" stroke="#15396F" strokeWidth="2" fill="none" opacity="0.3"></path>
-            
-            <circle cx="200" cy="150" r="6" fill="#FED73C" className="cursor-pointer hover:r-8 transition-all partner-uni-glow" data-location="MIT" onMouseOver={(e) => handleMapHover('MIT', e)} onMouseLeave={handleMapLeave}></circle>
-            <circle cx="350" cy="180" r="6" fill="#FED73C" className="cursor-pointer hover:r-8 transition-all partner-uni-glow" data-location="Oxford" onMouseOver={(e) => handleMapHover('Oxford', e)} onMouseLeave={handleMapLeave}></circle>
-            <circle cx="500" cy="160" r="6" fill="#FED73C" className="cursor-pointer hover:r-8 transition-all partner-uni-glow" data-location="TUM" onMouseOver={(e) => handleMapHover('TUM', e)} onMouseLeave={handleMapLeave}></circle>
-            <circle cx="600" cy="200" r="6" fill="#FED73C" className="cursor-pointer hover:r-8 transition-all partner-uni-glow" data-location="Sorbonne" onMouseOver={(e) => handleMapHover('Sorbonne', e)} onMouseLeave={handleMapLeave}></circle>
-            <circle cx="300" cy="250" r="6" fill="#FED73C" className="cursor-pointer hover:r-8 transition-all partner-uni-glow" data-location="UofT" onMouseOver={(e) => handleMapHover('UofT', e)} onMouseLeave={handleMapLeave}></circle>
-            
-            <line x1="400" y1="200" x2="200" y2="150" className="connection-line" style={{animationDelay: '0s'}}></line>
-            <line x1="400" y1="200" x2="350" y2="180" className="connection-line" style={{animationDelay: '0.3s'}}></line>
-            <line x1="400" y1="200" x2="500" y2="160" className="connection-line" style={{animationDelay: '0.6s'}}></line>
-            <line x1="400" y1="200" x2="600" y2="200" className="connection-line" style={{animationDelay: '0.9s'}}></line>
-            <line x1="400" y1="200" x2="300" y2="250" className="connection-line" style={{animationDelay: '1.2s'}}></line>
-            
-            <circle cx="400" cy="200" r="10" fill="#15396F"></circle>
-            <text x="400" y="205" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">KIU</text>
-          </svg>
-          
-          <div className="absolute bottom-4 left-4 glassmorphism rounded-lg p-4">
-            <h4 className="font-semibold text-primary mb-2">Partner Universities</h4>
-            <div className="text-sm text-secondary space-y-1">
-              <div>🇺🇸 MIT - Computer Science</div>
-              <div>🇬🇧 Oxford - Medicine</div>
-              <div>🇩🇪 TUM - Architecture</div>
-              <div>🇫🇷 Sorbonne - Law</div>
-              <div>🇨🇦 UofT - Psychology</div>
-            </div>
+        {/* Network Statistics */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 scroll-reveal" data-scroll-delay="100">
+          <div className="glassmorphism rounded-xl p-6 text-center">
+            <div className="text-3xl font-bold text-primary mb-2">{partnerUniversities.length}+</div>
+            <div className="text-sm text-secondary">Partner Universities</div>
           </div>
+          <div className="glassmorphism rounded-xl p-6 text-center">
+            <div className="text-3xl font-bold text-primary mb-2">{partnerUniversities.reduce((sum, p) => sum + p.students, 0)}+</div>
+            <div className="text-sm text-secondary">Exchange Students</div>
+          </div>
+          <div className="glassmorphism rounded-xl p-6 text-center">
+            <div className="text-3xl font-bold text-primary mb-2">{partnerUniversities.reduce((sum, p) => sum + p.projects, 0)}+</div>
+            <div className="text-sm text-secondary">Joint Projects</div>
+          </div>
+          <div className="glassmorphism rounded-xl p-6 text-center">
+            <div className="text-3xl font-bold text-primary mb-2">25+</div>
+            <div className="text-sm text-secondary">Countries</div>
+          </div>
+        </div>
+
+        {/* Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-3 mb-8 scroll-reveal" data-scroll-delay="150">
+          <button 
+            onClick={() => setFilterType('all')}
+            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+              filterType === 'all' 
+                ? 'bg-primary text-white shadow-lg' 
+                : 'glassmorphism text-primary hover:bg-primary hover:text-white'
+            }`}
+          >
+            All Partnerships
+          </button>
+          <button 
+            onClick={() => setFilterType('research')}
+            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+              filterType === 'research' 
+                ? 'bg-accent text-primary shadow-lg' 
+                : 'glassmorphism text-primary hover:bg-accent'
+            }`}
+          >
+            Research Collaborations
+          </button>
+          <button 
+            onClick={() => setFilterType('exchange')}
+            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+              filterType === 'exchange' 
+                ? 'bg-secondary text-white shadow-lg' 
+                : 'glassmorphism text-primary hover:bg-secondary hover:text-white'
+            }`}
+          >
+            Student Exchange
+          </button>
+          <button 
+            onClick={() => setFilterType('strategic')}
+            className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+              filterType === 'strategic' 
+                ? 'bg-green-600 text-white shadow-lg' 
+                : 'glassmorphism text-primary hover:bg-green-600 hover:text-white'
+            }`}
+          >
+            Strategic Partners
+          </button>
+        </div>
+        
+        {/* Interactive World Map */}
+        <div className="world-map rounded-2xl p-4 md:p-8 relative overflow-hidden scroll-reveal mb-8" data-scroll-delay="200" style={{ minHeight: '500px' }}>
+          <svg viewBox="0 0 800 350" className="w-full h-full" style={{ minHeight: '450px' }}>
+            <defs>
+              <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style={{ stopColor: '#15396F', stopOpacity: 0.1 }} />
+                <stop offset="100%" style={{ stopColor: '#3D5C84', stopOpacity: 0.2 }} />
+              </linearGradient>
+              
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+
+              <radialGradient id="pulseGradient">
+                <stop offset="0%" style={{ stopColor: '#FED73C', stopOpacity: 1 }} />
+                <stop offset="100%" style={{ stopColor: '#FED73C', stopOpacity: 0 }} />
+              </radialGradient>
+            </defs>
+
+            {/* Stylized World Map Background */}
+            <g opacity="0.15">
+              {/* North America */}
+              <path d="M50 80 Q100 60 150 80 L180 120 Q170 140 150 130 Q120 120 100 140 L60 130 Q40 110 50 80 Z" fill="url(#mapGradient)" stroke="#15396F" strokeWidth="1"/>
+              
+              {/* South America */}
+              <path d="M150 180 L180 200 Q190 240 170 270 Q150 280 140 260 L130 220 Q135 190 150 180 Z" fill="url(#mapGradient)" stroke="#15396F" strokeWidth="1"/>
+              
+              {/* Europe */}
+              <path d="M350 80 Q380 70 410 85 L430 110 Q425 125 405 120 L375 115 Q355 105 350 80 Z" fill="url(#mapGradient)" stroke="#15396F" strokeWidth="1"/>
+              
+              {/* Africa */}
+              <path d="M370 140 L400 140 Q420 180 410 220 Q390 250 370 245 Q355 220 360 180 Q365 150 370 140 Z" fill="url(#mapGradient)" stroke="#15396F" strokeWidth="1"/>
+              
+              {/* Asia */}
+              <path d="M450 60 Q520 50 600 70 L650 100 Q670 130 650 150 L600 160 Q550 140 500 130 L460 110 Q445 85 450 60 Z" fill="url(#mapGradient)" stroke="#15396F" strokeWidth="1"/>
+              
+              {/* Australia */}
+              <path d="M630 240 Q670 235 700 250 L710 270 Q700 285 670 280 Q640 270 630 240 Z" fill="url(#mapGradient)" stroke="#15396F" strokeWidth="1"/>
+            </g>
+
+            {/* Grid Lines */}
+            <g opacity="0.1" stroke="#15396F" strokeWidth="0.5" strokeDasharray="5,5">
+              <line x1="0" y1="87.5" x2="800" y2="87.5"/>
+              <line x1="0" y1="175" x2="800" y2="175"/>
+              <line x1="0" y1="262.5" x2="800" y2="262.5"/>
+              <line x1="200" y1="0" x2="200" y2="350"/>
+              <line x1="400" y1="0" x2="400" y2="350"/>
+              <line x1="600" y1="0" x2="600" y2="350"/>
+            </g>
+
+            {/* Connection Lines with Animation */}
+            {filteredPartners.map((partner, index) => (
+              <g key={`connection-${partner.id}`}>
+                <line 
+                  x1="430" 
+                  y1="150" 
+                  x2={partner.x} 
+                  y2={partner.y}
+                  stroke={selectedPartner === partner.id ? '#FED73C' : '#15396F'}
+                  strokeWidth={selectedPartner === partner.id ? '2' : '1'}
+                  opacity={selectedPartner === partner.id ? '0.8' : '0.3'}
+                  strokeDasharray="5,5"
+                  className="connection-line"
+                  style={{ 
+                    animationDelay: `${index * 0.2}s`,
+                    transition: 'all 0.3s ease'
+                  }}
+                />
+                
+                {/* Animated particles along connection lines */}
+                {selectedPartner === partner.id && (
+                  <circle r="3" fill="#FED73C" filter="url(#glow)">
+                    <animateMotion
+                      dur="2s"
+                      repeatCount="indefinite"
+                      path={`M430,150 L${partner.x},${partner.y}`}
+                    />
+                  </circle>
+                )}
+              </g>
+            ))}
+
+            {/* Partner University Markers */}
+            {filteredPartners.map((partner, index) => (
+              <g 
+                key={partner.id}
+                onClick={() => handlePartnerClick(partner.id)}
+                onMouseOver={(e) => handleMapHover(partner, e as any)}
+                onMouseLeave={handleMapLeave}
+                className="cursor-pointer"
+                style={{ transition: 'all 0.3s ease' }}
+              >
+                {/* Pulse effect */}
+                <circle 
+                  cx={partner.x} 
+                  cy={partner.y} 
+                  r={selectedPartner === partner.id ? "20" : "12"} 
+                  fill="url(#pulseGradient)"
+                  opacity={selectedPartner === partner.id ? "0.6" : "0.3"}
+                  className="partner-uni-glow"
+                >
+                  <animate
+                    attributeName="r"
+                    values={selectedPartner === partner.id ? "20;30;20" : "12;18;12"}
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                  <animate
+                    attributeName="opacity"
+                    values="0.3;0.6;0.3"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                
+                {/* Main marker */}
+                <circle 
+                  cx={partner.x} 
+                  cy={partner.y} 
+                  r={selectedPartner === partner.id ? "10" : "7"}
+                  fill="#FED73C"
+                  stroke="#15396F"
+                  strokeWidth="2"
+                  filter="url(#glow)"
+                  style={{ transition: 'all 0.3s ease' }}
+                />
+                
+                {/* Partner initial/flag */}
+                <text 
+                  x={partner.x} 
+                  y={partner.y + 3} 
+                  textAnchor="middle" 
+                  fill="#15396F" 
+                  fontSize={selectedPartner === partner.id ? "8" : "6"}
+                  fontWeight="bold"
+                  style={{ pointerEvents: 'none', transition: 'all 0.3s ease' }}
+                >
+                  {partner.flag}
+                </text>
+              </g>
+            ))}
+
+            {/* KIU Central Hub (Georgia) */}
+            <g>
+              <circle cx="430" cy="150" r="25" fill="url(#pulseGradient)" opacity="0.4">
+                <animate attributeName="r" values="25;35;25" dur="3s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="3s" repeatCount="indefinite"/>
+              </circle>
+              
+              <circle cx="430" cy="150" r="15" fill="#15396F" stroke="#FED73C" strokeWidth="3" filter="url(#glow)"/>
+              
+              <text x="430" y="155" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">
+                KIU
+              </text>
+              
+              <text x="430" y="175" textAnchor="middle" fill="#15396F" fontSize="9" fontWeight="600">
+                Georgia 🇬🇪
+              </text>
+            </g>
+          </svg>
+        </div>
+
+        {/* Partner Details Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 scroll-reveal" data-scroll-delay="300">
+          {filteredPartners.map((partner, index) => (
+            <div 
+              key={partner.id}
+              onClick={() => handlePartnerClick(partner.id)}
+              className={`glassmorphism rounded-xl p-5 cursor-pointer transition-all duration-300 hover:shadow-xl ${
+                selectedPartner === partner.id 
+                  ? 'ring-2 ring-accent scale-105 bg-gradient-to-br from-primary/5 to-accent/5' 
+                  : 'hover:scale-102'
+              }`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="flex items-start justify-between mb-3">
+                <div className="text-3xl">{partner.flag}</div>
+                <span className={`text-xs px-2 py-1 rounded-full font-medium ${
+                  partner.type === 'research' ? 'bg-blue-100 text-blue-700' :
+                  partner.type === 'exchange' ? 'bg-green-100 text-green-700' :
+                  partner.type === 'strategic' ? 'bg-purple-100 text-purple-700' :
+                  'bg-yellow-100 text-yellow-700'
+                }`}>
+                  {partner.type === 'research' ? 'Research' : 
+                   partner.type === 'exchange' ? 'Exchange' :
+                   partner.type === 'strategic' ? 'Strategic' : 'Multi-faceted'}
+                </span>
+              </div>
+              
+              <h4 className="font-semibold text-primary mb-1 text-sm leading-tight">{partner.name}</h4>
+              <p className="text-xs text-secondary mb-3">{partner.field}</p>
+              
+              <div className="space-y-2">
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-secondary">Students:</span>
+                  <span className="font-semibold text-primary">{partner.students}</span>
+                </div>
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-secondary">Projects:</span>
+                  <span className="font-semibold text-primary">{partner.projects}</span>
+                </div>
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-secondary">Since:</span>
+                  <span className="font-semibold text-primary">{partner.established}</span>
+                </div>
+              </div>
+              
+              {selectedPartner === partner.id && (
+                <div className="mt-3 pt-3 border-t border-gray-200">
+                  <p className="text-xs text-secondary italic">{partner.description}</p>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Schools Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12 scroll-reveal" data-scroll-delay="0">
-          <h2 className="text-3xl font-playfair font-bold text-primary mb-4">Choose Your Academic Path</h2>
-          <p className="text-lg text-secondary max-w-2xl mx-auto">Each school offers unique opportunities for growth, discovery, and professional development.</p>
+          <h2 className="text-3xl font-playfair font-bold text-primary mb-4">{t.programs.choosePath.title}</h2>
+          <p className="text-lg text-secondary max-w-2xl mx-auto">{t.programs.choosePath.subtitle}</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -458,8 +831,8 @@ export default function ProgramsPage() {
                 <p className="text-xs italic text-black font-medium mb-3">"{school.tagline}"</p>
                 
                 <div className="flex justify-center gap-4 mb-4 text-xs">
-                  <span className="glassmorphism text-primary px-3 py-1 rounded-full font-medium">{school.studentCount} Students</span>
-                  <span className="glassmorphism-dark text-primary px-3 py-1 rounded-full font-medium">{school.programCount} Programs</span>
+                  <span className="glassmorphism text-primary px-3 py-1 rounded-full font-medium">{school.studentCount} {t.programs.students}</span>
+                  <span className="glassmorphism-dark text-primary px-3 py-1 rounded-full font-medium">{school.programCount} {t.programs.programs}</span>
                 </div>
                 
                 <p className="text-secondary text-sm mb-4">
@@ -474,7 +847,7 @@ export default function ProgramsPage() {
                       navigateToSchool(school.id);
                     }}
                   >
-                    Explore Programs
+                    {t.programs.explorePrograms}
                   </button>
                   <button 
                     className="bg-primary hover:bg-secondary text-white font-medium px-4 py-2 rounded-lg transition-all duration-300 text-sm"
@@ -483,7 +856,7 @@ export default function ProgramsPage() {
                       quickApply(school.id);
                     }}
                   >
-                    Apply Now
+                    {t.programs.applyNow}
                   </button>
                 </div>
               </div>
@@ -510,8 +883,8 @@ export default function ProgramsPage() {
         {/* Alumni Success Stories */}
         <div className="mt-20 scroll-reveal" data-scroll-delay="0">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-playfair font-bold text-primary mb-4">Alumni Success Stories</h2>
-            <p className="text-lg text-secondary">Our graduates are making impact worldwide</p>
+            <h2 className="text-3xl font-playfair font-bold text-primary mb-4">{t.programs.alumniStories.title}</h2>
+            <p className="text-lg text-secondary">{t.programs.alumniStories.subtitle}</p>
           </div>
           
           <div className="alumni-slider rounded-2xl p-8 overflow-hidden">
@@ -579,19 +952,19 @@ export default function ProgramsPage() {
                     onClick={closeExpandedCard}
                     className="bg-primary text-white px-8 py-3 rounded-lg hover:bg-secondary transition-colors mr-4"
                   >
-                    Close
+                    {t.programs.close}
                   </button>
                   <button 
                     onClick={() => navigateToSchool(expandedSchool)}
                     className="bg-secondary text-white px-8 py-3 rounded-lg hover:bg-primary transition-colors mr-4"
                   >
-                    Learn More
+                    {t.programs.learnMore}
                   </button>
                   <button 
                     onClick={() => quickApply(expandedSchool)}
                     className="bg-accent text-primary px-8 py-3 rounded-lg hover:bg-yellow-400 transition-colors"
                   >
-                    Apply Now
+                    {t.programs.applyNow}
                   </button>
                 </div>
               </div>
