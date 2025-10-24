@@ -10,83 +10,47 @@ export default function HeroSection() {
 
   return (
     <section
-      className="py-16 px-4"
+      className="py-24"
       style={{
         background: "linear-gradient(135deg, #EFF6FF 0%, #E0E7FF 100%)",
       }}
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            {/* Main Title */}
-            <div>
-              <h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight"
-                style={{ fontFamily: "Playfair Display, serif" }}
-              >
-                {t.homepage.hero.title.split(t.homepage.hero.titleHighlight)[0]}
-                <span style={{ color: "#1E40AF" }}>
-                  {t.homepage.hero.titleHighlight}
-                </span>
-              </h1>
+            <div className="space-y-4">
+              <h2 className="text-5xl font-bold text-[#0a0a0a] leading-tight" style={{ fontFamily: "Playfair Display, serif" }}>
+                Where Knowledge Creates <span className="text-[#15396F]">Future!</span>
+              </h2>
+              <p className="text-lg text-[#3D5C84] italic font-medium">Hic Scientia futūrum creat!</p>
             </div>
-
-            {/* Latin Motto */}
-            <p className="text-lg italic text-gray-600">
-              {t.homepage.hero.motto}
+            <p className="text-xl text-[#3D5C84] leading-relaxed">
+              Kutaisi International University has opened its doors to the first cohort of students in 2020. Our goal is to gradually become an international hub of education, science and technology in the region.
             </p>
-
-            {/* Description */}
-            <p className="text-lg text-gray-700 leading-relaxed">
-              {t.homepage.hero.description}
-            </p>
-
-            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                className="text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:opacity-90"
-                style={{ backgroundColor: "#15396F" }}
-              >
-                {t.homepage.hero.applyButton}
+              <button className="bg-[#15396F] text-white px-8 py-4 rounded-lg shadow-light font-semibold hover:bg-[#3D5C84] transition-all duration-200 transform hover:scale-105">
+                Apply Now
               </button>
-              <button
-                className="text-black px-8 py-4 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:opacity-90"
-                style={{ backgroundColor: "#FED73C" }}
-              >
-                {t.homepage.hero.exploreButton}
+              <button className="bg-[#FED73C] text-[#0a0a0a] px-8 py-4 rounded-lg shadow-light font-semibold hover:bg-yellow-400 transition-all duration-200 transform hover:scale-105">
+                Explore Programs
               </button>
             </div>
           </div>
-
-          {/* Right Image */}
           <div className="relative">
-            <div className="relative transform rotate-2 hover:rotate-0 transition-transform duration-500">
-              <div className="bg-white p-4 shadow-2xl rounded-lg">
-                <Image
-                  src="/HomePageImages/home-page-rotated.jpg"
-                  alt="KIU Campus"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto rounded-lg"
-                />
+            <div className="bg-white rounded-lg shadow-light p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
+              <Image
+                src="/HomePageImages/home-page-rotated.jpg"
+                alt="KIU Campus"
+                width={600}
+                height={400}
+                className="w-full h-80 object-cover rounded-lg"
+              />
+              <div className="mt-6 text-center">
+                <h3 className="text-xl font-semibold text-[#0a0a0a]" style={{ fontFamily: "Playfair Display, serif" }}>
+                  Modern Campus in Kutaisi
+                </h3>
+                <p className="text-[#3D5C84] mt-2">State-of-the-art facilities for world-class education</p>
               </div>
-            </div>
-
-            {/* Image Caption */}
-            <div className="mt-6 text-center">
-              <h3
-                className="text-xl font-bold mb-2"
-                style={{
-                  color: "#15396F",
-                  fontFamily: "Playfair Display, serif",
-                }}
-              >
-                {t.homepage.hero.imageCaption}
-              </h3>
-              <p className="text-gray-600">
-                {t.homepage.hero.imageDescription}
-              </p>
             </div>
           </div>
         </div>

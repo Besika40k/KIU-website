@@ -9,71 +9,165 @@ export default function LatestNewsSection() {
 
   return (
     <section
-      className="py-16 px-4"
+      className="py-12 overflow-hidden"
       style={{
         background: "linear-gradient(90deg, #15396F 0%, #3D5C84 100%)",
         boxShadow: "0px 1px 2px 0px #0000000D",
       }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+            className="text-3xl font-bold text-white mb-2"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
-            {t.homepage.latestNews.title}
+            Latest News & Updates
           </h2>
-          <div className="w-16 h-1 bg-[#FED73C] mx-auto"></div>
+          <div className="w-24 h-1 bg-[#FED73C] mx-auto rounded-full"></div>
         </div>
 
-        {/* News Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {t.homepage.latestNews.news.map((newsItem: any, index: number) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-            >
-              {/* Tag */}
-              <div className="mb-4">
-                <span
-                  className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${
-                    newsItem.tagColor === "yellow"
-                      ? "text-[#15396F]"
-                      : "text-white"
-                  }`}
-                  style={{
-                    backgroundColor:
-                      newsItem.tagColor === "yellow" ? "#FED73C" : "#15396F",
-                  }}
-                >
-                  {newsItem.tag}
-                </span>
+        {/* Carousel Container */}
+        <div className="relative overflow-hidden">
+          <div className="flex space-x-6 carousel-scroll">
+            {/* News Card 1 */}
+            <article className="flex-none w-80 bg-white rounded-lg overflow-hidden shadow-light hover:shadow-neuro-sm transition-all duration-300 hover:scale-105">
+              <div className="p-6 h-56 flex flex-col justify-between">
+                <div>
+                  <div className="inline-block px-3 py-1 bg-[#FED73C] text-[#15396F] text-xs font-bold rounded-lg mb-4">
+                    ADMISSION
+                  </div>
+                  <h3 className="text-lg font-bold text-[#15396F] mb-3 leading-tight" style={{ fontFamily: "Playfair Display, serif" }}>
+                    Applications Open for 2024
+                  </h3>
+                  <p className="text-[#3D5C84] text-sm mb-4">
+                    Join the next generation of leaders at KIU with our comprehensive programs.
+                  </p>
+                </div>
+                <a href="#" className="text-[#15396F] font-bold hover:text-[#3D5C84] transition-colors text-sm flex items-center">
+                  Read More 
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
               </div>
+            </article>
 
-              {/* Title */}
-              <h3
-                className="text-lg font-bold mb-3 line-clamp-2"
-                style={{ color: "#15396F" }}
-              >
-                {newsItem.title}
-              </h3>
+            {/* News Card 2 */}
+            <article className="flex-none w-80 bg-white rounded-lg overflow-hidden shadow-light hover:shadow-neuro-sm transition-all duration-300 hover:scale-105">
+              <div className="p-6 h-56 flex flex-col justify-between">
+                <div>
+                  <div className="inline-block px-3 py-1 bg-[#15396F] text-white text-xs font-bold rounded-lg mb-4">
+                    RESEARCH
+                  </div>
+                  <h3 className="text-lg font-bold text-[#15396F] mb-3 leading-tight" style={{ fontFamily: "Playfair Display, serif" }}>
+                    New Research Center Opens
+                  </h3>
+                  <p className="text-[#3D5C84] text-sm mb-4">
+                    State-of-the-art facilities for cutting-edge research and innovation.
+                  </p>
+                </div>
+                <a href="#" className="text-[#15396F] font-bold hover:text-[#3D5C84] transition-colors text-sm flex items-center">
+                  Read More 
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
 
-              {/* Description */}
-              <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                {newsItem.description}
-              </p>
+            {/* News Card 3 */}
+            <article className="flex-none w-80 bg-white rounded-lg overflow-hidden shadow-light hover:shadow-neuro-sm transition-all duration-300 hover:scale-105">
+              <div className="p-6 h-56 flex flex-col justify-between">
+                <div>
+                  <div className="inline-block px-3 py-1 bg-[#3D5C84] text-white text-xs font-bold rounded-lg mb-4">
+                    CAMPUS LIFE
+                  </div>
+                  <h3 className="text-lg font-bold text-[#15396F] mb-3 leading-tight" style={{ fontFamily: "Playfair Display, serif" }}>
+                    Student Activities Week
+                  </h3>
+                  <p className="text-[#3D5C84] text-sm mb-4">
+                    Discover clubs and organizations on our vibrant campus.
+                  </p>
+                </div>
+                <a href="#" className="text-[#15396F] font-bold hover:text-[#3D5C84] transition-colors text-sm flex items-center">
+                  Read More 
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
 
-              {/* Read More Link */}
-              <a
-                href="#"
-                className="font-medium text-sm transition-colors duration-200 hover:opacity-80"
-                style={{ color: "#15396F" }}
-              >
-                {newsItem.link}
-              </a>
-            </div>
-          ))}
+            {/* News Card 4 */}
+            <article className="flex-none w-80 bg-white rounded-lg overflow-hidden shadow-light hover:shadow-neuro-sm transition-all duration-300 hover:scale-105">
+              <div className="p-6 h-56 flex flex-col justify-between">
+                <div>
+                  <div className="inline-block px-3 py-1 bg-[#FED73C] text-[#15396F] text-xs font-bold rounded-lg mb-4">
+                    PARTNERSHIP
+                  </div>
+                  <h3 className="text-lg font-bold text-[#15396F] mb-3 leading-tight" style={{ fontFamily: "Playfair Display, serif" }}>
+                    TUM Collaboration Expands
+                  </h3>
+                  <p className="text-[#3D5C84] text-sm mb-4">
+                    New joint programs with Technical University of Munich.
+                  </p>
+                </div>
+                <a href="#" className="text-[#15396F] font-bold hover:text-[#3D5C84] transition-colors text-sm flex items-center">
+                  Read More 
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            {/* News Card 5 */}
+            <article className="flex-none w-80 bg-white rounded-lg overflow-hidden shadow-light hover:shadow-neuro-sm transition-all duration-300 hover:scale-105">
+              <div className="p-6 h-56 flex flex-col justify-between">
+                <div>
+                  <div className="inline-block px-3 py-1 bg-[#15396F] text-white text-xs font-bold rounded-lg mb-4">
+                    EVENTS
+                  </div>
+                  <h3 className="text-lg font-bold text-[#15396F] mb-3 leading-tight" style={{ fontFamily: "Playfair Display, serif" }}>
+                    International Conference 2024
+                  </h3>
+                  <p className="text-[#3D5C84] text-sm mb-4">
+                    Join leading experts in technology and innovation.
+                  </p>
+                </div>
+                <a href="#" className="text-[#15396F] font-bold hover:text-[#3D5C84] transition-colors text-sm flex items-center">
+                  Read More 
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            {/* News Card 6 */}
+            <article className="flex-none w-80 bg-white rounded-lg overflow-hidden shadow-light hover:shadow-neuro-sm transition-all duration-300 hover:scale-105">
+              <div className="p-6 h-56 flex flex-col justify-between">
+                <div>
+                  <div className="inline-block px-3 py-1 bg-[#3D5C84] text-white text-xs font-bold rounded-lg mb-4">
+                    ACHIEVEMENTS
+                  </div>
+                  <h3 className="text-lg font-bold text-[#15396F] mb-3 leading-tight" style={{ fontFamily: "Playfair Display, serif" }}>
+                    KIU Wins Excellence Award
+                  </h3>
+                  <p className="text-[#3D5C84] text-sm mb-4">
+                    Recognition for outstanding educational innovation.
+                  </p>
+                </div>
+                <a href="#" className="text-[#15396F] font-bold hover:text-[#3D5C84] transition-colors text-sm flex items-center">
+                  Read More 
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
