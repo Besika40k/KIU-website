@@ -70,46 +70,50 @@ export default function Header() {
         {/* Right Section - Language Switcher */}
         <div className="flex items-center space-x-2">
           <div
-            className="flex items-center justify-center w-[102px] h-[44px] rounded-full bg-[#F3F4F6] 
+            className="relative flex items-center justify-center w-[102px] h-[44px] rounded-full bg-[#F3F4F6] 
   shadow-[8px_8px_16px_0px_#D1D5DB_inset,-8px_-8px_16px_0px_#D1D5DB_inset] px-[6px] gap-1"
           >
+            {/* Sliding Indicator Background */}
+            <div
+              className={`absolute w-[48px] h-[32px] rounded-full bg-[#F3F4F6] 
+                shadow-[-4px_-4px_8px_0px_#FFFFFF,4px_4px_8px_0px_#D1D5DB]
+                transition-all duration-500 ease-out
+                ${lang === "en" ? "translate-x-[-23px]" : "translate-x-[23px]"}`}
+            />
+            
             {/* English Button */}
             <button
               onClick={() => handleLanguageSwitch("en")}
-              className={`flex items-center justify-center w-[48px] h-[32px] rounded-full 
+              className={`relative z-10 flex items-center justify-center w-[48px] h-[32px] rounded-full 
       transition-all duration-300 cursor-pointer
-      ${
-        lang === "en"
-          ? "bg-[#F3F4F6] shadow-[-4px_-4px_8px_0px_#FFFFFF,4px_4px_8px_0px_#D1D5DB]"
-          : "bg-transparent shadow-none"
-      }`}
+      hover:scale-105 active:scale-95
+      ${lang === "en" ? "scale-100" : "scale-95 opacity-70"}`}
             >
               <Image
                 src="/united-kingdom.png"
                 alt="English"
                 width={24}
                 height={24}
-                className="w-6 h-6 object-cover"
+                className={`w-6 h-6 object-cover transition-all duration-300 
+                  ${lang === "en" ? "scale-100 opacity-100" : "scale-90 opacity-60"}`}
               />
             </button>
 
             {/* Georgian Button */}
             <button
               onClick={() => handleLanguageSwitch("ge")}
-              className={`flex items-center justify-center w-[48px] h-[32px] rounded-full 
+              className={`relative z-10 flex items-center justify-center w-[48px] h-[32px] rounded-full 
       transition-all duration-300 cursor-pointer
-      ${
-        lang === "ge"
-          ? "bg-[#F3F4F6] shadow-[-4px_-4px_8px_0px_#FFFFFF,4px_4px_8px_0px_#D1D5DB]"
-          : "bg-transparent shadow-none"
-      }`}
+      hover:scale-105 active:scale-95
+      ${lang === "ge" ? "scale-100" : "scale-95 opacity-70"}`}
             >
               <Image
                 src="/georgia.png"
                 alt="Georgian"
                 width={24}
                 height={24}
-                className="w-6 h-6 object-cover"
+                className={`w-6 h-6 object-cover transition-all duration-300 
+                  ${lang === "ge" ? "scale-100 opacity-100" : "scale-90 opacity-60"}`}
               />
             </button>
           </div>
@@ -142,46 +146,50 @@ export default function Header() {
 
           <div className="flex items-center space-x-2">
             <div
-              className="flex items-center justify-center w-[102px] h-[44px] rounded-full bg-[#F3F4F6] 
+              className="relative flex items-center justify-center w-[102px] h-[44px] rounded-full bg-[#F3F4F6] 
   shadow-[8px_8px_16px_0px_#D1D5DB_inset,-8px_-8px_16px_0px_#D1D5DB_inset] px-[6px] gap-1"
             >
+              {/* Sliding Indicator Background */}
+              <div
+                className={`absolute w-[48px] h-[32px] rounded-full bg-[#F3F4F6] 
+                  shadow-[-4px_-4px_8px_0px_#FFFFFF,4px_4px_8px_0px_#D1D5DB]
+                  transition-all duration-500 ease-out
+                  ${lang === "en" ? "translate-x-[-23px]" : "translate-x-[23px]"}`}
+              />
+              
               {/* English Button */}
               <button
                 onClick={() => handleLanguageSwitch("en")}
-                className={`flex items-center justify-center w-[48px] h-[32px] rounded-full 
+                className={`relative z-10 flex items-center justify-center w-[48px] h-[32px] rounded-full 
        transition-all duration-300 cursor-pointer
-       ${
-         lang === "en"
-           ? "bg-[#F3F4F6] shadow-[-4px_-4px_8px_0px_#FFFFFF,4px_4px_8px_0px_#D1D5DB]"
-           : "bg-transparent shadow-none"
-       }`}
+       hover:scale-105 active:scale-95
+       ${lang === "en" ? "scale-100" : "scale-95 opacity-70"}`}
               >
                 <Image
                   src="/united-kingdom.png"
                   alt="English"
                   width={24}
                   height={24}
-                  className="w-6 h-6 object-cover"
+                  className={`w-6 h-6 object-cover transition-all duration-300 
+                    ${lang === "en" ? "scale-100 opacity-100" : "scale-90 opacity-60"}`}
                 />
               </button>
 
               {/* Georgian Button */}
               <button
                 onClick={() => handleLanguageSwitch("ge")}
-                className={`flex items-center justify-center w-[48px] h-[32px] rounded-full 
-       transition-all duration-300 cursor-pointer 
-       ${
-         lang === "ge"
-           ? "bg-[#F3F4F6] shadow-[-4px_-4px_8px_0px_#FFFFFF,4px_4px_8px_0px_#D1D5DB]"
-           : "bg-transparent shadow-none"
-       }`}
+                className={`relative z-10 flex items-center justify-center w-[48px] h-[32px] rounded-full 
+       transition-all duration-300 cursor-pointer
+       hover:scale-105 active:scale-95
+       ${lang === "ge" ? "scale-100" : "scale-95 opacity-70"}`}
               >
                 <Image
                   src="/georgia.png"
                   alt="Georgian"
                   width={24}
                   height={24}
-                  className="w-6 h-6 object-cover"
+                  className={`w-6 h-6 object-cover transition-all duration-300 
+                    ${lang === "ge" ? "scale-100 opacity-100" : "scale-90 opacity-60"}`}
                 />
               </button>
             </div>
