@@ -325,8 +325,8 @@ export default function ProgramsPage() {
       students: 67,
       projects: 25,
       established: 2019,
-      x: 380,
-      y: 70,
+      x: 385,
+      y: 63,
       description: 'Strategic partnership in engineering education and innovation'
     },
     {
