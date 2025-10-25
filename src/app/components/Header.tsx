@@ -2,7 +2,7 @@
 import { useLanguage } from "../context/LanguageContext";
 import en from "../../../i18n/en.json";
 import ge from "../../../i18n/ge.json";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SearchButton from "./SearchButton";
@@ -27,7 +27,7 @@ export default function Header() {
     setIsResizing(true);
   };
 
-  const handleMouseMove = (e: MouseEvent) => {
+  const handleMouseMove = useCallback((e: MouseEvent) => {
     if (!isResizing) return;
     
     const newWidth = (e.clientX / window.innerWidth) * 100;
@@ -35,7 +35,7 @@ export default function Header() {
     if (newWidth >= 20 && newWidth <= 80) {
       setSidebarWidth(newWidth);
     }
-  };
+  }, [isResizing]);
 
   const handleMouseUp = () => {
     setIsResizing(false);

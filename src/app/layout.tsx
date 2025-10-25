@@ -1,8 +1,22 @@
 // app/layout.tsx
 import "./globals.css";
 import ClientLayout from "./ClientLayout";
+import { Inter, Playfair_Display } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
+});
 
 export const metadata = {
+  metadataBase: new URL('https://kiu-demo-url.com'),
   title: "KIU Website Demo",
   description:
     "A demonstration website for Kutaisi International University (KIU), built using Next.js, React, and Tailwind CSS. Explore modern university web design concepts.",
@@ -51,13 +65,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="mx-auto">
         <ClientLayout>{children}</ClientLayout>
       </body>

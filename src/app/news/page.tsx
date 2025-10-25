@@ -7,7 +7,7 @@ import newsDataGE from "../data/newsge.json";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function NewsPage() {
-  const { lang, setLang } = useLanguage();
+  const { lang } = useLanguage();
   const newsData = lang === "en" ? newsDataENG : newsDataGE;
   return (
     <div className="min-h-screen bg-background">

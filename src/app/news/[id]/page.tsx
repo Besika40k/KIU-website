@@ -8,7 +8,7 @@ import { useLanguage } from "../../context/LanguageContext";
 
 
 export default function NewsDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { lang, setLang } = useLanguage();
+  const { lang } = useLanguage();
   const { id } = React.use(params);
   const newsId = Number(id); 
   const newsData = lang === "en" ? newsDataENG : newsDataGE;

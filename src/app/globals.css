@@ -410,11 +410,11 @@
 
 /* Font utilities */
 .font-playfair {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-playfair), serif;
 }
 
 .font-inter {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
 
 /* Computer Science Page Specific Styles */

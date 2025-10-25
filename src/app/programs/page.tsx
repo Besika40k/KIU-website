@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
@@ -889,7 +889,7 @@ export default function ProgramsPage() {
 
         {/* Partner Details Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 scroll-reveal" data-scroll-delay="300">
-          {filteredPartners.map((partner, index) => (
+          {filteredPartners.map((partner) => (
             <div 
               key={partner.id}
               onClick={() => handlePartnerClick(partner.id)}
@@ -898,7 +898,7 @@ export default function ProgramsPage() {
                   ? 'ring-2 ring-accent scale-105 bg-gradient-to-br from-primary/5 to-accent/5' 
                   : 'hover:scale-102'
               }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${Math.random() * 0.5}s` }}
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="text-3xl">{partner.flag}</div>
@@ -948,7 +948,7 @@ export default function ProgramsPage() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {schools.map((school, index) => (
+          {schools.map((school) => (
             <div 
               key={school.id}
               className="neumorphic-card card-3d rounded-2xl p-6 relative overflow-hidden scroll-reveal cursor-pointer"

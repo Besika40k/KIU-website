@@ -32,7 +32,7 @@ interface NewsGridProps {
 }
 
 export function NewsGrid({ news, itemsPerPage = 6 }: NewsGridProps) {
-  const { lang, setLang } = useLanguage();
+  const { lang } = useLanguage();
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(news.length / itemsPerPage);

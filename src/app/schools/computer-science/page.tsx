@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { useLanguage } from '../../context/LanguageContext';
 import enTranslations from '../../../../i18n/en.json';
 import geTranslations from '../../../../i18n/ge.json';
@@ -145,8 +146,11 @@ export default function ComputerScienceSchoolPage() {
 
             {/* Hero Image */}
             <div className="relative">
-              <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                alt="Computer Science Lab" className="w-full h-96 lg:h-[500px] object-cover rounded-2xl shadow-2xl" />
+              <Image src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                alt="Computer Science Lab" 
+                width={800}
+                height={600}
+                className="w-full h-96 lg:h-[500px] object-cover rounded-2xl shadow-2xl" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl"></div>
             </div>
           </div>
@@ -295,8 +299,11 @@ export default function ComputerScienceSchoolPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="glassmorphism-dark rounded-2xl p-6">
                   <div className="flex items-center gap-4 mb-4">
-                    <img src="https://media.istockphoto.com/id/1395838909/photo/portrait-of-young-caucasian-men-in-office-school-environment.jpg?s=612x612&w=0&k=20&c=Io5Yro7pVGiLEG4_VF69_8zPWpTI7wieZL8fWrVTHjs="
-                      alt="Student" className="w-12 h-12 rounded-full object-cover" />
+                    <Image src="https://media.istockphoto.com/id/1395838909/photo/portrait-of-young-caucasian-men-in-office-school-environment.jpg?s=612x612&w=0&k=20&c=Io5Yro7pVGiLEG4_VF69_8zPWpTI7wieZL8fWrVTHjs="
+                      alt="Student" 
+                      width={48}
+                      height={48}
+                      className="w-12 h-12 rounded-full object-cover" />
                     <div>
                       <h4 className="font-semibold text-primary">Levan Beridze</h4>
                       <p className="text-sm text-secondary">Software Engineering, Class of 2021</p>
@@ -309,8 +316,11 @@ export default function ComputerScienceSchoolPage() {
 
                 <div className="glassmorphism-dark rounded-2xl p-6">
                   <div className="flex items-center gap-4 mb-4">
-                    <img src="https://thumbs.dreamstime.com/b/stylish-young-georgian-woman-relaxing-amid-lush-greenery-basking-serene-park-surroundings-portrait-vibrant-green-enjoying-359758508.jpg"
-                      alt="Student" className="w-12 h-12 rounded-full object-cover" />
+                    <Image src="https://thumbs.dreamstime.com/b/stylish-young-georgian-woman-relaxing-amid-lush-greenery-basking-serene-park-surroundings-portrait-vibrant-green-enjoying-359758508.jpg"
+                      alt="Student" 
+                      width={48}
+                      height={48}
+                      className="w-12 h-12 rounded-full object-cover" />
                     <div>
                       <h4 className="font-semibold text-primary">Nino Gelashvili</h4>
                       <p className="text-sm text-secondary">AI &amp; Machine Learning, Class of 2020</p>
@@ -322,8 +332,11 @@ export default function ComputerScienceSchoolPage() {
 
                 <div className="glassmorphism-dark rounded-2xl p-6">
                   <div className="flex items-center gap-4 mb-4">
-                    <img src="https://media.istockphoto.com/id/1250436971/photo/male-student.jpg?s=612x612&w=0&k=20&c=4gKa4sRcQQ0sD4yg6GVLd3aN3CpgeHNCY607Tm8oQXA="
-                      alt="Student" className="w-12 h-12 rounded-full object-cover" />
+                    <Image src="https://media.istockphoto.com/id/1250436971/photo/male-student.jpg?s=612x612&w=0&k=20&c=4gKa4sRcQQ0sD4yg6GVLd3aN3CpgeHNCY607Tm8oQXA="
+                      alt="Student" 
+                      width={48}
+                      height={48}
+                      className="w-12 h-12 rounded-full object-cover" />
                     <div>
                       <h4 className="font-semibold text-primary">Giorgi Kapanadze</h4>
                       <p className="text-sm text-secondary">Cybersecurity, Class of 2021</p>
@@ -456,8 +469,11 @@ export default function ComputerScienceSchoolPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="faculty-card rounded-2xl p-6 text-center scroll-reveal revealed fade-in-up">
-                <img src="https://www.kiu.edu.ge/uploads_script/banner_carusel/nika_gagua.JPG"
-                  alt="Nika Gagua" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+                <Image src="https://www.kiu.edu.ge/uploads_script/banner_carusel/nika_gagua.JPG"
+                  alt="Nika Gagua" 
+                  width={96}
+                  height={96}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                 <h3 className="text-xl font-playfair font-bold text-primary mb-2">Nika Gagua</h3>
                 <p className="text-accent2 font-medium mb-2">Dean &amp; Professor</p>
                 <p className="text-secondary text-sm mb-4">Head of the School of Computer Science at Kutaisi International University (KIU).
@@ -481,8 +497,11 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               <div className="faculty-card rounded-2xl p-6 text-center scroll-reveal revealed fade-in-up">
-                <img src="https://www.kiu.edu.ge/uploads_script/banner_carusel/dundua01.png"
-                  alt="Dr. Besik Dunda" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+                <Image src="https://www.kiu.edu.ge/uploads_script/banner_carusel/dundua01.png"
+                  alt="Dr. Besik Dunda" 
+                  width={96}
+                  height={96}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                 <h3 className="text-xl font-playfair font-bold text-primary mb-2">Dr. Besik Dunda</h3>
                 <p className="text-accent2 font-medium mb-2">Associated Professor</p>
                 <p className="text-secondary text-sm mb-4">He received his PhD in Computer Science from the University of Porto (Portugal). He then worked as a postdoctoral fellow
@@ -498,8 +517,11 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               <div className="faculty-card rounded-2xl p-6 text-center scroll-reveal revealed fade-in-up">
-                <img src="https://www.kiu.edu.ge/uploads_script/banner_carusel/Ia_Mosashvili.jpg"
-                  alt="Dr. Ia Mosashvili" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+                <Image src="https://www.kiu.edu.ge/uploads_script/banner_carusel/Ia_Mosashvili.jpg"
+                  alt="Dr. Ia Mosashvili" 
+                  width={96}
+                  height={96}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                 <h3 className="text-xl font-playfair font-bold text-primary mb-2">Dr. Ia Mosashvili</h3>
                 <p className="text-accent2 font-medium mb-2">Associated Professor</p>
                 <p className="text-secondary text-sm mb-4">Doctor of Engineering Sciences, Ia Mosashvili is one of the first to introduce modern digital design and embedded
@@ -516,8 +538,11 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               <div className="faculty-card rounded-2xl p-6 text-center scroll-reveal revealed fade-in-up">
-                <img src="https://www.kiu.edu.ge/uploads_script/banner_carusel/dsc_5618_1.jpg"
-                  alt="Dr. Eva Maria Knirsch" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+                <Image src="https://www.kiu.edu.ge/uploads_script/banner_carusel/dsc_5618_1.jpg"
+                  alt="Dr. Eva Maria Knirsch" 
+                  width={96}
+                  height={96}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                 <h3 className="text-xl font-playfair font-bold text-primary mb-2">Dr. Eva Maria Knirsch</h3>
                 <p className="text-accent2 font-medium mb-2">Associate Professor of Data Science</p>
                 <p className="text-secondary text-sm mb-4">M.A. graduated in Computer Science and English. A DAAD full scholarship allowed her to get her Master at the State
@@ -535,8 +560,11 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               <div className="faculty-card rounded-2xl p-6 text-center scroll-reveal revealed fade-in-up">
-                <img src="https://www.kiu.edu.ge/uploads/.jpg"
-                  alt="Dr. Konstantinos Kokkinos" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+                <Image src="https://www.kiu.edu.ge/uploads/.jpg"
+                  alt="Dr. Konstantinos Kokkinos" 
+                  width={96}
+                  height={96}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                 <h3 className="text-xl font-playfair font-bold text-primary mb-2">Dr. Konstantinos Kokkinos</h3>
                 <p className="text-accent2 font-medium mb-2">Invited Professor</p>
                 <p className="text-secondary text-sm mb-4">Greek scientist Dr. Konstantinos Kokkinos, Assistant Professor at the University of Thessaly, has joined the team of
@@ -554,8 +582,11 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               <div className="faculty-card rounded-2xl p-6 text-center scroll-reveal revealed fade-in-up">
-                <img src="https://www.kiu.edu.ge/uploads_script/banner_carusel/walter1.new.jpg"
-                  alt="Dr. Walter F. Tichy" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+                <Image src="https://www.kiu.edu.ge/uploads_script/banner_carusel/walter1.new.jpg"
+                  alt="Dr. Walter F. Tichy" 
+                  width={96}
+                  height={96}
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                 <h3 className="text-xl font-playfair font-bold text-primary mb-2">Dr. Walter F. Tichy</h3>
                 <p className="text-accent2 font-medium mb-2">Professor of Software Engineering</p>
                 <p className="text-secondary text-sm mb-4">He earned an M.S. and a PhD in Computer Science from Carnegie-Mellon University in 1976 and 1980, resp. He was a
@@ -585,8 +616,11 @@ export default function ComputerScienceSchoolPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="neumorphic-card2 rounded-2xl p-8 scroll-reveal revealed fade-in-up">
-                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
-                  alt="Computer Labs" className="w-full h-48 object-cover rounded-xl mb-6" />
+                <Image src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
+                  alt="Computer Labs" 
+                  width={600}
+                  height={300}
+                  className="w-full h-48 object-cover rounded-xl mb-6" />
                 <h3 className="text-2xl font-playfair font-bold text-primary mb-4">Advanced Computer Labs</h3>
                 <p className="text-secondary mb-4">Six state-of-the-art computer labs equipped with the latest hardware
                   and software for programming, development, and research.</p>
@@ -607,8 +641,11 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               <div className="neumorphic-card2 rounded-2xl p-8 scroll-reveal revealed fade-in-up">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
-                  alt="AI Research Lab" className="w-full h-48 object-cover rounded-xl mb-6" />
+                <Image src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
+                  alt="AI Research Lab" 
+                  width={600}
+                  height={300}
+                  className="w-full h-48 object-cover rounded-xl mb-6" />
                 <h3 className="text-2xl font-playfair font-bold text-primary mb-4">AI Research Laboratory</h3>
                 <p className="text-secondary mb-4">Dedicated space for artificial intelligence and machine learning
                   research with specialized hardware and software.</p>
@@ -629,8 +666,11 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               <div className="neumorphic-card2 rounded-2xl p-8 scroll-reveal revealed fade-in-up">
-                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
-                  alt="Cybersecurity Lab" className="w-full h-48 object-cover rounded-xl mb-6" />
+                <Image src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
+                  alt="Cybersecurity Lab" 
+                  width={600}
+                  height={300}
+                  className="w-full h-48 object-cover rounded-xl mb-6" />
                 <h3 className="text-2xl font-playfair font-bold text-primary mb-4">Cybersecurity Laboratory</h3>
                 <p className="text-secondary mb-4">Specialized facility for cybersecurity training and research with
                   isolated networks and security testing environments.</p>
@@ -651,8 +691,11 @@ export default function ComputerScienceSchoolPage() {
               </div>
 
               <div className="neumorphic-card2 rounded-2xl p-8 scroll-reveal revealed fade-in-up">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
-                  alt="Innovation Hub" className="w-full h-48 object-cover rounded-xl mb-6" />
+                <Image src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300"
+                  alt="Innovation Hub" 
+                  width={600}
+                  height={300}
+                  className="w-full h-48 object-cover rounded-xl mb-6" />
                 <h3 className="text-2xl font-playfair font-bold text-primary mb-4">Innovation Hub</h3>
                 <p className="text-secondary mb-4">Collaborative workspace for student projects, startups, and industry
                   partnerships with modern amenities.</p>

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
+import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 import translations from '@/../i18n/en.json';
 import translationsGe from '@/../i18n/ge.json';
@@ -83,19 +84,25 @@ export default function ResearchPage() {
 
             <div className="relative">
               <div className="grid grid-cols-2 gap-6">
-                <img 
+                <Image 
                   src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop&crop=center" 
                   alt="Research Laboratory"
+                  width={400}
+                  height={300}
                   className="w-full h-64 object-cover rounded-2xl shadow-lg"
                 />
-                <img 
+                <Image 
                   src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center" 
                   alt="Scientific Equipment"
+                  width={400}
+                  height={300}
                   className="w-full h-64 object-cover rounded-2xl shadow-lg"
                 />
-                <img 
+                <Image 
                   src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=400&h=300&fit=crop&crop=center" 
                   alt="Modern Facilities"
+                  width={400}
+                  height={300}
                   className="w-full h-64 object-cover rounded-2xl shadow-lg col-span-2"
                 />
               </div>
@@ -173,9 +180,11 @@ export default function ResearchPage() {
             </div>
 
             <div className="relative">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=700&h=500&fit=crop&crop=center" 
                 alt="Cyclotron Facility"
+                width={700}
+                height={500}
                 className="w-full h-96 object-cover rounded-2xl shadow-lg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-2xl"></div>
@@ -211,9 +220,11 @@ export default function ResearchPage() {
                 </div>
               </div>
               <div>
-                <img 
+                <Image 
                   src="https://www.medlinkstudents.com/wp-content/uploads/2021/02/Kutaisi-University-Georgia.jpg" 
                   alt="Kutaisi Campus"
+                  width={800}
+                  height={600}
                   className="w-full h-80 object-cover rounded-xl shadow-lg"
                 />
               </div>
@@ -262,24 +273,32 @@ export default function ResearchPage() {
             </div>
 
             <div className="grid grid-cols-2 gap-6">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=350&h=250&fit=crop&crop=center" 
                 alt="Medical Equipment"
+                width={350}
+                height={250}
                 className="w-full h-48 object-cover rounded-xl shadow-lg"
               />
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=350&h=250&fit=crop&crop=center" 
                 alt="Treatment Room"
+                width={350}
+                height={250}
                 className="w-full h-48 object-cover rounded-xl shadow-lg"
               />
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=350&h=250&fit=crop&crop=center" 
                 alt="Medical Technology"
+                width={350}
+                height={250}
                 className="w-full h-48 object-cover rounded-xl shadow-lg"
               />
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=350&h=250&fit=crop&crop=center" 
                 alt="Research Lab"
+                width={350}
+                height={250}
                 className="w-full h-48 object-cover rounded-xl shadow-lg"
               />
             </div>
@@ -412,9 +431,11 @@ export default function ResearchPage() {
           </div>
 
           <div className="text-center">
-            <img 
+            <Image 
               src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1000&h=400&fit=crop&crop=center" 
               alt="Conference Hall"
+              width={1000}
+              height={400}
               className="w-full h-80 object-cover rounded-2xl shadow-lg mb-8"
             />
             <h3 className="text-2xl font-bold text-text mb-4 font-playfair">{t.research?.publications?.conferenceTitle || 'Annual Research Conference'}</h3>
