@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLanguage } from '../context/LanguageContext';
 import programsData from '../data/programs.json';
+import programsDataGe from '../data/programsge.json';
 import enTranslations from '../../../i18n/en.json';
 import geTranslations from '../../../i18n/ge.json';
 
@@ -28,159 +29,330 @@ interface AlumniStory {
 }
 
 // Extended school data with additional details
-const extendedSchoolsData = {
-  'computer-science': {
-    name: 'Computer Science',
-    description: 'Cutting-edge technology education with focus on software development, AI, and digital innovation.',
-    programs: [
-      "Bachelor's Degree in Computer Science",
-      "Master's in Artificial Intelligence",
-      "PhD in Data Science",
-      "Certificate in Web Development",
-    ],
-    research: [
-      "AI Ethics and Bias",
-      "Quantum Computing Algorithms",
-      "Cybersecurity Systems",
-      "Human-Computer Interaction",
-    ]
-  },
-  'mathematics': {
-    name: 'Mathematics',
-    description: 'Pure and applied mathematics with emphasis on analytical thinking and problem-solving skills.',
-    programs: [
-      "Bachelor's Degree in Pure Mathematics",
-      "Master's in Applied Statistics",
-      "PhD in Theoretical Physics",
-      "Certificate in Financial Modeling",
-    ],
-    research: [
-      "Number Theory Applications",
-      "Topology and Geometry",
-      "Mathematical Biology",
-      "Computational Fluid Dynamics",
-    ]
-  },
-  'management': {
-    name: 'Management',
-    description: 'Business leadership and strategic management education for tomorrow\'s global leaders.',
-    programs: [
-      "Bachelor of Business Administration (BBA)",
-      "Master of Business Administration (MBA)",
-      "PhD in Organizational Behavior",
-      "Certificate in Project Management",
-    ],
-    research: [
-      "Sustainable Business Practices",
-      "Global Supply Chain Optimization",
-      "Leadership in Digital Transformation",
-      "Consumer Psychology",
-    ]
-  },
-  'medicine': {
-    name: 'Medicine',
-    description: 'Comprehensive medical education combining clinical practice with cutting-edge research.',
-    programs: [
-      "Doctor of Medicine (MD)",
-      "Master of Public Health (MPH)",
-      "PhD in Biomedical Sciences",
-      "Residency Programs (various specialties)",
-    ],
-    research: [
-      "Cancer Immunotherapy",
-      "Neurodegenerative Diseases",
-      "Infectious Disease Epidemiology",
-      "Personalized Medicine",
-    ]
-  },
-  'law': {
-    name: 'Law',
-    description: 'Legal education focused on justice, ethics, and contemporary legal practice.',
-    programs: [
-      "Juris Doctor (JD)",
-      "Master of Laws (LL.M)",
-      "PhD in International Law",
-      "Certificate in Corporate Law",
-    ],
-    research: [
-      "Human Rights Law",
-      "Environmental Law",
-      "Cyber Law and Privacy",
-      "International Arbitration",
-    ]
-  },
-  'psychology': {
-    name: 'Psychology and Social Sciences',
-    description: 'Understanding human behavior and society through research and evidence-based practice.',
-    programs: [
-      "Bachelor's Degree in Psychology",
-      "Master's in Clinical Psychology",
-      "PhD in Cognitive Neuroscience",
-      "Certificate in Social Work",
-    ],
-    research: [
-      "Child Development and Education",
-      "Mental Health Interventions",
-      "Social Justice and Inequality",
-      "Cross-cultural Psychology",
-    ]
-  },
-  'architecture': {
-    name: 'Architecture, Urban Planning, and Design',
-    description: 'Creative design education shaping sustainable environments and innovative architectural solutions.',
-    programs: [
-      "Bachelor of Architecture (B.Arch)",
-      "Master of Urban Planning (MUP)",
-      "PhD in Sustainable Design",
-      "Certificate in Interior Design",
-    ],
-    research: [
-      "Green Building Technologies",
-      "Smart City Planning",
-      "Historic Preservation",
-      "Parametric Design",
-    ]
+const getExtendedSchoolsData = (language: string) => {
+  if (language === 'ge') {
+    return {
+      'computer-science': {
+        name: 'კომპიუტერული მეცნიერება',
+        description: 'მოწინავე ტექნოლოგიური განათლება პროგრამული უზრუნველყოფის, AI-სა და ციფრული ინოვაციების ფოკუსით.',
+        programs: [
+          "ბაკალავრი კომპიუტერულ მეცნიერებებში",
+          "მაგისტრი ხელოვნურ ინტელექტში",
+          "დოქტორი მონაცემთა მეცნიერებაში",
+          "სერტიფიკატი ვებ-დეველოპმენტში",
+        ],
+        research: [
+          "AI-ს ეთიკა და მიკერძოება",
+          "კვანტური კომპიუტინგის ალგორითმები",
+          "კიბერუსაფრთხოების სისტემები",
+          "ადამიან-კომპიუტერის ურთიერთქმედება",
+        ]
+      },
+      'mathematics': {
+        name: 'მათემატიკა',
+        description: 'წმინდა და გამოყენებითი მათემატიკა ანალიტიკური აზროვნებისა და პრობლემის გადაჭრის უნარების ხაზგასმით.',
+        programs: [
+          "ბაკალავრი წმინდა მათემატიკაში",
+          "მაგისტრი გამოყენებით სტატისტიკაში",
+          "დოქტორი თეორიულ ფიზიკაში",
+          "სერტიფიკატი ფინანსურ მოდელირებაში",
+        ],
+        research: [
+          "რიცხვთა თეორიის გამოყენებები",
+          "ტოპოლოგია და გეომეტრია",
+          "მათემატიკური ბიოლოგია",
+          "კომპიუტერული ფლუიდის დინამიკა",
+        ]
+      },
+      'management': {
+        name: 'მენეჯმენტი',
+        description: 'ბიზნეს ლიდერობისა და სტრატეგიული მენეჯმენტის განათლება ხვალინდელი გლობალური ლიდერებისთვის.',
+        programs: [
+          "ბაკალავრი ბიზნეს ადმინისტრირებაში (BBA)",
+          "მაგისტრი ბიზნეს ადმინისტრირებაში (MBA)",
+          "დოქტორი ორგანიზაციულ ქცევაში",
+          "სერტიფიკატი პროექტის მენეჯმენტში",
+        ],
+        research: [
+          "მდგრადი ბიზნეს პრაქტიკები",
+          "გლობალური მიწოდების ჯაჭვის ოპტიმიზაცია",
+          "ლიდერობა ციფრულ ტრანსფორმაციაში",
+          "მომხმარებელთა ფსიქოლოგია",
+        ]
+      },
+      'medicine': {
+        name: 'მედიცინა',
+        description: 'ყოვლისმომცველი სამედიცინო განათლება, რომელიც აერთიანებს კლინიკურ პრაქტიკას მოწინავე კვლევასთან.',
+        programs: [
+          "მედიცინის დოქტორი (MD)",
+          "საზოგადოებრივი ჯანმრთელობის მაგისტრი (MPH)",
+          "დოქტორი ბიომედიცინურ მეცნიერებებში",
+          "რეზიდენტური პროგრამები (სხვადასხვა სპეციალობა)",
+        ],
+        research: [
+          "კიბოს იმუნოთერაპია",
+          "ნეიროდეგენერაციული დაავადებები",
+          "ინფექციური დაავადებების ეპიდემიოლოგია",
+          "პერსონალიზებული მედიცინა",
+        ]
+      },
+      'law': {
+        name: 'სამართალი',
+        description: 'იურიდიული განათლება, რომელიც ფოკუსირებულია სამართლიანობაზე, ეთიკაზე და თანამედროვე იურიდიულ პრაქტიკაზე.',
+        programs: [
+          "იურისტის დოქტორი (JD)",
+          "სამართლის მაგისტრი (LL.M)",
+          "დოქტორი საერთაშორისო სამართალში",
+          "სერტიფიკატი კორპორატიულ სამართალში",
+        ],
+        research: [
+          "ადამიანის უფლებების სამართალი",
+          "გარემოსდაცვითი სამართალი",
+          "კიბერ-სამართალი და კონფიდენციალურობა",
+          "საერთაშორისო არბიტრაჟი",
+        ]
+      },
+      'psychology': {
+        name: 'ფსიქოლოგია და სოციალური მეცნიერებები',
+        description: 'ადამიანის ქცევისა და საზოგადოების გაგება კვლევისა და მტკიცებულებაზე დაფუძნებული პრაქტიკის მეშვეობით.',
+        programs: [
+          "ბაკალავრი ფსიქოლოგიაში",
+          "მაგისტრი კლინიკურ ფსიქოლოგიაში",
+          "დოქტორი კოგნიტურ ნეირომეცნიერებაში",
+          "სერტიფიკატი სოციალურ მუშაობაში",
+        ],
+        research: [
+          "ბავშვის განვითარება და განათლება",
+          "ფსიქიკური ჯანმრთელობის ჩარევები",
+          "სოციალური სამართლიანობა და უთანასწორობა",
+          "კროს-კულტურული ფსიქოლოგია",
+        ]
+      },
+      'architecture': {
+        name: 'არქიტექტურა, ურბანული დაგეგმარება და დიზაინი',
+        description: 'კრეატიული დიზაინის განათლება, რომელიც ქმნის მდგრად გარემოსა და ინოვაციურ არქიტექტურულ გადაწყვეტილებებს.',
+        programs: [
+          "არქიტექტურის ბაკალავრი (B.Arch)",
+          "ურბანული დაგეგმარების მაგისტრი (MUP)",
+          "დოქტორი მდგრად დიზაინში",
+          "სერტიფიკატი ინტერიერის დიზაინში",
+        ],
+        research: [
+          "მწვანე შენობის ტექნოლოგიები",
+          "ჭკვიანი ქალაქის დაგეგმარება",
+          "ისტორიული ძეგლების შენარჩუნება",
+          "პარამეტრული დიზაინი",
+        ]
+      }
+    };
   }
+  
+  return {
+    'computer-science': {
+      name: 'Computer Science',
+      description: 'Cutting-edge technology education with focus on software development, AI, and digital innovation.',
+      programs: [
+        "Bachelor's Degree in Computer Science",
+        "Master's in Artificial Intelligence",
+        "PhD in Data Science",
+        "Certificate in Web Development",
+      ],
+      research: [
+        "AI Ethics and Bias",
+        "Quantum Computing Algorithms",
+        "Cybersecurity Systems",
+        "Human-Computer Interaction",
+      ]
+    },
+    'mathematics': {
+      name: 'Mathematics',
+      description: 'Pure and applied mathematics with emphasis on analytical thinking and problem-solving skills.',
+      programs: [
+        "Bachelor's Degree in Pure Mathematics",
+        "Master's in Applied Statistics",
+        "PhD in Theoretical Physics",
+        "Certificate in Financial Modeling",
+      ],
+      research: [
+        "Number Theory Applications",
+        "Topology and Geometry",
+        "Mathematical Biology",
+        "Computational Fluid Dynamics",
+      ]
+    },
+    'management': {
+      name: 'Management',
+      description: 'Business leadership and strategic management education for tomorrow\'s global leaders.',
+      programs: [
+        "Bachelor of Business Administration (BBA)",
+        "Master of Business Administration (MBA)",
+        "PhD in Organizational Behavior",
+        "Certificate in Project Management",
+      ],
+      research: [
+        "Sustainable Business Practices",
+        "Global Supply Chain Optimization",
+        "Leadership in Digital Transformation",
+        "Consumer Psychology",
+      ]
+    },
+    'medicine': {
+      name: 'Medicine',
+      description: 'Comprehensive medical education combining clinical practice with cutting-edge research.',
+      programs: [
+        "Doctor of Medicine (MD)",
+        "Master of Public Health (MPH)",
+        "PhD in Biomedical Sciences",
+        "Residency Programs (various specialties)",
+      ],
+      research: [
+        "Cancer Immunotherapy",
+        "Neurodegenerative Diseases",
+        "Infectious Disease Epidemiology",
+        "Personalized Medicine",
+      ]
+    },
+    'law': {
+      name: 'Law',
+      description: 'Legal education focused on justice, ethics, and contemporary legal practice.',
+      programs: [
+        "Juris Doctor (JD)",
+        "Master of Laws (LL.M)",
+        "PhD in International Law",
+        "Certificate in Corporate Law",
+      ],
+      research: [
+        "Human Rights Law",
+        "Environmental Law",
+        "Cyber Law and Privacy",
+        "International Arbitration",
+      ]
+    },
+    'psychology': {
+      name: 'Psychology and Social Sciences',
+      description: 'Understanding human behavior and society through research and evidence-based practice.',
+      programs: [
+        "Bachelor's Degree in Psychology",
+        "Master's in Clinical Psychology",
+        "PhD in Cognitive Neuroscience",
+        "Certificate in Social Work",
+      ],
+      research: [
+        "Child Development and Education",
+        "Mental Health Interventions",
+        "Social Justice and Inequality",
+        "Cross-cultural Psychology",
+      ]
+    },
+    'architecture': {
+      name: 'Architecture, Urban Planning, and Design',
+      description: 'Creative design education shaping sustainable environments and innovative architectural solutions.',
+      programs: [
+        "Bachelor of Architecture (B.Arch)",
+        "Master of Urban Planning (MUP)",
+        "PhD in Sustainable Design",
+        "Certificate in Interior Design",
+      ],
+      research: [
+        "Green Building Technologies",
+        "Smart City Planning",
+        "Historic Preservation",
+        "Parametric Design",
+      ]
+    }
+  };
 };
 
-const eventTags = {
-  'computer-science': 'AI Conf Oct 15',
-  'mathematics': 'Math Olympiad Nov 3',
-  'management': 'Business Summit Dec 10',
-  'medicine': 'Medical Symposium Jan 20',
-  'law': 'Moot Court Finals Feb 14',
-  'psychology': 'Psychology Week Mar 5',
-  'architecture': 'Design Expo Apr 12'
+const getEventTags = (language: string) => {
+  if (language === 'ge') {
+    return {
+      'computer-science': 'AI კონფერენცია 15 ოქტ',
+      'mathematics': 'მათემატიკის ოლიმპიადა 3 ნოემ',
+      'management': 'ბიზნეს სამიტი 10 დეკ',
+      'medicine': 'სამედიცინო სიმპოზიუმი 20 იან',
+      'law': 'მოტის სასამართლო ფინალი 14 თებ',
+      'psychology': 'ფსიქოლოგიის კვირა 5 მარ',
+      'architecture': 'დიზაინის ექსპო 12 აპრ'
+    };
+  }
+  return {
+    'computer-science': 'AI Conf Oct 15',
+    'mathematics': 'Math Olympiad Nov 3',
+    'management': 'Business Summit Dec 10',
+    'medicine': 'Medical Symposium Jan 20',
+    'law': 'Moot Court Finals Feb 14',
+    'psychology': 'Psychology Week Mar 5',
+    'architecture': 'Design Expo Apr 12'
+  };
 };
 
-const microStories = {
-  'computer-science': '500+ Students • 15 Research Labs • 25 Industry Partners',
-  'mathematics': '300+ Students • 8 Research Centers • 12 International Collaborations',
-  'management': '750+ Students • 25 Corporate Partners • 95% Employment Rate',
-  'medicine': '400+ Students • 5 Teaching Hospitals • 18 Research Labs',
-  'law': '350+ Students • 10 Law Clinics • 85% Bar Pass Rate',
-  'psychology': '450+ Students • 14 Research Projects • 3 Community Clinics',
-  'architecture': '250+ Students • 8 Design Studios • 6 Sustainability Awards'
+const getMicroStories = (language: string) => {
+  if (language === 'ge') {
+    return {
+      'computer-science': '500+ სტუდენტი • 15 კვლევითი ლაბორატორია • 25 ინდუსტრიული პარტნიორი',
+      'mathematics': '300+ სტუდენტი • 8 კვლევითი ცენტრი • 12 საერთაშორისო თანამშრომლობა',
+      'management': '750+ სტუდენტი • 25 კორპორატიული პარტნიორი • 95% დასაქმების მაჩვენებელი',
+      'medicine': '400+ სტუდენტი • 5 სასწავლო საავადმყოფო • 18 კვლევითი ლაბორატორია',
+      'law': '350+ სტუდენტი • 10 სამართლის კლინიკა • 85% ადვოკატთა გამოცდის ჩაბარების მაჩვენებელი',
+      'psychology': '450+ სტუდენტი • 14 კვლევითი პროექტი • 3 საზოგადოებრივი კლინიკა',
+      'architecture': '250+ სტუდენტი • 8 დიზაინის სტუდია • 6 მდგრადობის ჯილდო'
+    };
+  }
+  return {
+    'computer-science': '500+ Students • 15 Research Labs • 25 Industry Partners',
+    'mathematics': '300+ Students • 8 Research Centers • 12 International Collaborations',
+    'management': '750+ Students • 25 Corporate Partners • 95% Employment Rate',
+    'medicine': '400+ Students • 5 Teaching Hospitals • 18 Research Labs',
+    'law': '350+ Students • 10 Law Clinics • 85% Bar Pass Rate',
+    'psychology': '450+ Students • 14 Research Projects • 3 Community Clinics',
+    'architecture': '250+ Students • 8 Design Studios • 6 Sustainability Awards'
+  };
 };
 
-const newsHighlights = {
-  'computer-science': { title: 'Latest News', content: 'CS Students Win National Hackathon with AI Healthcare Solution' },
-  'mathematics': { title: 'Research Breakthrough', content: 'New Algorithm Advances Climate Modeling Accuracy by 40%' },
-  'management': { title: 'Student Achievement', content: 'MBA Team Wins International Case Competition in London' },
-  'medicine': { title: 'Research Grant', content: '$2M NIH Grant Awarded for Cancer Immunotherapy Research' },
-  'law': { title: 'Competition Win', content: 'Law Students Win Regional Human Rights Moot Court' },
-  'psychology': { title: 'Community Impact', content: 'Free Mental Health Clinic Serves 1000+ Community Members' },
-  'architecture': { title: 'Award Recognition', content: 'Student Project Wins International Green Building Competition' }
+const getNewsHighlights = (language: string) => {
+  if (language === 'ge') {
+    return {
+      'computer-science': { title: 'უახლესი სიახლე', content: 'CS სტუდენტები იმარჯვებენ ეროვნულ ჰაკათონში AI ჯანდაცვის გადაწყვეტილებით' },
+      'mathematics': { title: 'კვლევითი გარღვევა', content: 'ახალი ალგორითმი აწინაურებს კლიმატის მოდელირების სიზუსტეს 40%-ით' },
+      'management': { title: 'სტუდენტური მიღწევა', content: 'MBA გუნდი იმარჯვებს საერთაშორისო საქმის კონკურსში ლონდონში' },
+      'medicine': { title: 'კვლევითი გრანტი', content: '2 მილიონი დოლარის NIH გრანტი კიბოს იმუნოთერაპიის კვლევისთვის' },
+      'law': { title: 'კონკურსის მოგება', content: 'სამართლის სტუდენტები იმარჯვებენ რეგიონულ ადამიანის უფლებების მოტის სასამართლოში' },
+      'psychology': { title: 'საზოგადოებრივი გავლენა', content: 'უფასო ფსიქიკური ჯანმრთელობის კლინიკა ემსახურება 1000+ საზოგადოების წევრს' },
+      'architecture': { title: 'ჯილდოს აღიარება', content: 'სტუდენტური პროექტი იმარჯვებს საერთაშორისო მწვანე შენობის კონკურსში' }
+    };
+  }
+  return {
+    'computer-science': { title: 'Latest News', content: 'CS Students Win National Hackathon with AI Healthcare Solution' },
+    'mathematics': { title: 'Research Breakthrough', content: 'New Algorithm Advances Climate Modeling Accuracy by 40%' },
+    'management': { title: 'Student Achievement', content: 'MBA Team Wins International Case Competition in London' },
+    'medicine': { title: 'Research Grant', content: '$2M NIH Grant Awarded for Cancer Immunotherapy Research' },
+    'law': { title: 'Competition Win', content: 'Law Students Win Regional Human Rights Moot Court' },
+    'psychology': { title: 'Community Impact', content: 'Free Mental Health Clinic Serves 1000+ Community Members' },
+    'architecture': { title: 'Award Recognition', content: 'Student Project Wins International Green Building Competition' }
+  };
 };
 
-const deans = {
-  'computer-science': { name: 'Dr. Alex Smith', title: 'Dean of Computer Science', quote: 'We\'re shaping the future of technology' },
-  'mathematics': { name: 'Dr. Maria Johnson', title: 'Dean of Mathematics', quote: 'Mathematics is the language of the universe' },
-  'management': { name: 'Prof. David Wilson', title: 'Dean of Management', quote: 'Innovation drives business success' },
-  'medicine': { name: 'Dr. Sarah Chen', title: 'Dean of Medicine', quote: 'Compassion meets innovation in medicine' },
-  'law': { name: 'Prof. Elena Rodriguez', title: 'Dean of Law', quote: 'Justice is the foundation of society' },
-  'psychology': { name: 'Dr. Lisa Thompson', title: 'Dean of Psychology and Social Sciences', quote: 'Mental health is universal health' },
-  'architecture': { name: 'Prof. Carlos Martinez', title: 'Dean of Architecture, Urban Planning, and Design', quote: 'Architecture shapes human experience' }
+const getDeans = (language: string) => {
+  if (language === 'ge') {
+    return {
+      'computer-science': { name: 'დოქტორი ალექს სმითი', title: 'კომპიუტერული მეცნიერებების დეკანი', quote: 'ჩვენ ვქმნით ტექნოლოგიების მომავალს' },
+      'mathematics': { name: 'დოქტორი მარია ჯონსონი', title: 'მათემატიკის დეკანი', quote: 'მათემატიკა არის სამყაროს ენა' },
+      'management': { name: 'პროფ. დევიდ უილსონი', title: 'მენეჯმენტის დეკანი', quote: 'ინოვაცია აძლიერებს ბიზნეს წარმატებას' },
+      'medicine': { name: 'დოქტორი სარა ჩენი', title: 'მედიცინის დეკანი', quote: 'თანაგრძნობა ხვდება ინოვაციას მედიცინაში' },
+      'law': { name: 'პროფ. ელენა როდრიგესი', title: 'სამართლის დეკანი', quote: 'სამართლიანობა არის საზოგადოების საფუძველი' },
+      'psychology': { name: 'დოქტორი ლიზა ტომპსონი', title: 'ფსიქოლოგიისა და სოციალური მეცნიერებების დეკანი', quote: 'ფსიქიკური ჯანმრთელობა არის უნივერსალური ჯანმრთელობა' },
+      'architecture': { name: 'პროფ. კარლოს მარტინესი', title: 'არქიტექტურის, ურბანული დაგეგმარებისა და დიზაინის დეკანი', quote: 'არქიტექტურა ქმნის ადამიანის გამოცდილებას' }
+    };
+  }
+  return {
+    'computer-science': { name: 'Dr. Alex Smith', title: 'Dean of Computer Science', quote: 'We\'re shaping the future of technology' },
+    'mathematics': { name: 'Dr. Maria Johnson', title: 'Dean of Mathematics', quote: 'Mathematics is the language of the universe' },
+    'management': { name: 'Prof. David Wilson', title: 'Dean of Management', quote: 'Innovation drives business success' },
+    'medicine': { name: 'Dr. Sarah Chen', title: 'Dean of Medicine', quote: 'Compassion meets innovation in medicine' },
+    'law': { name: 'Prof. Elena Rodriguez', title: 'Dean of Law', quote: 'Justice is the foundation of society' },
+    'psychology': { name: 'Dr. Lisa Thompson', title: 'Dean of Psychology and Social Sciences', quote: 'Mental health is universal health' },
+    'architecture': { name: 'Prof. Carlos Martinez', title: 'Dean of Architecture, Urban Planning, and Design', quote: 'Architecture shapes human experience' }
+  };
 };
 
 // Function to convert Tailwind color classes to hex values
@@ -256,8 +428,8 @@ export default function ProgramsPage() {
   const router = useRouter();
   const overlayRef = useRef<HTMLDivElement>(null);
 
-  const schools: School[] = programsData.schools;
-  const alumniStories: AlumniStory[] = programsData.alumniStories;
+  const schools: School[] = lang === 'en' ? programsData.schools : programsDataGe.schools;
+  const alumniStories: AlumniStory[] = lang === 'en' ? programsData.alumniStories : programsDataGe.alumniStories;
 
   const handleSchoolClick = (schoolId: string) => {
     setExpandedSchool(schoolId);
@@ -270,7 +442,8 @@ export default function ProgramsPage() {
   };
 
   const quickApply = (schoolId: string) => {
-    alert(`Quick apply to ${extendedSchoolsData[schoolId as keyof typeof extendedSchoolsData]?.name} - Redirecting to application form...`);
+    const extendedData = getExtendedSchoolsData(lang);
+    alert(`Quick apply to ${extendedData[schoolId as keyof typeof extendedData]?.name} - Redirecting to application form...`);
     closeExpandedCard();
   };
 
@@ -786,10 +959,10 @@ export default function ProgramsPage() {
                 '--card-bg-to': getColorFromTailwind(school.borderColor)
               } as React.CSSProperties}
             >
-              <div className="event-tag">{eventTags[school.id as keyof typeof eventTags]}</div>
+              <div className="event-tag">{getEventTags(lang)[school.id as keyof ReturnType<typeof getEventTags>]}</div>
               
               <div className="micro-story glassmorphism rounded-lg px-4 py-2">
-                <div className="text-xs font-semibold text-primary">{microStories[school.id as keyof typeof microStories]}</div>
+                <div className="text-xs font-semibold text-primary">{getMicroStories(lang)[school.id as keyof ReturnType<typeof getMicroStories>]}</div>
               </div>
               
               <div className="text-center relative z-10">
@@ -834,18 +1007,18 @@ export default function ProgramsPage() {
               
               <div className="face-reveal glassmorphism-dark rounded-t-2xl p-4">
                 <div className="flex items-center gap-3">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt={deans[school.id as keyof typeof deans]?.name} className="w-12 h-12 rounded-full object-cover" />
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt={getDeans(lang)[school.id as keyof ReturnType<typeof getDeans>]?.name} className="w-12 h-12 rounded-full object-cover" />
                   <div>
-                    <div className="text-sm font-semibold text-white">{deans[school.id as keyof typeof deans]?.name}</div>
-                    <div className="text-xs text-blue-600">{deans[school.id as keyof typeof deans]?.title}</div>
-                    <div className="text-xs italic text-black mt-1">"{deans[school.id as keyof typeof deans]?.quote}"</div>
+                    <div className="text-sm font-semibold text-white">{getDeans(lang)[school.id as keyof ReturnType<typeof getDeans>]?.name}</div>
+                    <div className="text-xs text-blue-600">{getDeans(lang)[school.id as keyof ReturnType<typeof getDeans>]?.title}</div>
+                    <div className="text-xs italic text-black mt-1">"{getDeans(lang)[school.id as keyof ReturnType<typeof getDeans>]?.quote}"</div>
                   </div>
                 </div>
               </div>
               
               <div className="news-highlight">
-                <div className="text-xs font-semibold text-primary mb-1">{newsHighlights[school.id as keyof typeof newsHighlights]?.title}</div>
-                <div className="text-xs text-secondary">{newsHighlights[school.id as keyof typeof newsHighlights]?.content}</div>
+                <div className="text-xs font-semibold text-primary mb-1">{getNewsHighlights(lang)[school.id as keyof ReturnType<typeof getNewsHighlights>]?.title}</div>
+                <div className="text-xs text-secondary">{getNewsHighlights(lang)[school.id as keyof ReturnType<typeof getNewsHighlights>]?.content}</div>
               </div>
             </div>
           ))}
@@ -887,31 +1060,31 @@ export default function ProgramsPage() {
             className="bg-white rounded-2xl max-w-4xl w-full max-h-[80vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            {expandedSchool && extendedSchoolsData[expandedSchool as keyof typeof extendedSchoolsData] && (
+            {expandedSchool && getExtendedSchoolsData(lang)[expandedSchool as keyof ReturnType<typeof getExtendedSchoolsData>] && (
               <div className="p-8">
                 <div className="text-center mb-8">
                   <h2 className="text-3xl font-playfair font-bold text-primary mb-4">
-                    {extendedSchoolsData[expandedSchool as keyof typeof extendedSchoolsData].name}
+                    {getExtendedSchoolsData(lang)[expandedSchool as keyof ReturnType<typeof getExtendedSchoolsData>].name}
                   </h2>
                   <p className="text-lg text-secondary">
-                    {extendedSchoolsData[expandedSchool as keyof typeof extendedSchoolsData].description}
+                    {getExtendedSchoolsData(lang)[expandedSchool as keyof ReturnType<typeof getExtendedSchoolsData>].description}
                   </p>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                   <div className="glassmorphism rounded-xl p-6">
-                    <h3 className="font-semibold text-primary mb-4">Academic Programs</h3>
+                    <h3 className="font-semibold text-primary mb-4">{lang === 'en' ? 'Academic Programs' : 'აკადემიური პროგრამები'}</h3>
                     <ul className="space-y-2 text-secondary">
-                      {extendedSchoolsData[expandedSchool as keyof typeof extendedSchoolsData].programs.map((program, index) => (
+                      {getExtendedSchoolsData(lang)[expandedSchool as keyof ReturnType<typeof getExtendedSchoolsData>].programs.map((program, index) => (
                         <li key={index}>• {program}</li>
                       ))}
                     </ul>
                   </div>
                   
                   <div className="glassmorphism rounded-xl p-6">
-                    <h3 className="font-semibold text-primary mb-4">Research Areas</h3>
+                    <h3 className="font-semibold text-primary mb-4">{lang === 'en' ? 'Research Areas' : 'კვლევითი სფეროები'}</h3>
                     <ul className="space-y-2 text-secondary">
-                      {extendedSchoolsData[expandedSchool as keyof typeof extendedSchoolsData].research.map((research, index) => (
+                      {getExtendedSchoolsData(lang)[expandedSchool as keyof ReturnType<typeof getExtendedSchoolsData>].research.map((research, index) => (
                         <li key={index}>• {research}</li>
                       ))}
                     </ul>
