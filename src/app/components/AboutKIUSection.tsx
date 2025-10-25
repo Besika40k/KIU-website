@@ -22,7 +22,7 @@ export default function AboutKIUSection() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-6">
-            {t.homepage.about.stats.map((stat: any, index: number) => (
+            {t.homepage.about.stats.map((stat: { number: string; label: string }, index: number) => (
               <div key={index} className="bg-white rounded-lg p-6 shadow-light text-center">
                 <div 
                   className={`text-3xl font-bold mb-2 ${

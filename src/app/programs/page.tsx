@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 import programsData from '../data/programs.json';
 import programsDataGe from '../data/programsge.json';
@@ -426,7 +427,6 @@ export default function ProgramsPage() {
   const [showOverlay, setShowOverlay] = useState(false);
   const [tooltip, setTooltip] = useState({ visible: false, content: '', x: 0, y: 0 });
   const router = useRouter();
-  const overlayRef = useRef<HTMLDivElement>(null);
 
   const schools: School[] = lang === 'en' ? programsData.schools : programsDataGe.schools;
   const alumniStories: AlumniStory[] = lang === 'en' ? programsData.alumniStories : programsDataGe.alumniStories;
@@ -776,7 +776,7 @@ export default function ProgramsPage() {
             </g>
 
             {/* Connection Lines with Animation */}
-            {filteredPartners.map((partner, index) => (
+            {filteredPartners.map((partner) => (
               <g key={`connection-${partner.id}`}>
                 <line 
                   x1="472" 
@@ -789,7 +789,7 @@ export default function ProgramsPage() {
                   strokeDasharray="5,5"
                   className="connection-line"
                   style={{ 
-                    animationDelay: `${index * 0.2}s`,
+                    animationDelay: `${Math.random() * 0.5}s`,
                     transition: 'all 0.3s ease'
                   }}
                 />
@@ -808,11 +808,11 @@ export default function ProgramsPage() {
             ))}
 
             {/* Partner University Markers */}
-            {filteredPartners.map((partner, index) => (
+            {filteredPartners.map((partner) => (
               <g 
                 key={partner.id}
                 onClick={() => handlePartnerClick(partner.id)}
-                onMouseOver={(e) => handleMapHover(partner, e as any)}
+                onMouseOver={(e) => handleMapHover(partner, e as React.MouseEvent)}
                 onMouseLeave={handleMapLeave}
                 className="cursor-pointer"
                 style={{ transition: 'all 0.3s ease' }}
@@ -972,7 +972,7 @@ export default function ProgramsPage() {
                 <h3 className="text-lg font-playfair font-semibold text-primary mb-1">
                   {school.name}
                 </h3>
-                <p className="text-xs italic text-black font-medium mb-3">"{school.tagline}"</p>
+                <p className="text-xs italic text-black font-medium mb-3">&ldquo;{school.tagline}&rdquo;</p>
                 
                 <div className="flex justify-center gap-4 mb-4 text-xs">
                   <span className="glassmorphism text-primary px-3 py-1 rounded-full font-medium">{school.studentCount} {t.programs.students}</span>
@@ -1007,11 +1007,11 @@ export default function ProgramsPage() {
               
               <div className="face-reveal glassmorphism-dark rounded-t-2xl p-4">
                 <div className="flex items-center gap-3">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt={getDeans(lang)[school.id as keyof ReturnType<typeof getDeans>]?.name} className="w-12 h-12 rounded-full object-cover" />
+                  <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt={getDeans(lang)[school.id as keyof ReturnType<typeof getDeans>]?.name} width={48} height={48} className="w-12 h-12 rounded-full object-cover" />
                   <div>
                     <div className="text-sm font-semibold text-white">{getDeans(lang)[school.id as keyof ReturnType<typeof getDeans>]?.name}</div>
                     <div className="text-xs text-blue-600">{getDeans(lang)[school.id as keyof ReturnType<typeof getDeans>]?.title}</div>
-                    <div className="text-xs italic text-black mt-1">"{getDeans(lang)[school.id as keyof ReturnType<typeof getDeans>]?.quote}"</div>
+                    <div className="text-xs italic text-black mt-1">&ldquo;{getDeans(lang)[school.id as keyof ReturnType<typeof getDeans>]?.quote}&rdquo;</div>
                   </div>
                 </div>
               </div>
@@ -1036,13 +1036,13 @@ export default function ProgramsPage() {
               {[...alumniStories, ...alumniStories].map((alumni, index) => (
                 <div key={`${alumni.id}-${index}`} className="flex-shrink-0 w-80 glassmorphism rounded-xl p-6">
                   <div className="flex items-center gap-4 mb-4">
-                    <img src={alumni.image} alt={alumni.name} className="w-16 h-16 rounded-full object-cover" />
+                    <Image src={alumni.image} alt={alumni.name} width={64} height={64} className="w-16 h-16 rounded-full object-cover" />
                     <div>
                       <div className="font-semibold text-primary">{alumni.name}</div>
                       <div className="text-sm text-secondary">{alumni.degree}</div>
                     </div>
                   </div>
-                  <p className="text-sm text-secondary italic">"{alumni.quote}"</p>
+                  <p className="text-sm text-secondary italic">&ldquo;{alumni.quote}&rdquo;</p>
                 </div>
               ))}
             </div>

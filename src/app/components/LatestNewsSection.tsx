@@ -30,7 +30,7 @@ export default function LatestNewsSection() {
         {/* Carousel Container */}
         <div className="relative overflow-visible">
           <div className="flex space-x-6 carousel-scroll">
-            {t.homepage.latestNews.news.map((newsItem: any, index: number) => (
+            {t.homepage.latestNews.news.map((newsItem: { tag: string; tagColor: string; title: string; description: string }, index: number) => (
               <article key={index} className="flex-none w-80 bg-white rounded-lg overflow-hidden shadow-light hover:shadow-neuro-sm transition-all duration-300 hover:scale-105">
                 <div className="p-6 h-56 flex flex-col justify-between">
                   <div>

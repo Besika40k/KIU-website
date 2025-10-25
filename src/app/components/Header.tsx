@@ -4,6 +4,7 @@ import en from "../../../i18n/en.json";
 import ge from "../../../i18n/ge.json";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import SearchButton from "./SearchButton";
 
 export default function Header() {
@@ -59,7 +60,7 @@ export default function Header() {
       document.body.style.cursor = '';
       document.body.style.userSelect = '';
     };
-  }, [isResizing]);
+  }, [isResizing, handleMouseMove]);
 
   const navigationItems = [
     { key: "home", href: "/" },
@@ -96,14 +97,14 @@ export default function Header() {
             <div className="absolute inset-0 rounded-full shadow-lg blur-sm opacity-50 -z-10"></div>
           </div>
           {!isSearchExpanded && (
-            <a 
+            <Link 
               href="/" 
               className="text-[#1E40AF] font-bold cursor-pointer transition-all duration-300 animate-in fade-in slide-in-from-left-5"
             >
               <div className="text-lg leading-tight">Kutaisi</div>
               <div className="text-lg leading-tight">International</div>
               <div className="text-lg leading-tight">University</div>
-            </a>
+            </Link>
           )}
         </div>
 

@@ -31,7 +31,7 @@ export function IndividualNewsPage({
   news,
   latestNews,
 }: IndividualNewsPageProps) {
-  const { lang, setLang } = useLanguage();
+  const { lang } = useLanguage();
   return (
     <div className="bg-slate-50">
       <div className="container mx-auto flex flex-col lg:flex-row justify-center gap-12 py-12 px-4">
@@ -84,7 +84,7 @@ export function IndividualNewsPage({
                             </div>
                             <div className="flex-grow">
                               <blockquote className="text-slate-700 italic text-base md:text-lg border-none p-0 m-0">
-                                "{news.quote?.text}"
+                                &ldquo;{news.quote?.text}&rdquo;
                               </blockquote>
                               <p className="text-slate-600 text-sm mt-4">
                                 — {news.quote?.author}, {news.quote?.title}

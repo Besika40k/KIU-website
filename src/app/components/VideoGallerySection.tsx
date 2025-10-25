@@ -17,7 +17,7 @@ export default function VideoGallerySection() {
           <p className="text-xl text-[#3D5C84]">{t.homepage.videoGallery.subtitle}</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          {t.homepage.videoGallery.videos.map((video: any, index: number) => {
+          {t.homepage.videoGallery.videos.map((video: { title: string; description: string }, index: number) => {
             const getGradientClass = (idx: number) => {
               switch(idx) {
                 case 0: return 'from-[#15396F] to-[#3D5C84]';

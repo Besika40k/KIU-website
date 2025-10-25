@@ -110,7 +110,7 @@ export default function SearchButton({ onExpandChange }: SearchButtonProps) {
 
     // Search news
     const newsData = lang === "en" ? newsEn : newsGe;
-    newsData.forEach((article: any) => {
+    newsData.forEach((article: { title: string; content: string; category: string; id: number }) => {
       if (
         article.title.toLowerCase().includes(lowerQuery) ||
         article.content.toLowerCase().includes(lowerQuery) ||

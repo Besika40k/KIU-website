@@ -72,7 +72,7 @@ function PaginationPrevious({
   className,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) {
-   const { lang, setLang } = useLanguage();
+   const { lang } = useLanguage();
   return (
     <PaginationLink
       aria-label="Go to previous page"
@@ -90,7 +90,7 @@ function PaginationNext({
   className,
   ...props
 }: React.ComponentProps<typeof PaginationLink>) {
-  const { lang, setLang } = useLanguage();
+  const { lang } = useLanguage();
   return (
     <PaginationLink
       aria-label="Go to next page"

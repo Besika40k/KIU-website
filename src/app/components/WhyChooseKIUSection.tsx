@@ -66,7 +66,7 @@ export default function WhyChooseKIUSection() {
 
         {/* Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {t.homepage.whyChoose.features.map((feature: any, index: number) => (
+          {t.homepage.whyChoose.features.map((feature: { bgColor: string; icon: string; title: string; description: string }, index: number) => (
             <div
               key={index}
               className="p-8 rounded-xl hover:-translate-y-1 hover:shadow-lg transition-all duration-300 text-center cursor-pointer"

@@ -17,7 +17,7 @@ export default function OurSchoolsSection() {
           <p className="text-xl text-[#3D5C84]">{t.homepage.schools.subtitle}</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {t.homepage.schools.programs.map((program: any, index: number) => {
+          {t.homepage.schools.programs.map((program: { color: string; title: string; description: string }, index: number) => {
             const getGradientClass = (color: string) => {
               switch(color) {
                 case 'blue': return 'from-[#15396F] to-[#3D5C84]';
