@@ -13,6 +13,7 @@ export default function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [sidebarWidth, setSidebarWidth] = useState(50); // percentage
   const [isResizing, setIsResizing] = useState(false);
+  const [isSearchExpanded, setIsSearchExpanded] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
 
   const handleLanguageSwitch = (newLang: "en" | "ge") => {
@@ -94,11 +95,16 @@ export default function Header() {
             </div>
             <div className="absolute inset-0 rounded-full shadow-lg blur-sm opacity-50 -z-10"></div>
           </div>
-          <a href="/" className="text-[#1E40AF] font-bold cursor-pointer">
-            <div className="text-lg leading-tight">Kutaisi</div>
-            <div className="text-lg leading-tight">International</div>
-            <div className="text-lg leading-tight">University</div>
-          </a>
+          {!isSearchExpanded && (
+            <a 
+              href="/" 
+              className="text-[#1E40AF] font-bold cursor-pointer transition-all duration-300 animate-in fade-in slide-in-from-left-5"
+            >
+              <div className="text-lg leading-tight">Kutaisi</div>
+              <div className="text-lg leading-tight">International</div>
+              <div className="text-lg leading-tight">University</div>
+            </a>
+          )}
         </div>
 
         {/* Middle Section - Navigation */}
@@ -117,7 +123,7 @@ export default function Header() {
         {/* Right Section - Search and Language Switcher */}
         <div className="flex items-center space-x-3">
           {/* Search Button */}
-          <SearchButton />
+          <SearchButton onExpandChange={setIsSearchExpanded} />
           
           {/* Language Switcher */}
           <div
@@ -191,16 +197,18 @@ export default function Header() {
               </div>
               <div className="absolute inset-0 rounded-full shadow-lg blur-sm opacity-50 -z-10"></div>
             </div>
-            <div className="text-[#1E40AF] font-bold">
-              <div className="text-sm leading-tight">Kutaisi</div>
-              <div className="text-sm leading-tight">International</div>
-              <div className="text-sm leading-tight">University</div>
-            </div>
+            {!isSearchExpanded && (
+              <div className="text-[#1E40AF] font-bold transition-all duration-300 animate-in fade-in slide-in-from-left-5">
+                <div className="text-sm leading-tight">Kutaisi</div>
+                <div className="text-sm leading-tight">International</div>
+                <div className="text-sm leading-tight">University</div>
+              </div>
+            )}
           </div>
 
           <div className="flex items-center space-x-2">
             {/* Search Button */}
-            <SearchButton />
+            <SearchButton onExpandChange={setIsSearchExpanded} />
             
             {/* Language Switcher */}
             <div

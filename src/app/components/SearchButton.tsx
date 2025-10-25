@@ -15,7 +15,11 @@ interface SearchResult {
   category?: string;
 }
 
-export default function SearchButton() {
+interface SearchButtonProps {
+  onExpandChange?: (isExpanded: boolean) => void;
+}
+
+export default function SearchButton({ onExpandChange }: SearchButtonProps) {
   const { lang } = useLanguage();
   const t = lang === "en" ? en : ge;
   const [isExpanded, setIsExpanded] = useState(false);
@@ -37,6 +41,13 @@ export default function SearchButton() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // Notify parent when expansion state changes
+  useEffect(() => {
+    if (onExpandChange) {
+      onExpandChange(isExpanded);
+    }
+  }, [isExpanded, onExpandChange]);
 
   // Focus input when expanded
   useEffect(() => {
