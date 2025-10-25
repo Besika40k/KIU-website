@@ -286,120 +286,103 @@ export default function ProgramsPage() {
   const [selectedPartner, setSelectedPartner] = useState<string | null>(null);
   const [filterType, setFilterType] = useState<string>('all');
 
-  const partnerUniversities = [
+  const partnerUniversitiesData = [
     {
       id: 'MIT',
-      name: 'Massachusetts Institute of Technology',
       country: 'USA',
       flag: '🇺🇸',
-      field: 'Computer Science & AI',
       type: 'research',
       students: 45,
       projects: 12,
       established: 2021,
       x: 120,
-      y: 100,
-      description: 'Leading collaboration in artificial intelligence and machine learning research'
+      y: 100
     },
     {
       id: 'Oxford',
-      name: 'University of Oxford',
       country: 'United Kingdom',
       flag: '🇬🇧',
-      field: 'Medicine & Life Sciences',
       type: 'both',
       students: 32,
       projects: 8,
       established: 2020,
       x: 360,
-      y: 50,
-      description: 'Joint medical research and student exchange programs'
+      y: 50
     },
     {
       id: 'TUM',
-      name: 'Technical University of Munich',
       country: 'Germany',
       flag: '🇩🇪',
-      field: 'Architecture & Engineering',
       type: 'strategic',
       students: 67,
       projects: 25,
       established: 2019,
       x: 385,
-      y: 63,
-      description: 'Strategic partnership in engineering education and innovation'
+      y: 63
     },
     {
       id: 'Sorbonne',
-      name: 'Sorbonne University',
       country: 'France',
       flag: '🇫🇷',
-      field: 'Law & Social Sciences',
       type: 'exchange',
       students: 28,
       projects: 6,
       established: 2021,
       x: 367,
-      y: 75,
-      description: 'Student exchange and legal studies collaboration'
+      y: 75
     },
     {
       id: 'UofT',
-      name: 'University of Toronto',
       country: 'Canada',
       flag: '🇨🇦',
-      field: 'Psychology & Neuroscience',
       type: 'research',
       students: 23,
       projects: 9,
       established: 2022,
       x: 130,
-      y: 50,
-      description: 'Collaborative research in cognitive science and psychology'
+      y: 50
     },
     {
       id: 'Melbourne',
-      name: 'University of Melbourne',
       country: 'Australia',
       flag: '🇦🇺',
-      field: 'Environmental Science',
       type: 'research',
       students: 18,
       projects: 7,
       established: 2022,
       x: 700,
-      y: 285,
-      description: 'Environmental research and sustainability initiatives'
+      y: 285
     },
     {
       id: 'Tokyo',
-      name: 'University of Tokyo',
       country: 'Japan',
       flag: '🇯🇵',
-      field: 'Robotics & Technology',
       type: 'research',
       students: 35,
       projects: 14,
       established: 2021,
       x: 680,
-      y: 170,
-      description: 'Advanced robotics and technology research collaboration'
+      y: 170
     },
     {
       id: 'Shanghai',
-      name: 'Shanghai Jiao Tong University',
       country: 'China',
       flag: '🇨🇳',
-      field: 'Engineering & Innovation',
       type: 'both',
       students: 52,
       projects: 18,
       established: 2019,
       x: 685,
-      y: 70,
-      description: 'Strategic partnership in engineering innovation and research collaboration'
+      y: 70
     }
   ];
+
+  const partnerUniversities = partnerUniversitiesData.map(partner => ({
+    ...partner,
+    name: t.programs.globalNetwork.partners[partner.id as keyof typeof t.programs.globalNetwork.partners].name,
+    field: t.programs.globalNetwork.partners[partner.id as keyof typeof t.programs.globalNetwork.partners].field,
+    description: t.programs.globalNetwork.partners[partner.id as keyof typeof t.programs.globalNetwork.partners].description
+  }));
 
   const handleMapHover = (partner: typeof partnerUniversities[0], event: React.MouseEvent) => {
     setTooltip({
@@ -520,19 +503,19 @@ export default function ProgramsPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 scroll-reveal" data-scroll-delay="100">
           <div className="glassmorphism rounded-xl p-6 text-center">
             <div className="text-3xl font-bold text-primary mb-2">{partnerUniversities.length}+</div>
-            <div className="text-sm text-secondary">Partner Universities</div>
+            <div className="text-sm text-secondary">{t.programs.globalNetwork.stats.partnerUniversities}</div>
           </div>
           <div className="glassmorphism rounded-xl p-6 text-center">
             <div className="text-3xl font-bold text-primary mb-2">{partnerUniversities.reduce((sum, p) => sum + p.students, 0)}+</div>
-            <div className="text-sm text-secondary">Exchange Students</div>
+            <div className="text-sm text-secondary">{t.programs.globalNetwork.stats.exchangeStudents}</div>
           </div>
           <div className="glassmorphism rounded-xl p-6 text-center">
             <div className="text-3xl font-bold text-primary mb-2">{partnerUniversities.reduce((sum, p) => sum + p.projects, 0)}+</div>
-            <div className="text-sm text-secondary">Joint Projects</div>
+            <div className="text-sm text-secondary">{t.programs.globalNetwork.stats.jointProjects}</div>
           </div>
           <div className="glassmorphism rounded-xl p-6 text-center">
             <div className="text-3xl font-bold text-primary mb-2">25+</div>
-            <div className="text-sm text-secondary">Countries</div>
+            <div className="text-sm text-secondary">{t.programs.globalNetwork.stats.countries}</div>
           </div>
         </div>
 
@@ -546,7 +529,7 @@ export default function ProgramsPage() {
                 : 'glassmorphism text-primary hover:bg-primary hover:text-white'
             }`}
           >
-            All Partnerships
+            {t.programs.globalNetwork.filterAll}
           </button>
           <button 
             onClick={() => setFilterType('research')}
@@ -556,7 +539,7 @@ export default function ProgramsPage() {
                 : 'glassmorphism text-primary hover:bg-accent'
             }`}
           >
-            Research Collaborations
+            {t.programs.globalNetwork.filterResearch}
           </button>
           <button 
             onClick={() => setFilterType('exchange')}
@@ -566,7 +549,7 @@ export default function ProgramsPage() {
                 : 'glassmorphism text-primary hover:bg-secondary hover:text-white'
             }`}
           >
-            Student Exchange
+            {t.programs.globalNetwork.filterExchange}
           </button>
           <button 
             onClick={() => setFilterType('strategic')}
@@ -576,7 +559,7 @@ export default function ProgramsPage() {
                 : 'glassmorphism text-primary hover:bg-green-600 hover:text-white'
             }`}
           >
-            Strategic Partners
+            {t.programs.globalNetwork.filterStrategic}
           </button>
         </div>
         
@@ -752,9 +735,7 @@ export default function ProgramsPage() {
                   partner.type === 'strategic' ? 'bg-purple-100 text-purple-700' :
                   'bg-yellow-100 text-yellow-700'
                 }`}>
-                  {partner.type === 'research' ? 'Research' : 
-                   partner.type === 'exchange' ? 'Exchange' :
-                   partner.type === 'strategic' ? 'Strategic' : 'Multi-faceted'}
+                  {t.programs.globalNetwork.typeLabels[partner.type as keyof typeof t.programs.globalNetwork.typeLabels]}
                 </span>
               </div>
               
@@ -763,15 +744,15 @@ export default function ProgramsPage() {
               
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-secondary">Students:</span>
+                  <span className="text-secondary">{t.programs.globalNetwork.detailLabels.students}</span>
                   <span className="font-semibold text-primary">{partner.students}</span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-secondary">Projects:</span>
+                  <span className="text-secondary">{t.programs.globalNetwork.detailLabels.projects}</span>
                   <span className="font-semibold text-primary">{partner.projects}</span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-secondary">Since:</span>
+                  <span className="text-secondary">{t.programs.globalNetwork.detailLabels.since}</span>
                   <span className="font-semibold text-primary">{partner.established}</span>
                 </div>
               </div>

@@ -209,7 +209,70 @@
     "globalNetwork": {
       "title": "Global Academic Network",
       "subtitle": "Our schools maintain partnerships with leading universities worldwide",
-      "partnerTitle": "Partner Universities"
+      "partnerTitle": "Partner Universities",
+      "filterAll": "All Partnerships",
+      "filterResearch": "Research Collaborations",
+      "filterExchange": "Student Exchange",
+      "filterStrategic": "Strategic Partners",
+      "partners": {
+        "MIT": {
+          "name": "Massachusetts Institute of Technology",
+          "field": "Computer Science & AI",
+          "description": "Leading collaboration in artificial intelligence and machine learning research"
+        },
+        "Oxford": {
+          "name": "University of Oxford",
+          "field": "Medicine & Life Sciences",
+          "description": "Joint medical research and student exchange programs"
+        },
+        "TUM": {
+          "name": "Technical University of Munich",
+          "field": "Architecture & Engineering",
+          "description": "Strategic partnership in engineering education and innovation"
+        },
+        "Sorbonne": {
+          "name": "Sorbonne University",
+          "field": "Law & Social Sciences",
+          "description": "Student exchange and legal studies collaboration"
+        },
+        "UofT": {
+          "name": "University of Toronto",
+          "field": "Psychology & Neuroscience",
+          "description": "Collaborative research in cognitive science and psychology"
+        },
+        "Melbourne": {
+          "name": "University of Melbourne",
+          "field": "Environmental Science",
+          "description": "Environmental research and sustainability initiatives"
+        },
+        "Tokyo": {
+          "name": "University of Tokyo",
+          "field": "Robotics & Technology",
+          "description": "Advanced robotics and technology research collaboration"
+        },
+        "Shanghai": {
+          "name": "Shanghai Jiao Tong University",
+          "field": "Engineering & Innovation",
+          "description": "Strategic partnership in engineering innovation and research collaboration"
+        }
+      },
+      "stats": {
+        "partnerUniversities": "Partner Universities",
+        "exchangeStudents": "Exchange Students",
+        "jointProjects": "Joint Projects",
+        "countries": "Countries"
+      },
+      "typeLabels": {
+        "research": "Research",
+        "exchange": "Exchange",
+        "strategic": "Strategic",
+        "both": "Multi-faceted"
+      },
+      "detailLabels": {
+        "students": "Students:",
+        "projects": "Projects:",
+        "since": "Since:"
+      }
     },
     "choosePath": {
       "title": "Choose Your Academic Path",
